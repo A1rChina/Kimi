@@ -3,9 +3,9 @@ import os
 import shutil
 from datetime import datetime, timedelta
 from pathlib import Path
+from urllib.parse import urlparse, urlunparse
 
 import pandas as pd
-from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 from playwright.sync_api import sync_playwright
 
 LOGIN_URL = os.environ['CMMS_LOGIN_URL']
@@ -20,6 +20,14 @@ DEBUG_DIR = OUTPUT_DIR / 'debug'
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 DEBUG_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def normalize_url_keep_login_host(target_url):
+    login = urlparse(LOGIN_URL)
+    target = urlparse(target_url)
+    if login.netloc and target.hostname == login.hostname and target.netloc != login.netloc:
+        target = target._replace(netloc=login.netloc)
+    return urlunparse(target)
 
 
 def default_date_range(days=3):
@@ -66,14 +74,8 @@ def save_outputs(xls_path, date_range):
         df = tables[0]
 
     df = normalize_dataframe(df)
-
-    csv_path = OUTPUT_DIR / 'latest.csv'
-    json_path = OUTPUT_DIR / 'latest.json'
-    jsonl_path = OUTPUT_DIR / 'latest.jsonl'
-
-    df.to_csv(csv_path, index=False, encoding='utf-8-sig')
+    df.to_csv(OUTPUT_DIR / 'latest.csv', index=False, encoding='utf-8-sig')
     records = df.to_dict(orient='records')
-
     payload = {
         'source': 'purchase_inbound',
         'date_range': date_range,
@@ -81,10 +83,8 @@ def save_outputs(xls_path, date_range):
         'count': len(records),
         'records': records,
     }
-
-    json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
-
-    with jsonl_path.open('w', encoding='utf-8') as f:
+    (OUTPUT_DIR / 'latest.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
+    with (OUTPUT_DIR / 'latest.jsonl').open('w', encoding='utf-8') as f:
         for row in records:
             f.write(json.dumps(row, ensure_ascii=False) + '\n')
 
@@ -93,20 +93,19 @@ def run_scraper():
     date_range = DATE_RANGE or default_date_range()
     latest_xls = OUTPUT_DIR / 'latest.xls'
     raw_xls = RAW_DIR / f"{datetime.now():%Y%m%d_%H%M%S}.xls"
+    fixed_purchase_url = normalize_url_keep_login_host(PURCHASE_INBOUND_URL)
+
+    print('Configured purchase URL:', PURCHASE_INBOUND_URL)
+    print('Fixed purchase URL:', fixed_purchase_url)
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        context = browser.new_context(
-            accept_downloads=True,
-            viewport={'width': 1440, 'height': 1000},
-            ignore_https_errors=True,
-        )
+        context = browser.new_context(accept_downloads=True, viewport={'width': 1440, 'height': 1000}, ignore_https_errors=True)
         page = context.new_page()
 
         print('Open login page')
         page.goto(LOGIN_URL, wait_until='domcontentloaded', timeout=60000)
         save_debug(page, '01_login_page')
-
         page.locator('input[type="text"]').first.fill(USERNAME)
         page.locator('input[type="password"]').first.fill(PASSWORD)
 
@@ -120,7 +119,6 @@ def run_scraper():
                     break
             except Exception:
                 pass
-
         if not clicked:
             save_debug(page, '02_login_button_not_found')
             raise RuntimeError('未找到登录按钮')
@@ -130,7 +128,7 @@ def run_scraper():
         print('After login URL:', page.url)
 
         print('Open purchase inbound page')
-        page.goto(PURCHASE_INBOUND_URL, wait_until='domcontentloaded', timeout=60000)
+        page.goto(fixed_purchase_url, wait_until='domcontentloaded', timeout=60000)
         page.wait_for_timeout(5000)
         save_debug(page, '04_purchase_page')
         print('Purchase page URL:', page.url)
@@ -141,7 +139,7 @@ def run_scraper():
             for frame in page.frames:
                 print('-', frame.url)
             save_debug(page, '05_text3_not_found')
-            raise RuntimeError('未找到 #text3。可能未登录成功、被跳转登录页，或页面需要从菜单进入。')
+            raise RuntimeError('未找到 #text3。请检查实际打开页面是否包含业务时间输入框。')
 
         target.fill('#text3', date_range)
         target.click('#Button2')
@@ -150,7 +148,6 @@ def run_scraper():
 
         with page.expect_download(timeout=60000) as download_info:
             target.get_by_text('导出Excel', exact=True).click()
-
         download = download_info.value
         download.save_as(str(latest_xls))
         shutil.copyfile(latest_xls, raw_xls)
