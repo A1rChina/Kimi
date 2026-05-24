@@ -1,0 +1,21 @@
+{
+  "sources": [
+    {
+      "name": "purchase_inbound",
+      "title": "采购入库",
+      "flow_order": 1,
+      "type": "excel_export",
+      "url_secret": "CMMS_PURCHASE_INBOUND_URL",
+      "default_url": "http://103.14.132.165:8068/ECOERP_CMMS/webserch/web_mjc_0008/?id=1846",
+      "output_dir": "data/excel_export/purchase_inbound",
+      "export_button_text_candidates": [
+        "导出Excel",
+        "导出EXCEL",
+        "导出",
+        "Excel",
+        "EXCEL"
+      ],
+      "notes": "供应链流动第一步：采购入库。有 Excel 导出按钮，优先下载 Excel 原文件。"
+    }
+  ]
+}
