@@ -10,18 +10,17 @@ from playwright.sync_api import sync_playwright
 
 LOGIN_URL = os.environ['CMMS_LOGIN_URL']
 PURCHASE_INBOUND_URL = os.environ['CMMS_PURCHASE_INBOUND_URL']
-WAREHOUSE_DETAIL_URL = os.environ.get(
-    'CMMS_WAREHOUSE_DETAIL_URL',
-    'http://103.14.132.165:8068/ECOERP_CMMS/webserch/web_mjc_0008/?id=1995#',
-)
+WAREHOUSE_DETAIL_URL = os.environ['CMMS_WAREHOUSE_DETAIL_URL']
+WAREHOUSE_LEDGER_URL = os.environ['CMMS_WAREHOUSE_LEDGER_URL']
 USERNAME = os.environ['CMMS_USERNAME']
 PASSWORD = os.environ['CMMS_PASSWORD']
 DATE_RANGE = os.environ.get('DATE_RANGE', '').strip()
 
 PURCHASE_OUTPUT_DIR = Path('data/excel_export/purchase_inbound')
 WAREHOUSE_OUTPUT_DIR = Path('data/excel_export/warehouse_detail')
+WAREHOUSE_LEDGER_OUTPUT_DIR = Path('data/excel_export/warehouse_ledger')
 
-for output_dir in [PURCHASE_OUTPUT_DIR, WAREHOUSE_OUTPUT_DIR]:
+for output_dir in [PURCHASE_OUTPUT_DIR, WAREHOUSE_OUTPUT_DIR, WAREHOUSE_LEDGER_OUTPUT_DIR]:
     (output_dir / 'raw').mkdir(parents=True, exist_ok=True)
     (output_dir / 'debug').mkdir(parents=True, exist_ok=True)
 
@@ -97,16 +96,15 @@ def save_outputs(output_dir, xls_path, payload):
             f.write(json.dumps(row, ensure_ascii=False) + '\n')
 
 
-
 def scrape_export(
     page,
     *,
     name,
     url,
-    date_selector,
-    date_value,
     output_dir,
     payload,
+    date_selector=None,
+    date_value=None,
 ):
     raw_dir = output_dir / 'raw'
     debug_dir = output_dir / 'debug'
@@ -121,15 +119,18 @@ def scrape_export(
     page.wait_for_timeout(5000)
     save_debug(page, debug_dir, f'{name}_page')
 
-    target = find_frame_with_selector(page, date_selector)
+    target_selector = date_selector or '#Button2'
+    target = find_frame_with_selector(page, target_selector)
     if target is None:
         print('Frames found:')
         for frame in page.frames:
             print('-', frame.url)
         save_debug(page, debug_dir, f'{name}_selector_not_found')
-        raise RuntimeError(f'未找到 {date_selector}')
+        raise RuntimeError(f'未找到 {target_selector}')
 
-    target.fill(date_selector, date_value)
+    if date_selector:
+        target.fill(date_selector, date_value)
+
     target.click('#Button2')
     page.wait_for_timeout(5000)
     save_debug(page, debug_dir, f'{name}_after_query')
@@ -142,7 +143,6 @@ def scrape_export(
     shutil.copyfile(latest_xls, raw_xls)
 
     save_outputs(output_dir, latest_xls, payload)
-
 
 
 def run_scraper():
@@ -204,6 +204,17 @@ def run_scraper():
             payload={
                 'source': 'warehouse_detail',
                 'date_range': date_range,
+            },
+        )
+
+        scrape_export(
+            page,
+            name='warehouse_ledger',
+            url=WAREHOUSE_LEDGER_URL,
+            output_dir=WAREHOUSE_LEDGER_OUTPUT_DIR,
+            payload={
+                'source': 'warehouse_ledger',
+                'date_range': None,
             },
         )
 
