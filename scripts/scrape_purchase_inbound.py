@@ -45,11 +45,6 @@ def default_business_date():
     return f'{datetime.now().date():%Y-%m-%d}'
 
 
-def normalize_business_date(value):
-    value = (value or default_business_date()).strip()
-    return value if value.startswith('/') else f'/{value}'
-
-
 def normalize_dataframe(df):
     df = df.dropna(how='all')
     df = df.dropna(axis=1, how='all')
@@ -157,7 +152,7 @@ def scrape_export(
 
 def run_scraper():
     date_range = DATE_RANGE or default_date_range()
-    business_date = normalize_business_date(BUSINESS_DATE)
+    business_date = BUSINESS_DATE or default_business_date()
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
