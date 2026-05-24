@@ -39,6 +39,7 @@ jobs:
           CMMS_PURCHASE_INBOUND_URL: ${{ secrets.CMMS_PURCHASE_INBOUND_URL }}
           CMMS_WAREHOUSE_DETAIL_URL: ${{ secrets.CMMS_WAREHOUSE_DETAIL_URL }}
           CMMS_WAREHOUSE_LEDGER_URL: ${{ secrets.CMMS_WAREHOUSE_LEDGER_URL }}
+          CMMS_SALES_OUTBOUND_DETAIL_URL: ${{ secrets.CMMS_SALES_OUTBOUND_DETAIL_URL }}
           CMMS_USERNAME: ${{ secrets.CMMS_USERNAME }}
           CMMS_PASSWORD: ${{ secrets.CMMS_PASSWORD }}
           DATE_RANGE: ${{ github.event.inputs.date_range }}
