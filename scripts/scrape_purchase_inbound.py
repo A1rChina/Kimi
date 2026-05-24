@@ -22,12 +22,7 @@ WAREHOUSE_OUTPUT_DIR = Path('data/excel_export/warehouse_detail')
 WAREHOUSE_LEDGER_OUTPUT_DIR = Path('data/excel_export/warehouse_ledger')
 SALES_OUTBOUND_DETAIL_OUTPUT_DIR = Path('data/excel_export/sales_outbound_detail')
 
-for output_dir in [
-    PURCHASE_OUTPUT_DIR,
-    WAREHOUSE_OUTPUT_DIR,
-    WAREHOUSE_LEDGER_OUTPUT_DIR,
-    SALES_OUTBOUND_DETAIL_OUTPUT_DIR,
-]:
+for output_dir in [PURCHASE_OUTPUT_DIR, WAREHOUSE_OUTPUT_DIR, WAREHOUSE_LEDGER_OUTPUT_DIR, SALES_OUTBOUND_DETAIL_OUTPUT_DIR]:
     (output_dir / 'raw').mkdir(parents=True, exist_ok=True)
     (output_dir / 'debug').mkdir(parents=True, exist_ok=True)
 
@@ -86,39 +81,18 @@ def save_outputs(output_dir, xls_path, payload):
     df = normalize_dataframe(df)
     df.to_csv(output_dir / 'latest.csv', index=False, encoding='utf-8-sig')
     records = df.to_dict(orient='records')
-
-    payload.update({
-        'synced_at': datetime.now().isoformat(timespec='seconds'),
-        'count': len(records),
-        'records': records,
-    })
-
-    (output_dir / 'latest.json').write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2),
-        encoding='utf-8',
-    )
-
+    payload.update({'synced_at': datetime.now().isoformat(timespec='seconds'), 'count': len(records), 'records': records})
+    (output_dir / 'latest.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
     with (output_dir / 'latest.jsonl').open('w', encoding='utf-8') as f:
         for row in records:
             f.write(json.dumps(row, ensure_ascii=False) + '\n')
 
 
-def scrape_export(
-    page,
-    *,
-    name,
-    url,
-    output_dir,
-    payload,
-    date_selector=None,
-    date_value=None,
-):
+def scrape_export(page, *, name, url, output_dir, payload, date_selector=None, date_value=None):
     raw_dir = output_dir / 'raw'
     debug_dir = output_dir / 'debug'
-
     latest_xls = output_dir / 'latest.xls'
     raw_xls = raw_dir / f"{datetime.now():%Y%m%d_%H%M%S}.xls"
-
     fixed_url = normalize_url_keep_login_host(url)
 
     print(f'Open {name} page')
@@ -137,38 +111,28 @@ def scrape_export(
 
     if date_selector:
         target.fill(date_selector, date_value)
-
     target.click('#Button2')
     page.wait_for_timeout(5000)
     save_debug(page, debug_dir, f'{name}_after_query')
 
     with page.expect_download(timeout=60000) as download_info:
         target.get_by_text('导出Excel', exact=True).click()
-
     download = download_info.value
     download.save_as(str(latest_xls))
     shutil.copyfile(latest_xls, raw_xls)
-
     save_outputs(output_dir, latest_xls, payload)
 
 
 def run_scraper():
     date_range = DATE_RANGE or default_date_range()
-
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        context = browser.new_context(
-            accept_downloads=True,
-            viewport={'width': 1440, 'height': 1000},
-            ignore_https_errors=True,
-        )
-
+        context = browser.new_context(accept_downloads=True, viewport={'width': 1440, 'height': 1000}, ignore_https_errors=True)
         page = context.new_page()
 
         print('Open login page')
         page.goto(LOGIN_URL, wait_until='domcontentloaded', timeout=60000)
         save_debug(page, PURCHASE_OUTPUT_DIR / 'debug', '01_login_page')
-
         page.locator('input[type="text"]').first.fill(USERNAME)
         page.locator('input[type="password"]').first.fill(PASSWORD)
 
@@ -182,59 +146,14 @@ def run_scraper():
                     break
             except Exception:
                 pass
-
         if not clicked:
             raise RuntimeError('未找到登录按钮')
-
         page.wait_for_timeout(5000)
 
-        scrape_export(
-            page,
-            name='purchase_inbound',
-            url=PURCHASE_INBOUND_URL,
-            date_selector='#text3',
-            date_value=date_range,
-            output_dir=PURCHASE_OUTPUT_DIR,
-            payload={
-                'source': 'purchase_inbound',
-                'date_range': date_range,
-            },
-        )
-
-        scrape_export(
-            page,
-            name='warehouse_detail',
-            url=WAREHOUSE_DETAIL_URL,
-            date_selector='#text0',
-            date_value=date_range,
-            output_dir=WAREHOUSE_OUTPUT_DIR,
-            payload={
-                'source': 'warehouse_detail',
-                'date_range': date_range,
-            },
-        )
-
-        scrape_export(
-            page,
-            name='warehouse_ledger',
-            url=WAREHOUSE_LEDGER_URL,
-            output_dir=WAREHOUSE_LEDGER_OUTPUT_DIR,
-            payload={
-                'source': 'warehouse_ledger',
-                'date_range': None,
-            },
-        )
-
-        scrape_export(
-            page,
-            name='sales_outbound_detail',
-            url=SALES_OUTBOUND_DETAIL_URL,
-            output_dir=SALES_OUTBOUND_DETAIL_OUTPUT_DIR,
-            payload={
-                'source': 'sales_outbound_detail',
-                'date_range': None,
-            },
-        )
+        scrape_export(page, name='purchase_inbound', url=PURCHASE_INBOUND_URL, date_selector='#text3', date_value=date_range, output_dir=PURCHASE_OUTPUT_DIR, payload={'source': 'purchase_inbound', 'date_range': date_range})
+        scrape_export(page, name='warehouse_detail', url=WAREHOUSE_DETAIL_URL, date_selector='#text0', date_value=date_range, output_dir=WAREHOUSE_OUTPUT_DIR, payload={'source': 'warehouse_detail', 'date_range': date_range})
+        scrape_export(page, name='warehouse_ledger', url=WAREHOUSE_LEDGER_URL, output_dir=WAREHOUSE_LEDGER_OUTPUT_DIR, payload={'source': 'warehouse_ledger', 'date_range': None})
+        scrape_export(page, name='sales_outbound_detail', url=SALES_OUTBOUND_DETAIL_URL, date_selector='#text0', date_value=date_range, output_dir=SALES_OUTBOUND_DETAIL_OUTPUT_DIR, payload={'source': 'sales_outbound_detail', 'date_range': date_range})
 
         browser.close()
 
