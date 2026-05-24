@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1"><title>
+	协同制造【CMMS】2.0
+</title><meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link rel="icon" href="images/favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<style type="text/css">
+body {
+    background-color:aliceblue;/*背景色，没有背景图片时显示背景色*/
+}
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-image: url("images/login-background.jpg"); /*背景图片*/
+  background-size: cover;
+}
+.login-form {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px 15px 15px 15px;
+    margin-top:100px; /*距离页面上边距离*/
+    margin-left:0px;/*距离页面左边距离，默认是在中间*/
+    opacity:0.9; /*登录框透明度*/
+}
+
+.box{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.box h2{
+    text-align: center;
+    font-size: 22px;
+    color: black;
+    border-bottom: 1px solid rgb(105,105,105);
+    height: 50px;
+    margin-bottom: 40px;
+}
+
+.box input{
+    width: 300px;
+    height: 100%;
+    margin-top: 10px;
+    outline: none;
+    border: 0;
+    padding: 10px;
+    background-color: transparent;
+    border-bottom: 3px solid rgb(150,150,240);
+    font: 900 14px '';
+}
+
+.go{
+    text-align: center;
+    display: block;
+    height: 24px;
+    padding: 12px;
+    font: 900 16px '';
+    border-radius: 10px;
+    margin-top: 20px;
+    color: #fff;
+    letter-spacing: 3px;
+    background-image: linear-gradient(to left,#fd79a8,#a29bf6);
+}
+
+</style>
+<script>
+  document.onkeypress   =   kk;
+  function   kk()   
+  { 
+    if(   event.keyCode   ==   13   )
+    {   
+       document.all["Btok"].click();
+    }
+  } 
+ function GetFocus()
+ {
+  document.getElementById("UserName").focus();
+ }
+</script>
+</head>
+<body bottommargin="0" leftmargin="0" rightmargin="0" topmargin="0" scroll="no" onload="GetFocus()" class="login">
+ <form name="form1" method="post" action="Login.aspx" id="form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTc2OTg5MzQwN2RkzPnlmPy3ju/1IPCAEhi//OH4QOnPF6S72w6evxx7X1E=">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAARuGKco7leoIJnA5KLjIds4R1LBKX1P1xh290RQyTesRVwK8/1gnn25OldlRNyIednIpqDmUbYkAulEwBb8WTT3FyXP0Ienj+jYHFDsZdAQ6XaTkZJRzqORijP6ctG4stM=">
+</div>
+     
+
+     
+    <div class="login-form">
+        <div class="box">
+            <h2>
+              <span>登  录</span>
+            </h2>
+            <input name="UserName" type="text" id="UserName" placeholder="账号">
+            <input name="Password" type="password" id="Password" placeholder="密码">
+            
+            <p>
+            <a id="Btok" class="go" href="javascript:__doPostBack('Btok','')">登录</a>
+            </p>
+        </div>
+
+    </div>
+     
+ </form>
+
+
+</body></html>
