@@ -1,0 +1,608 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>
+	供货明细查询
+</title>
+    
+    <script src="../../js/calendar3.js">
+</script><style type="text/css">.cmp-date-time-picker{width:210px;padding:4px;margin:0;background-color:#fff;border:1px solid #ccc;border-radius:2px;-webkit-box-shadow:0 1px 3px #ccc;box-shadow:0 1px 3px #ccc;-webkit-box-sizing:content-box;box-sizing:content-box;font-size:12px;position:absolute;z-index:9999;display:none;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.cmp-date-time-picker *{-webkit-box-sizing:content-box;box-sizing:content-box;margin:0;padding:0;font-style:normal}.cmp-date-time-picker .cmp-dp-ctrl-wrap{width:210px;height:26px;overflow:hidden}.cmp-date-time-picker .cmp-dp-ctrl-group{height:26px;line-height:26px;float:left;margin:0 2px}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-btn{width:22px;height:26px;overflow:hidden;float:left;cursor:pointer;position:relative}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-txt{width:57px;height:26px;text-align:center;overflow:hidden;float:left}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-triangle{display:block;width:0;height:0;position:absolute;left:50%;top:50%;margin:-4px 0 0 -2px}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-btn-prev .cmp-dp-triangle{border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:0 solid transparent;border-right:5px solid #333}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-btn-next .cmp-dp-triangle{border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #333;border-right:0 solid transparent}.cmp-date-time-picker .cmp-dp-ctrl-group-month{width:91px}.cmp-date-time-picker .cmp-dp-ctrl-group-month .cmp-dp-txt{width:47px;cursor:pointer}.cmp-date-time-picker .cmp-dp-ctrl-group-year{width:111px}.cmp-date-time-picker .cmp-dp-ctrl-group-year .cmp-dp-txt{width:67px}.cmp-date-time-picker .cmp-dp-day-name{width:210px;height:30px;line-height:30px;overflow:hidden}.cmp-date-time-picker .cmp-dp-day-name .cmp-dp-day-item{width:30px;text-align:center;font-weight:700;color:#999;float:left}.cmp-date-time-picker .cmp-dp-date-wrapper{width:210px;line-height:26px;overflow:hidden}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item{width:26px;margin:0 2px 4px;text-align:center;color:#333;float:left;cursor:pointer;border-radius:3px}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item:hover{background-color:#eee;color:#3740d5;font-weight:700}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-today,.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-today:hover{background-color:#a4a4a4;color:#fff}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-other{background-color:#f0f0f0}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-cur,.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-cur:hover{background-color:#3740d5;color:#fff}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-disabled,.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-disabled:hover{background-color:#f9f9f9;color:#e1e1e1;font-weight:400;cursor:default}.cmp-date-time-picker .cmp-dp-btn-wrap{width:210px;height:26px;padding-top:5px;*padding-top:10px;padding-bottom:4px;text-align:center;overflow:hidden}.cmp-date-time-picker .cmp-dp-btn-wrap .cmp-dp-btn{display:inline-block;padding:0 8px;margin:0 4px;height:24px;line-height:24px;font-size:12px;color:#fff;background:#3740d5;border:1px solid #3740d5;border-radius:4px;cursor:pointer}.cmp-date-time-picker .cmp-dp-btn-wrap .cmp-dp-btn-disabled{color:#f6f6f6;background:#cecece;border:1px solid #cecece}.cmp-date-time-picker .cmp-dp-time-group{width:105px;height:26px;float:left;overflow:hidden;vertical-align:top;font-size:12px;color:#999}.cmp-date-time-picker .cmp-dp-time-group input{width:20px;height:16px;line-height:16px;padding:4px 0;*margin-top:-1px;text-align:center;color:#666;border:1px solid #ccc;outline:0;vertical-align:middle}.cmp-date-time-picker .cmp-dp-btn-group{width:105px;height:26px;float:left;overflow:hidden;font-size:0}.cmp-date-time-picker .cmp-dp-month-menu{width:150px;padding:4px;background-color:#fff;border:1px solid #ccc;border-radius:2px;-webkit-box-shadow:0 1px 3px #ccc;box-shadow:0 1px 3px #ccc;position:absolute;top:30px;right:10px;display:none}.cmp-date-time-picker .cmp-dp-month-item{width:50px;height:26px;line-height:26px;text-align:center;overflow:hidden;border-radius:3px;float:left}.cmp-date-time-picker .cmp-dp-month-item:hover{background-color:#eee}.cmp-date-time-picker .cmp-dp-time-menu{width:180px;padding:4px;background-color:#fff;border:1px solid #ccc;border-radius:2px;-webkit-box-shadow:0 1px 3px #ccc;box-shadow:0 1px 3px #ccc;position:absolute;bottom:37px;display:none}.cmp-date-time-picker .cmp-dp-time-item{width:26px;line-height:26px;margin:0 2px;text-align:center;color:#333;float:left;cursor:pointer;border-radius:3px}.cmp-date-time-picker .cmp-dp-time-item:hover{background-color:#eee}.cmp-date-time-picker .cmp-dp-hour-menu{left:4px}.cmp-date-time-picker .cmp-dp-minute-menu{width:120px;left:36px}.cmp-date-time-picker .cmp-dp-second-menu{width:120px;left:68px}</style></head><body text="#00" onload="GetEnable()"><iframe id="endDateLayer" name="endDateLayer" frameborder="0" width="204" height="273" style="position: absolute;  z-index: 9998; display: none;"></iframe>
+
+<script type="text/javascript">
+
+
+    function gettextvalue() {
+
+    var textvalue="";
+    for(var i=0;i<10;i++)
+    {
+        var control=document.getElementById("text"+i);
+        if(control!=undefined&&control!=null)
+        {
+            textvalue+="&text"+i+"="+control.value;
+        }
+    }
+    return textvalue;
+}
+
+
+//2019.5.25
+document.onkeydown = function ()
+{
+//使用document.getElementById获取到按钮对象
+ var button = document.getElementById('Button2');
+ if(event.keyCode == 13)
+ {
+  button.click();
+  event.returnValue = false;
+ }
+}
+var textid;
+function Buck() {
+            textid.value=document.all.TextBox1.value+"/"+document.all.TextBox2.value;
+            document.getElementById("divtime").style.visibility="hidden";
+}
+function divview() {
+                   //document.getElementById("divtime").style.visibility="visible";
+                   //document.getElementById("TextBox1").value=textid;
+                   }
+function Button4_onclick() {
+document.getElementById("divtime").style.visibility="hidden";
+}
+function btjs_Click()
+{
+ 
+ btjsclick(gettextvalue());
+}
+function btadd_Click()
+{
+ btaddclick();
+}
+function bthz_Click()
+{
+ bthzclick();
+}
+function QueryString(item){
+     var sValue=location.search.match(new RegExp("[\?\&]"+item+"=([^\&]*)(\&?)","i"))
+     return sValue?sValue[1]:sValue
+}
+function btsql_Click()
+{
+    var sql="";
+    var e=document.getElementsByTagName("input"); 
+    for(var i=0;i <e.length;i++) 
+　{ 
+　　if (e[i].type=="checkbox") 
+　　{ 
+　　  if(e[i].checked==true&&e[i].value!="全否")
+　　  {
+　　    sql=sql+e[i].value+",";
+　　  }
+　　} 
+　} 
+　if(sql!="")
+　{
+　  var iTop = (window.screen.availHeight-document.getElementById("hisqlheight").value)/2;
+　  var iLeft = (window.screen.availWidth-500)/2;
+    window.open("jcsql.aspx?id=" + sql + "&rowid=" +  QueryString('id')+gettextvalue() ,"","Scrollbars=no,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=500px ,Height="+document.getElementById("hisqlheight").value+"px,top="+iTop+",left="+iLeft);
+   }
+    else
+    {
+        alert("请选择需要处理的数据！");
+    }
+}
+function GetEnable()
+{
+    var flagjs=document.getElementById("hiflag").value.split(',')[0];
+    var flaghz=document.getElementById("hiflag").value.split(',')[1];
+    var flagadd=document.getElementById("hiflag").value.split(',')[2];
+    if(flagjs=="0")
+    {
+        document.getElementById("btjs").disabled="disabled";
+        document.getElementById("btjs").style.display="none";
+    }
+    if(flaghz=="0")
+    {
+        document.getElementById("bthz").disabled="disabled";
+        document.getElementById("bthz").style.display="none";
+    }
+    if(flagadd=="0")
+    {
+        document.getElementById("btadd").disabled="disabled";
+        document.getElementById("btadd").style.display="none";
+    }
+}
+function SelectAll(obj) 
+{ 
+  var e=document.getElementsByTagName("input"); 
+  var IsTrue; 
+  if(obj.value=="全选") 
+　 { 
+　　 IsTrue=true; 
+　　 obj.value="全否" 
+　 } 
+　 else 
+　 {
+     IsTrue = false; 
+　　obj.value="全选" 
+　　} 
+　　 
+　for(var i=0;i <e.length;i++) 
+　{ 
+　　if (e[i].type=="checkbox") 
+　　{ 
+　　  e[i].checked=IsTrue; 
+　　} 
+　} 
+} 
+function showwait()
+{
+    document.getElementById("showdiv").style.left=document.body.clientWidth/2-100;
+    document.getElementById("showdiv").style.top=document.body.clientHeight/2-35;
+    document.getElementById("showdiv").style.display="";
+}
+function diswait()
+{
+    //try
+    //{
+        document.getElementById("showdiv").style.display="none";
+    //}
+    //catch(e)
+   // {
+   // }
+}
+function btmbexcel_Click()
+{
+   if(document.getElementById("trmb").style.display=="none")
+      document.getElementById("trmb").style.display="";
+   else
+      document.getElementById("trmb").style.display="none";
+}
+function getexcel()
+{
+    window.open("XLS_DownLoad.aspx?path="+document.getElementById("fileupexcel").value);
+    //location.reload();
+    //window.document.forms(0).Button2.click();
+}
+function getexcelload()
+{
+    
+    location.reload();
+    //window.document.forms(0).Button2.click();
+}
+</script>
+
+
+    <form name="form1" method="post" action="?id=1846" id="form1" enctype="multipart/form-data">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var Anthem_FormID = "form1";
+//]]>
+</script>
+<script src="/ECOERP_CMMS/WebResource.axd?d=VKHi8pxmLK-NK79fg4jTrRvZYBlkpRg1_CyGEBV10UvySVwJjI-WFz1a_LFk_M9Gr_2ZjpmMySU6JpMRqJWSe3sZEgerjlhKgtHsFJgXXV-WiyzRNXRPc24LJOLVJtV10&amp;t=635260899183750000" type="text/javascript"></script>
+    <div><link href="../../Images/TreeImg/infocss.css" rel="stylesheet" type="text/css">
+    <div id="ValidationSummary1" style="color:Red;display:none;">
+
+</div>
+        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+            <tbody><tr>
+                <td id="TD2" style="width: 100%;  background-repeat: repeat-x; border-top-width: 1px; border-left-width: 1px; border-left-color: #009999; border-bottom-width: 1px; border-bottom-color: #009999; border-top-color: #009999; border-right-width: 1px; border-right-color: #009999;">
+                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%" class="prodtable">
+                        <tbody><tr>
+                            
+                            <td style="width: 100%; border-top-width: 1px; border-left-width: 1px; border-left-color: #000099; border-bottom-width: 1px; border-bottom-color: #000099; border-top-color: #000099; border-right-width: 1px; border-right-color: #000099;">
+                                <div style="float:left; vertical-align:middle; margin-top:4px; margin-left:5px; width:100%; ">
+                                <div id="Anthem_Panel1__"><div id="Panel1" style="width:850px;">
+	<span id="lb0" title="SysCheckDate" style="display:inline-block;width:65px;">核算期</span><span id="lbL0" style="display:inline-block;width:20px;">like</span><span id="Anthem_text0__"><select name="text0" id="text0" class="prodbut" style="width:100px;">
+		<option selected="selected" value=""></option>
+		<option value="202605">202605</option>
+		<option value="202604">202604</option>
+		<option value="202603">202603</option>
+		<option value="202602">202602</option>
+		<option value="202601">202601</option>
+		<option value="202512">202512</option>
+		<option value="202511">202511</option>
+		<option value="202510">202510</option>
+		<option value="202509">202509</option>
+		<option value="202508">202508</option>
+		<option value="202507">202507</option>
+		<option value="202506">202506</option>
+		<option value="202505">202505</option>
+		<option value="202504">202504</option>
+		<option value="202503">202503</option>
+		<option value="202502">202502</option>
+		<option value="202501">202501</option>
+		<option value="202412">202412</option>
+
+	</select></span><span style="display:inline-block;color:Red;width:14px;">   </span><span id="lb1" title="PalTypeID" style="display:inline-block;width:65px;">供应商</span><span id="lbL1" style="display:inline-block;width:20px;">=</span><span id="Anthem_text1__"><select name="text1" id="text1" class="prodbut" onchange="javascript:Anthem_FireCallBackEvent(this,event,'text1','',false,'','','',true,null,null,null,true,true);return false;" style="width:100px;">
+		<option selected="selected" value=""></option>
+		<option value="誉寰">誉寰</option>
+		<option value="亿企">亿企</option>
+		<option value="祥鑫">祥鑫</option>
+		<option value="普翼">普翼</option>
+		<option value="亮达">亮达</option>
+		<option value="联伟">联伟</option>
+		<option value="锦佳盛">锦佳盛</option>
+		<option value="嘉龙">嘉龙</option>
+		<option value="和胜">和胜</option>
+		<option value="东泽">东泽</option>
+		<option value="长盈">长盈</option>
+		<option value="博奥镁铝">博奥镁铝</option>
+		<option value=""></option>
+
+	</select></span><span style="display:inline-block;color:Red;width:14px;">   </span><span id="lb2" title="PalTypeName" style="display:inline-block;width:65px;">二级</span><span id="lbL2" style="display:inline-block;width:20px;">like</span><span id="Anthem_text2__"><select name="text2" id="text2" class="prodbut" style="width:100px;">
+		<option selected="selected" value=""></option>
+
+	</select></span><span style="display:inline-block;color:Red;width:14px;">   </span><span id="lb3" title="SysTime" style="display:inline-block;width:65px;">业务时间</span><span id="lbL3" style="display:inline-block;width:20px;"></span><span id="Anthem_text3__"><input name="text3" type="text" value="2026-01-01/2026-05-24" id="text3" title="时间型" class="prodbut" onfocus="javascript:document.getElementById(&quot;divtime&quot;).style.visibility=&quot;visible&quot;;document.getElementById(&quot;divtime&quot;).style.top=this.offsetTop+this.clientHeight+25;;document.getElementById(&quot;divtime&quot;).style.left=this.offsetLeft+this.clientLeft+106;textid=this;" style="width:100px;"></span><span style="display:inline-block;color:Red;width:14px;">   </span><span id="lb4" title="MaterialName" style="display:inline-block;width:65px;">物资名称</span><span id="lbL4" style="display:inline-block;width:20px;">like</span><span id="Anthem_text4__"><input name="text4" type="text" id="text4" class="prodbut" style="width:100px;"></span><span style="display:inline-block;color:Red;width:14px;">   </span><span id="lb5" title="DocumentNumber" style="display:inline-block;width:65px;">业务单号</span><span id="lbL5" style="display:inline-block;width:20px;">like</span><span id="Anthem_text5__"><input name="text5" type="text" id="text5" class="prodbut" style="width:100px;"></span><span style="display:inline-block;color:Red;width:14px;">   </span>
+</div></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+
+            </tr>
+            <tr>
+                <td id="TD1" style="width: 100%; height: 26px; background-repeat: repeat-x; border-top-width: 1px; border-left-width: 1px; border-left-color: #000099; border-bottom-width: 1px; border-bottom-color: #000099; border-top-color: #000099; border-right-width: 1px; border-right-color: #000099;" align="right">
+                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%" class="prodtable1">
+                        <tbody><tr>
+                            <td style="width: 20%; " align="left" bgcolor="#FFFFFF">
+                                &nbsp; &nbsp; 
+                                <span id="Anthem_Label1__"><span id="Label1" class="STYLE3" style="font-weight:bold;">供货明细查询</span></span>
+                        &nbsp; &nbsp; 
+                                
+                        </td>
+                        <td style="width: 30%; " align="left" bgcolor="#FFFFFF">
+                            <span id="lbl" class="prodbut"></span>
+                          
+                        </td>
+                            <td style="width: 50%;" bgcolor="#FFFFFF" align="right">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody><tr>
+                            
+                            <td style="width: 72px">
+                                </td>
+                            <td>
+                                <input id="btadd" type="button" value="添加" style="width: 80px; margin-left: 5px; display: none;" class="prodbut" onclick="btadd_Click()" disabled=""></td>
+                               <td>
+                                <input type="submit" name="Button1" value="导出Excel" id="Button1" class="prodbut" style="width:80px;margin-left:5px">
+                                
+                                </td>
+                            
+                            <td>
+                                    <input name="btjs" type="button" id="btjs" value="计算后台信息" class="prodbut" onclick="btjs_Click()" style="margin-left: 5px; display: none;" disabled="">
+                                </td>
+                            <td>
+                                <span id="Anthem_btn1__"></span>
+                            </td>
+                            <td>
+                                <span id="Anthem_btn2__"></span>
+                            </td>
+                            <td>
+                                <span id="Anthem_btn3__"></span>
+                            </td>
+                            <td>
+                                
+                                </td>
+                            <td>
+                               <input id="bthz" type="button" value="汇总" style="width: 80px; margin-left: 5px; display: none;" class="prodbut" onclick="bthz_Click()" disabled=""> 
+                                </td>
+                                <td>
+                                <span id="Anthem_Button2__"><input type="submit" name="Button2" value="开始查询" onclick="javascript:Anthem_FireCallBackEvent(this,event,'Button2','',true,'','','正在查询...',false,showwait(),null,null,true,true);return false;" id="Button2" class="prodbut" style="margin-left:5px"></span></td>
+                            <td style="width: 10px">
+                            </td>
+                        </tr>
+                        
+                    </tbody></table>
+                            </td>
+                        </tr>
+                        <tr style="display:none" id="trmb">
+                            <td align="left" bgcolor="#ffffff" style="width: 50%; border-top:lightsteelblue 2px solid; background-color: lightsteelblue;">
+                            </td>
+                            <td bgcolor="#ffffff" style="width: 50%; border-top:lightsteelblue 1px solid; background-color: lightsteelblue;">
+                                <input type="file" name="fileupexcel" id="fileupexcel" class="prodbut" autoupdateaftercallback="true"> 
+                                <input type="submit" name="btupdownexcel" value="导出数据到模板" id="btupdownexcel" class="prodbut" autoupdateaftercallback="true" postcallbackfunction="getexcel()" enabledduringcallback="false" textduringcallback="正在生成数据..."> <input id="Button5" type="button" value="刷新页面" style="width:80px" class="prodbut" onclick="getexcelload()"> 
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+
+            </tr>
+            <tr>
+                <td style="width: 100%; height: 3px; ">
+                
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100%; border-top-width: 1px; border-left-width: 1px; border-left-color: #000099; border-bottom-width: 1px; border-bottom-color: #000099; border-top-color: #000099; border-right-width: 1px; border-right-color: #000099; font-size: 10pt;">
+                    
+                    <div id="Anthem_GridView1__"><div>
+	<table class="gridbk" cellspacing="0" rules="all" border="1" id="GridView1" style="width:100%;border-collapse:collapse;background-image:url(../../Images/TreeImg/info/conbg.jpg);background-repeat:repeat-x;">
+		<tbody><tr class="gridcss" style="height:20px;">
+			<th class="gridcss" scope="col" style="width:20px;"><input name="GridView1$ctl01$chall" type="checkbox" id="GridView1_ctl01_chall" value="全选" onclick="javascript:SelectAll(this);"></th><th class="gridcss" scope="col">核算期</th><th class="gridcss" scope="col">业务人员</th><th class="gridcss" scope="col">业务时间</th><th class="gridcss" scope="col">业务单号</th><th class="gridcss" scope="col">业务类型</th><th class="gridcss" scope="col">库房</th><th class="gridcss" scope="col">物资ID</th><th class="gridcss" scope="col">物资名称</th><th class="gridcss" scope="col">规格图号</th><th class="gridcss" scope="col">毛坯重</th><th class="gridcss" scope="col">报价重</th><th class="gridcss" scope="col">数量</th><th class="gridcss" scope="col">供应商</th><th class="gridcss" scope="col">二级</th>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl02$ch1" type="checkbox" id="GridView1_ctl02_ch1" value="5781167"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 14:54:29</td><td class="gridcss">R260523012</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">2.A.02.6200-OSP00-YL</td><td class="gridcss">PP-0168-前边梁</td><td class="gridcss">502.8</td><td class="gridcss">1.028</td><td class="gridcss">1.028</td><td class="gridcss">225.00</td><td class="gridcss">长盈</td><td class="gridcss">佳坤</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl03$ch1" type="checkbox" id="GridView1_ctl03_ch1" value="5781165"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 14:54:29</td><td class="gridcss">R260523012</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">2.A.02.6196-OSP00-YL</td><td class="gridcss">PP-0168-安装梁1</td><td class="gridcss">284</td><td class="gridcss">0.197</td><td class="gridcss">0.197</td><td class="gridcss">232.00</td><td class="gridcss">长盈</td><td class="gridcss">佳坤</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl04$ch1" type="checkbox" id="GridView1_ctl04_ch1" value="5781164"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 14:54:29</td><td class="gridcss">R260523012</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">2.A.02.6194-OSP00-YL</td><td class="gridcss">PP-0168-纵梁</td><td class="gridcss">499.5</td><td class="gridcss">0.998</td><td class="gridcss">0.998</td><td class="gridcss">220.00</td><td class="gridcss">长盈</td><td class="gridcss">佳坤</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl05$ch1" type="checkbox" id="GridView1_ctl05_ch1" value="5781163"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 14:54:29</td><td class="gridcss">R260523012</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">2.A.02.6184-OSP00-YL</td><td class="gridcss">PP-0168-右边梁</td><td class="gridcss">1470.5</td><td class="gridcss">9.78</td><td class="gridcss">9.93</td><td class="gridcss">52.00</td><td class="gridcss">长盈</td><td class="gridcss">佳坤</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl06$ch1" type="checkbox" id="GridView1_ctl06_ch1" value="5781152"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 14:33:22</td><td class="gridcss">R260523011</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">SD01-61KWH-B-XC-021-YL</td><td class="gridcss">SD01后端挂载</td><td class="gridcss">88</td><td class="gridcss">0.433</td><td class="gridcss">0</td><td class="gridcss">1.00</td><td class="gridcss">祥鑫</td><td class="gridcss">三星</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl07$ch1" type="checkbox" id="GridView1_ctl07_ch1" value="5781151"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 14:33:22</td><td class="gridcss">R260523011</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">SD01-61KWH-B-XC-022-YL</td><td class="gridcss">SD01前护板支架</td><td class="gridcss">9.51</td><td class="gridcss">0.02</td><td class="gridcss">0</td><td class="gridcss">11.00</td><td class="gridcss">祥鑫</td><td class="gridcss">三星</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl08$ch1" type="checkbox" id="GridView1_ctl08_ch1" value="5781150"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 14:33:22</td><td class="gridcss">R260523011</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">SD01-61KWH-B-XC-021-YL</td><td class="gridcss">SD01后端挂载</td><td class="gridcss">88</td><td class="gridcss">0.433</td><td class="gridcss">0</td><td class="gridcss">21.00</td><td class="gridcss">祥鑫</td><td class="gridcss">三星</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl09$ch1" type="checkbox" id="GridView1_ctl09_ch1" value="5781149"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 14:33:22</td><td class="gridcss">R260523011</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">BP45A-XC-11-YL</td><td class="gridcss">BP45（76）A后横梁</td><td class="gridcss">323</td><td class="gridcss">0.412</td><td class="gridcss">0.42</td><td class="gridcss">142.00</td><td class="gridcss">祥鑫</td><td class="gridcss">三星</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl10$ch1" type="checkbox" id="GridView1_ctl10_ch1" value="5781148"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 14:33:22</td><td class="gridcss">R260523011</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">SD01-61KWH-B-XC-021-YL</td><td class="gridcss">SD01后端挂载</td><td class="gridcss">88</td><td class="gridcss">0.433</td><td class="gridcss">0</td><td class="gridcss">1.00</td><td class="gridcss">祥鑫</td><td class="gridcss">三星</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl11$ch1" type="checkbox" id="GridView1_ctl11_ch1" value="5781106"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 11:28:44</td><td class="gridcss">R260523010</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">500109-00677-01-10-YL</td><td class="gridcss">F3-56-膨胀梁01</td><td class="gridcss">1278.8</td><td class="gridcss">5.575</td><td class="gridcss">5.819</td><td class="gridcss">215.00</td><td class="gridcss">联伟</td><td class="gridcss">豪美</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl12$ch1" type="checkbox" id="GridView1_ctl12_ch1" value="5781103"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 11:28:44</td><td class="gridcss">R260523010</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">500104-00518-01-05-B-YL</td><td class="gridcss">小卡三代-后膨胀梁</td><td class="gridcss">658</td><td class="gridcss">5.09</td><td class="gridcss">5.04438</td><td class="gridcss">59.00</td><td class="gridcss">联伟</td><td class="gridcss">豪美</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl13$ch1" type="checkbox" id="GridView1_ctl13_ch1" value="5781102"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 11:28:44</td><td class="gridcss">R260523010</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">500104-00518-01-04-A-YL</td><td class="gridcss">小卡三代-前膨胀梁</td><td class="gridcss">658</td><td class="gridcss">4.04</td><td class="gridcss">3.94965</td><td class="gridcss">96.00</td><td class="gridcss">联伟</td><td class="gridcss">豪美</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl14$ch1" type="checkbox" id="GridView1_ctl14_ch1" value="5781080"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 10:34:21</td><td class="gridcss">R260523008</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">500110-00799-02-04-YL</td><td class="gridcss">AWT87.3-挂载支架02</td><td class="gridcss">120.7</td><td class="gridcss">1.226</td><td class="gridcss">1.2847</td><td class="gridcss">63.00</td><td class="gridcss">祥鑫</td><td class="gridcss">星环</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl15$ch1" type="checkbox" id="GridView1_ctl15_ch1" value="5781079"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 10:34:21</td><td class="gridcss">R260523008</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">500110-00799-01-02/03-YL-GY</td><td class="gridcss">AWT87.3-横梁01/02</td><td class="gridcss">1302</td><td class="gridcss">3.24</td><td class="gridcss">3.4297</td><td class="gridcss">243.00</td><td class="gridcss">祥鑫</td><td class="gridcss">星环</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl16$ch1" type="checkbox" id="GridView1_ctl16_ch1" value="5781078"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 10:34:21</td><td class="gridcss">R260523008</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">500110-00799-01-02/03-YL-GY</td><td class="gridcss">AWT87.3-横梁01/02</td><td class="gridcss">1302</td><td class="gridcss">3.24</td><td class="gridcss">3.4297</td><td class="gridcss">357.00</td><td class="gridcss">祥鑫</td><td class="gridcss">星环</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl17$ch1" type="checkbox" id="GridView1_ctl17_ch1" value="5781077"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 10:34:21</td><td class="gridcss">R260523008</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">500110-00799-01-02/03-YL-GY</td><td class="gridcss">AWT87.3-横梁01/02</td><td class="gridcss">1302</td><td class="gridcss">3.24</td><td class="gridcss">3.4297</td><td class="gridcss">200.00</td><td class="gridcss">祥鑫</td><td class="gridcss">星环</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl18$ch1" type="checkbox" id="GridView1_ctl18_ch1" value="5781076"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 10:34:21</td><td class="gridcss">R260523008</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">500110-00799-01-02/03-YL-GY</td><td class="gridcss">AWT87.3-横梁01/02</td><td class="gridcss">1302</td><td class="gridcss">3.24</td><td class="gridcss">3.4297</td><td class="gridcss">200.00</td><td class="gridcss">祥鑫</td><td class="gridcss">星环</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl19$ch1" type="checkbox" id="GridView1_ctl19_ch1" value="5781075"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/23 10:34:21</td><td class="gridcss">R260523008</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">500109-00698-01-01-YL</td><td class="gridcss">EHU-56前梁01</td><td class="gridcss">1252.5</td><td class="gridcss">5.89</td><td class="gridcss">6.163</td><td class="gridcss">60.00</td><td class="gridcss">联伟</td><td class="gridcss">星环</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl20$ch1" type="checkbox" id="GridView1_ctl20_ch1" value="5780833"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/22 19:46:39</td><td class="gridcss">R260522074</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">10062035-0-07-YL</td><td class="gridcss">025AC纵梁</td><td class="gridcss">1515.4</td><td class="gridcss">2.626</td><td class="gridcss">2.7123</td><td class="gridcss">315.00</td><td class="gridcss">联伟</td><td class="gridcss">正合</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl21$ch1" type="checkbox" id="GridView1_ctl21_ch1" value="5780832"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/22 19:46:39</td><td class="gridcss">R260522074</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">10062035-0-04-YL</td><td class="gridcss">025AC后边梁</td><td class="gridcss">1341.49</td><td class="gridcss">3.915</td><td class="gridcss">4.0644</td><td class="gridcss">720.00</td><td class="gridcss">联伟</td><td class="gridcss">正合</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl22$ch1" type="checkbox" id="GridView1_ctl22_ch1" value="5780831"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/22 19:46:39</td><td class="gridcss">R260522074</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">10062035-0-06-YL</td><td class="gridcss">025AC中横梁</td><td class="gridcss">1293</td><td class="gridcss">3.304</td><td class="gridcss">3.4577</td><td class="gridcss">648.00</td><td class="gridcss">联伟</td><td class="gridcss">正合</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl23$ch1" type="checkbox" id="GridView1_ctl23_ch1" value="5780830"></td><td class="gridcss">202605</td><td class="gridcss">刘盛华</td><td class="gridcss">2026/5/22 19:46:39</td><td class="gridcss">R260522074</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">10062035-0-03/11-YL-GY</td><td class="gridcss">025AC左右边梁</td><td class="gridcss">1657.98</td><td class="gridcss">6.028</td><td class="gridcss">6.1871</td><td class="gridcss">294.00</td><td class="gridcss">联伟</td><td class="gridcss">正合</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl24$ch1" type="checkbox" id="GridView1_ctl24_ch1" value="5780740"></td><td class="gridcss">202605</td><td class="gridcss">申利花</td><td class="gridcss">2026/5/22 14:38:45</td><td class="gridcss">R260522005</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">BP76A-XC-10-YL</td><td class="gridcss">BP76A-前横梁</td><td class="gridcss">511</td><td class="gridcss">0.81</td><td class="gridcss">0.91</td><td class="gridcss">37.00</td><td class="gridcss">祥鑫</td><td class="gridcss">南涪</td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl25$ch1" type="checkbox" id="GridView1_ctl25_ch1" value="5780739"></td><td class="gridcss">202605</td><td class="gridcss">申利花</td><td class="gridcss">2026/5/22 14:38:45</td><td class="gridcss">R260522005</td><td class="gridcss">采购入库</td><td class="gridcss">原材料库</td><td class="gridcss">BP76A-XC-06-YL</td><td class="gridcss">BP76A-左边梁</td><td class="gridcss">807</td><td class="gridcss">0.433</td><td class="gridcss">1.963</td><td class="gridcss">750.00</td><td class="gridcss">祥鑫</td><td class="gridcss">南涪</td>
+		</tr><tr align="right">
+			<td colspan="15">
+                        <table width="100%" class="prodtable1" border="0" cellpadding="0" cellspacing="0">
+                      
+                          <tbody><tr>
+                          <td style="width:20%;" bgcolor="#FFFFFF">
+                            &nbsp; &nbsp; <span id="Anthem_GridView1_ctl27_Label2__"><span id="GridView1_ctl27_Label2" class="STYLE1" style="font-weight:normal;">查询数据共：2000条</span></span>
+                          </td>
+                          <td bgcolor="#FFFFFF" style="width:30%;"></td>
+                            <td style="text-align:right; width:50%;" bgcolor="#FFFFFF">
+                            第<span id="Anthem_GridView1_ctl27_lblPageIndex__"><span id="GridView1_ctl27_lblPageIndex">1</span></span>页
+                                /共<span id="Anthem_GridView1_ctl27_lblPageCount__"><span id="GridView1_ctl27_lblPageCount">84</span></span>页 
+                                <span id="Anthem_GridView1_ctl27_btnFirst__"><a onclick="javascript:Anthem_FireCallBackEvent(this,event,'GridView1$ctl27$btnFirst','',false,'','','首页 正在处理...',false,null,null,null,true,true);return false;" id="GridView1_ctl27_btnFirst" href="javascript:__doPostBack('GridView1$ctl27$btnFirst','')">首页</a></span>
+                              <span id="Anthem_GridView1_ctl27_btnPrev__"><a onclick="javascript:Anthem_FireCallBackEvent(this,event,'GridView1$ctl27$btnPrev','',false,'','','上一页 正在处理...',false,null,null,null,true,true);return false;" id="GridView1_ctl27_btnPrev" href="javascript:__doPostBack('GridView1$ctl27$btnPrev','')">上一页</a></span>
+                             <span id="Anthem_GridView1_ctl27_btnNext__"><a onclick="javascript:Anthem_FireCallBackEvent(this,event,'GridView1$ctl27$btnNext','',false,'','','下一页 正在处理...',false,null,null,null,true,true);return false;" id="GridView1_ctl27_btnNext" href="javascript:__doPostBack('GridView1$ctl27$btnNext','')">下一页</a></span>                          
+                             <span id="Anthem_GridView1_ctl27_btnLast__"><a onclick="javascript:Anthem_FireCallBackEvent(this,event,'GridView1$ctl27$btnLast','',false,'','','尾页 正在处理...',false,null,null,null,true,true);return false;" id="GridView1_ctl27_btnLast" href="javascript:__doPostBack('GridView1$ctl27$btnLast','')">尾页</a></span>                                            
+                             <span id="Anthem_GridView1_ctl27_txtNewPageIndex__"><input name="GridView1$ctl27$txtNewPageIndex" type="text" value="1" id="GridView1_ctl27_txtNewPageIndex" style="width:20px;"></span>
+                             <span id="Anthem_GridView1_ctl27_btnGo__"><a onclick="javascript:Anthem_FireCallBackEvent(this,event,'GridView1$ctl27$btnGo','',false,'','','GO...',false,null,null,null,true,true);return false;" id="GridView1_ctl27_btnGo" href="javascript:__doPostBack('GridView1$ctl27$btnGo','')">GO</a></span><!-- here set the CommandArgument of the Go Button to '-1' as the flag -->
+                              &nbsp; &nbsp; </td>
+                          </tr>
+                        </tbody></table>
+
+                        
+</td>
+		</tr>
+	</tbody></table>
+</div></div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-top-width: 1px; border-left-width: 1px; font-size: 10pt; border-left-color: #000099;
+                    border-bottom-width: 1px; border-bottom-color: #000099; width: 100%; border-top-color: #000099;
+                    height: 25px; border-right-width: 1px; border-right-color: #000099">
+                  <span id="Anthem_lbsum__"><span id="lbsum" class="STYLE3" style="font-weight:bold;">【合计：2000条】</span></span>  
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+        <div id="divtime" style="z-index: 101; left: 338px; width: 200px; position: absolute; top: 176px;
+            height: 44px; visibility: hidden;">
+            <table border="0" cellpadding="0" cellspacing="0" style="width: 120%; border-right: #330000 1px solid; border-top: #330000 1px solid; border-left: #330000 1px solid; border-bottom: #330000 1px solid;">
+                <tbody><tr>
+                   
+                    <td style="width: 100px; height: 32px;" align="center" class="mailinput01bg">
+                        <span style="font-size: 10pt">起始时间：</span></td>
+                    <td style="width: 100px; height: 32px;" class="mailinput01bg">
+                        <span id="Anthem_TextBox1__"><input name="TextBox1" type="text" id="TextBox1" class="mailinput01bg" onfocus="setday(this)" style="width:100px;" readonly=""></span></td>
+                </tr>
+                <tr>
+                    <td align="center" class="mailinput01bg" style="width: 100px; height: 32px">
+                        <span style="font-size: 10pt">结束时间：</span></td>
+                    <td class="mailinput01bg" style="width: 100px; height: 32px">
+                        <span id="Anthem_TextBox2__"><input name="TextBox2" type="text" id="TextBox2" class="mailinput01bg" onfocus="setday(this)" style="width:100px;" readonly=""></span></td>
+                </tr>
+                <tr>
+                    <td align="center" class="mailinput01bg" style="height: 32px" colspan="2">
+                        <input id="Button3" type="button" value="确定" onclick="Buck()">
+                        <input id="Button4" type="button" value="取消" onclick="return Button4_onclick()"></td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+        
+        
+        
+        
+        <span id="Anthem_hiflag__"><input type="hidden" name="hiflag" id="hiflag" value="0,0,0"></span>
+        <span id="Anthem_hisqlheight__"><input type="hidden" name="hisqlheight" id="hisqlheight"></span>
+         <span id="Anthem_hiupdateparm__"><input type="hidden" name="hiupdateparm" id="hiupdateparm"></span>
+          <span id="Anthem_hiupdatemun__"><input type="hidden" name="hiupdatemun" id="hiupdatemun"></span>
+          <span id="Anthem_hiexcelpath__"><input type="hidden" name="hiexcelpath" id="hiexcelpath"></span>
+        <div id="showdiv" style="z-index: 102; left: 289px; width: 232px; position: absolute; top: 620px; height: 60px; display:none; background-image:url(../../Images/loading_index01.gif); vertical-align: middle;">
+            <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+        
+        </div>
+
+<script src="../../js/jquery.min.js"></script>
+    <script src="../../js/date-time-picker.min.js"></script>
+    <script type="text/javascript">
+        $('#TextBox1').dateTimePicker(
+        //以下设置可以选择时分秒
+        //{
+        //mode: 'dateTime'
+        //}
+        );
+
+        $('#TextBox2').dateTimePicker(
+        //以下设置可以选择时分秒
+        //{
+        //mode: 'dateTime'
+        //}
+        );
+    </script>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ValidationSummary1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ValidationSummary1 = document.all ? document.all["ValidationSummary1"] : document.getElementById("ValidationSummary1");
+ValidationSummary1.showmessagebox = "True";
+ValidationSummary1.showsummary = "False";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+diswait();//]]>
+</script>
+</form>
+
+
+<div class="cmp-date-time-picker" data-cur-target="" data-target-list="" data-year="" data-month="" data-date="" data-original-year="" data-original-month="" data-original-date="" data-original="" data-year-name="" data-month-name="" data-limit-max="" data-limit-min="" data-format="" data-mode="">
+    <div class="cmp-dp-ctrl-wrap">
+        <div class="cmp-dp-ctrl-group cmp-dp-ctrl-group-year">
+            <span class="cmp-dp-btn cmp-dp-btn-prev J-dtp-btn-ctrl" data-ctrl="prev" data-type="year">
+                <i class="cmp-dp-triangle"></i>
+            </span>
+            <span class="cmp-dp-txt J-dtp-year-txt">2017年</span>
+            <span class="cmp-dp-btn cmp-dp-btn-next J-dtp-btn-ctrl" data-ctrl="next" data-type="year">
+                <i class="cmp-dp-triangle"></i>
+            </span>
+        </div>
+        <div class="cmp-dp-ctrl-group cmp-dp-ctrl-group-month">
+            <span class="cmp-dp-btn cmp-dp-btn-prev J-dtp-btn-ctrl" data-ctrl="prev" data-type="month">
+                <i class="cmp-dp-triangle"></i>
+            </span>
+            <span class="cmp-dp-txt J-dtp-month-txt">12月</span>
+            <span class="cmp-dp-btn cmp-dp-btn-next J-dtp-btn-ctrl" data-ctrl="next" data-type="month">
+                <i class="cmp-dp-triangle"></i>
+            </span>
+        </div>
+    </div>
+    <div class="cmp-dp-day-name J-dtp-day-name">
+        <span class="cmp-dp-day-item">日</span>
+        <span class="cmp-dp-day-item">一</span>
+        <span class="cmp-dp-day-item">二</span>
+        <span class="cmp-dp-day-item">三</span>
+        <span class="cmp-dp-day-item">四</span>
+        <span class="cmp-dp-day-item">五</span>
+        <span class="cmp-dp-day-item">六</span>
+    </div>
+    <div class="cmp-dp-date-wrapper J-dtp-date-wrap"></div>
+
+    <div class="cmp-dp-btn-wrap J-dtp-date-btn-wrap">
+        <span class="cmp-dp-btn J-dtp-btn-clear">清空</span>
+        <span class="cmp-dp-btn J-dtp-btn-today">今天</span>
+    </div>
+    <div class="cmp-dp-btn-wrap J-dtp-time-btn-wrap">
+        <div class="cmp-dp-time-group">
+            <input type="text" name="hour" maxlength="2" class="J-dtp-hour-input">&nbsp;:&nbsp;<input type="text" name="minute" maxlength="2" class="J-dtp-minute-input">&nbsp;:&nbsp;<input type="text" name="second" maxlength="2" class="J-dtp-second-input">
+        </div>
+        <div class="cmp-dp-btn-group">
+            <span class="cmp-dp-btn J-dtp-btn-clear">清空</span>
+            <span class="cmp-dp-btn J-dtp-btn-yes">确定</span>
+        </div>
+    </div>
+
+    <div class="cmp-dp-month-menu J-dtp-month-menu"></div>
+    <div class="cmp-dp-time-menu cmp-dp-hour-menu J-dtp-hour-menu">
+        <span class="cmp-dp-time-item J-dtp-hour-item">00</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">01</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">02</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">04</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">05</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">06</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">07</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">08</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">09</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">10</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">11</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">12</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">13</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">14</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">15</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">16</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">17</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">18</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">19</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">20</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">21</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">22</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">23</span>
+    </div>
+    <div class="cmp-dp-time-menu cmp-dp-minute-menu J-dtp-minute-menu">
+        <span class="cmp-dp-time-item J-dtp-minute-item">00</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">05</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">10</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">15</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">20</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">25</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">30</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">35</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">40</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">45</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">50</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">55</span>
+    </div>
+    <div class="cmp-dp-time-menu cmp-dp-second-menu J-dtp-second-menu">
+        <span class="cmp-dp-time-item J-dtp-second-item">00</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">05</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">10</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">15</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">20</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">25</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">30</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">35</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">40</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">45</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">50</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">55</span>
+    </div>
+</div></body></html>
