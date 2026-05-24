@@ -17,7 +17,6 @@ WAREHOUSE_DETAIL_URL = os.environ.get(
 USERNAME = os.environ['CMMS_USERNAME']
 PASSWORD = os.environ['CMMS_PASSWORD']
 DATE_RANGE = os.environ.get('DATE_RANGE', '').strip()
-BUSINESS_DATE = os.environ.get('BUSINESS_DATE', '').strip()
 
 PURCHASE_OUTPUT_DIR = Path('data/excel_export/purchase_inbound')
 WAREHOUSE_OUTPUT_DIR = Path('data/excel_export/warehouse_detail')
@@ -39,10 +38,6 @@ def default_date_range(days=3):
     today = datetime.now().date()
     start = today - timedelta(days=days)
     return f'{start:%Y-%m-%d}/{today:%Y-%m-%d}'
-
-
-def default_business_date():
-    return f'{datetime.now().date():%Y-%m-%d}'
 
 
 def normalize_dataframe(df):
@@ -152,7 +147,6 @@ def scrape_export(
 
 def run_scraper():
     date_range = DATE_RANGE or default_date_range()
-    business_date = BUSINESS_DATE or default_business_date()
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -205,11 +199,11 @@ def run_scraper():
             name='warehouse_detail',
             url=WAREHOUSE_DETAIL_URL,
             date_selector='#text0',
-            date_value=business_date,
+            date_value=date_range,
             output_dir=WAREHOUSE_OUTPUT_DIR,
             payload={
                 'source': 'warehouse_detail',
-                'business_date': business_date,
+                'date_range': date_range,
             },
         )
 
