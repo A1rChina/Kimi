@@ -1,0 +1,56 @@
+name: Scrape Purchase Inbound
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_range:
+        description: "业务时间范围 YYYY-MM-DD/YYYY-MM-DD"
+        required: false
+        default: ""
+  schedule:
+    - cron: "0 */2 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install chromium
+
+      - name: Run scraper
+        env:
+          CMMS_LOGIN_URL: ${{ secrets.CMMS_LOGIN_URL }}
+          CMMS_PURCHASE_INBOUND_URL: ${{ secrets.CMMS_PURCHASE_INBOUND_URL }}
+          CMMS_USERNAME: ${{ secrets.CMMS_USERNAME }}
+          CMMS_PASSWORD: ${{ secrets.CMMS_PASSWORD }}
+          DATE_RANGE: ${{ github.event.inputs.date_range }}
+        run: |
+          python scripts/scrape_purchase_inbound.py
+
+      - name: Commit scraped data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "Update purchase inbound data"
+            git push
+          fi
