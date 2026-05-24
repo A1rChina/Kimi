@@ -12,6 +12,7 @@ LOGIN_URL = os.environ['CMMS_LOGIN_URL']
 PURCHASE_INBOUND_URL = os.environ['CMMS_PURCHASE_INBOUND_URL']
 WAREHOUSE_DETAIL_URL = os.environ['CMMS_WAREHOUSE_DETAIL_URL']
 WAREHOUSE_LEDGER_URL = os.environ['CMMS_WAREHOUSE_LEDGER_URL']
+SALES_OUTBOUND_DETAIL_URL = os.environ['CMMS_SALES_OUTBOUND_DETAIL_URL']
 USERNAME = os.environ['CMMS_USERNAME']
 PASSWORD = os.environ['CMMS_PASSWORD']
 DATE_RANGE = os.environ.get('DATE_RANGE', '').strip()
@@ -19,8 +20,14 @@ DATE_RANGE = os.environ.get('DATE_RANGE', '').strip()
 PURCHASE_OUTPUT_DIR = Path('data/excel_export/purchase_inbound')
 WAREHOUSE_OUTPUT_DIR = Path('data/excel_export/warehouse_detail')
 WAREHOUSE_LEDGER_OUTPUT_DIR = Path('data/excel_export/warehouse_ledger')
+SALES_OUTBOUND_DETAIL_OUTPUT_DIR = Path('data/excel_export/sales_outbound_detail')
 
-for output_dir in [PURCHASE_OUTPUT_DIR, WAREHOUSE_OUTPUT_DIR, WAREHOUSE_LEDGER_OUTPUT_DIR]:
+for output_dir in [
+    PURCHASE_OUTPUT_DIR,
+    WAREHOUSE_OUTPUT_DIR,
+    WAREHOUSE_LEDGER_OUTPUT_DIR,
+    SALES_OUTBOUND_DETAIL_OUTPUT_DIR,
+]:
     (output_dir / 'raw').mkdir(parents=True, exist_ok=True)
     (output_dir / 'debug').mkdir(parents=True, exist_ok=True)
 
@@ -214,6 +221,17 @@ def run_scraper():
             output_dir=WAREHOUSE_LEDGER_OUTPUT_DIR,
             payload={
                 'source': 'warehouse_ledger',
+                'date_range': None,
+            },
+        )
+
+        scrape_export(
+            page,
+            name='sales_outbound_detail',
+            url=SALES_OUTBOUND_DETAIL_URL,
+            output_dir=SALES_OUTBOUND_DETAIL_OUTPUT_DIR,
+            payload={
+                'source': 'sales_outbound_detail',
                 'date_range': None,
             },
         )
