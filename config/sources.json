@@ -2,20 +2,21 @@
   "sources": [
     {
       "name": "purchase_inbound",
-      "title": "采购入库",
+      "title": "供货明细查询 / 采购入库",
       "flow_order": 1,
       "type": "excel_export",
       "url_secret": "CMMS_PURCHASE_INBOUND_URL",
       "default_url": "http://103.14.132.165:8068/ECOERP_CMMS/webserch/web_mjc_0008/?id=1846",
       "output_dir": "data/excel_export/purchase_inbound",
-      "export_button_text_candidates": [
-        "导出Excel",
-        "导出EXCEL",
-        "导出",
-        "Excel",
-        "EXCEL"
-      ],
-      "notes": "供应链流动第一步：采购入库。有 Excel 导出按钮，优先下载 Excel 原文件。"
+      "date_filter": {
+        "field_label": "业务时间",
+        "input_format": "YYYY-MM-DD/YYYY-MM-DD",
+        "default_lookback_days": 3,
+        "manual_example": "2026-05-21/2026-05-23"
+      },
+      "export_button_text": "导出Excel",
+      "download_filename": "供货明细查询.xls",
+      "notes": "供应链流动第一步：采购入库。支持按业务时间筛选，格式为 YYYY-MM-DD/YYYY-MM-DD，点击 导出Excel 下载 xls。"
     }
   ]
 }
