@@ -17,6 +17,20 @@
       "export_button_text": "导出Excel",
       "download_filename": "供货明细查询.xls",
       "notes": "供应链流动第一步：采购入库。支持按业务时间筛选，格式为 YYYY-MM-DD/YYYY-MM-DD，点击 导出Excel 下载 xls。"
+    },
+    {
+      "name": "defective_tracking",
+      "title": "不良品跟踪",
+      "flow_order": 5,
+      "type": "excel_export",
+      "url_secret": "CMMS_DEFECTIVE_TRACKING_URL",
+      "default_url": "http://103.14.132.165:8068/ECOERP_CMMS/webserch/web_mjc_0004/?id=1839",
+      "output_dir": "data/excel_export/defective_tracking",
+      "date_filter": null,
+      "query_button_selector": "#Button2",
+      "export_button_text": "导出Excel",
+      "download_filename": "不良品跟踪.xls",
+      "notes": "操作流程与其他 Excel 导出页面一致：先点击开始查询，再点击导出Excel。"
     }
   ]
 }

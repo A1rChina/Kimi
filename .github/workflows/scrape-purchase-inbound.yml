@@ -40,6 +40,7 @@ jobs:
           CMMS_WAREHOUSE_DETAIL_URL: ${{ secrets.CMMS_WAREHOUSE_DETAIL_URL }}
           CMMS_WAREHOUSE_LEDGER_URL: ${{ secrets.CMMS_WAREHOUSE_LEDGER_URL }}
           CMMS_SALES_OUTBOUND_DETAIL_URL: ${{ secrets.CMMS_SALES_OUTBOUND_DETAIL_URL }}
+          CMMS_DEFECTIVE_TRACKING_URL: ${{ secrets.CMMS_DEFECTIVE_TRACKING_URL }}
           CMMS_USERNAME: ${{ secrets.CMMS_USERNAME }}
           CMMS_PASSWORD: ${{ secrets.CMMS_PASSWORD }}
           DATE_RANGE: ${{ github.event.inputs.date_range }}

@@ -27,7 +27,7 @@ CMMS / ERP 网页系统
 
 ## 2. 当前已支持的数据源
 
-当前脚本已接入 4 类业务页面：
+当前脚本已接入 5 类业务页面：
 
 | 数据源 | 脚本内部名称 | 说明 |
 |---|---|---|
@@ -35,6 +35,7 @@ CMMS / ERP 网页系统
 | 仓库明细 | `warehouse_detail` | 按业务时间范围查询并导出 |
 | 仓库台账 / 库存台账 | `warehouse_ledger` | 当前不设置日期范围，直接查询导出 |
 | 销售出库明细 | `sales_outbound_detail` | 按业务时间范围查询并导出 |
+| 不良品跟踪 | `defective_tracking` | 当前不设置日期范围，直接查询导出 |
 
 ## 3. 项目结构
 
@@ -54,7 +55,8 @@ Kimi/
 │       │   └── debug/                    # 页面 HTML / 截图调试文件
 │       ├── warehouse_detail/             # 仓库明细输出目录
 │       ├── warehouse_ledger/             # 仓库台账输出目录
-│       └── sales_outbound_detail/        # 销售出库明细输出目录
+│       ├── sales_outbound_detail/        # 销售出库明细输出目录
+│       └── defective_tracking/           # 不良品跟踪输出目录
 ├── scripts/
 │   └── scrape_purchase_inbound.py        # 当前主抓取脚本
 ├── requirements.txt                      # Python 依赖
@@ -81,6 +83,7 @@ CMMS_PURCHASE_INBOUND_URL
 CMMS_WAREHOUSE_DETAIL_URL
 CMMS_WAREHOUSE_LEDGER_URL
 CMMS_SALES_OUTBOUND_DETAIL_URL
+CMMS_DEFECTIVE_TRACKING_URL
 CMMS_USERNAME
 CMMS_PASSWORD
 DATE_RANGE
@@ -97,6 +100,7 @@ data/excel_export/purchase_inbound/
 data/excel_export/warehouse_detail/
 data/excel_export/warehouse_ledger/
 data/excel_export/sales_outbound_detail/
+data/excel_export/defective_tracking/
 ```
 
 每个目录下会自动创建：
@@ -201,6 +205,7 @@ scrape_export(page, name, url, output_dir, payload, date_selector=None, date_val
 | 仓库明细 | `#text0` |
 | 仓库台账 | 不设置日期 |
 | 销售出库明细 | `#text0` |
+| 不良品跟踪 | 不设置日期 |
 
 查询按钮统一使用：
 
