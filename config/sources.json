@@ -4,53 +4,157 @@
       "name": "purchase_inbound",
       "title": "供货明细查询 / 采购入库",
       "flow_order": 1,
+      "enabled": true,
       "type": "excel_export",
-      "url_secret": "CMMS_PURCHASE_INBOUND_URL",
-      "default_url": "http://103.14.132.165:8068/ECOERP_CMMS/webserch/web_mjc_0008/?id=1846",
-      "output_dir": "data/excel_export/purchase_inbound",
-      "date_filter": {
-        "field_label": "业务时间",
-        "input_format": "YYYY-MM-DD/YYYY-MM-DD",
-        "default_lookback_days": 3,
-        "manual_example": "2026-05-21/2026-05-23"
+      "url_env": "CMMS_PURCHASE_INBOUND_URL",
+      "selectors": {
+        "date": "#text3",
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
       },
-      "export_button_text": "导出Excel",
-      "download_filename": "供货明细查询.xls",
-      "notes": "供应链流动第一步：采购入库。支持按业务时间筛选，格式为 YYYY-MM-DD/YYYY-MM-DD，点击 导出Excel 下载 xls。"
+      "incremental": {
+        "mode": "date_window",
+        "watermark_field": "业务时间",
+        "lookback_days": 2,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/purchase_inbound"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "purchase_inbound"
+      }
+    },
+    {
+      "name": "warehouse_detail",
+      "title": "仓库明细",
+      "flow_order": 2,
+      "enabled": true,
+      "type": "excel_export",
+      "url_env": "CMMS_WAREHOUSE_DETAIL_URL",
+      "selectors": {
+        "date": "#text0",
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
+      },
+      "incremental": {
+        "mode": "date_window",
+        "watermark_field": "业务时间",
+        "lookback_days": 2,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/warehouse_detail"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "warehouse_detail"
+      }
+    },
+    {
+      "name": "warehouse_ledger",
+      "title": "仓库台账 / 库存台账",
+      "flow_order": 3,
+      "enabled": true,
+      "type": "excel_export",
+      "url_env": "CMMS_WAREHOUSE_LEDGER_URL",
+      "selectors": {
+        "date": null,
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
+      },
+      "incremental": {
+        "mode": "snapshot",
+        "watermark_field": null,
+        "lookback_days": 0,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/warehouse_ledger"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "warehouse_ledger"
+      }
+    },
+    {
+      "name": "sales_outbound_detail",
+      "title": "销售出库明细",
+      "flow_order": 4,
+      "enabled": true,
+      "type": "excel_export",
+      "url_env": "CMMS_SALES_OUTBOUND_DETAIL_URL",
+      "selectors": {
+        "date": "#text0",
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
+      },
+      "incremental": {
+        "mode": "date_window",
+        "watermark_field": "业务时间",
+        "lookback_days": 2,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/sales_outbound_detail"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "sales_outbound_detail"
+      }
     },
     {
       "name": "defective_tracking",
       "title": "不良品跟踪",
       "flow_order": 5,
+      "enabled": true,
       "type": "excel_export",
-      "url_secret": "CMMS_DEFECTIVE_TRACKING_URL",
-      "default_url": "http://103.14.132.165:8068/ECOERP_CMMS/webserch/web_mjc_0004/?id=1839",
-      "output_dir": "data/excel_export/defective_tracking",
-      "date_filter": null,
-      "query_button_selector": "#Button2",
-      "export_button_text": "导出Excel",
-      "download_filename": "不良品跟踪.xls",
-      "notes": "操作流程与其他 Excel 导出页面一致：先点击开始查询，再点击导出Excel。"
+      "url_env": "CMMS_DEFECTIVE_TRACKING_URL",
+      "selectors": {
+        "date": null,
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
+      },
+      "incremental": {
+        "mode": "snapshot",
+        "watermark_field": null,
+        "lookback_days": 0,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/defective_tracking"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "defective_tracking"
+      }
     },
     {
       "name": "post_process_report_tracking",
       "title": "后工序报工跟踪",
       "flow_order": 6,
+      "enabled": true,
       "type": "excel_export",
-      "url_secret": "CMMS_POST_PROCESS_REPORT_TRACKING_URL",
-      "default_url": "http://103.14.132.165:8068/ECOERP_CMMS/webserch/web_mjc_0008/?id=1876",
-      "output_dir": "data/excel_export/post_process_report_tracking",
-      "date_filter": {
-        "field_label": "时间型",
-        "selector": "#text0",
-        "input_format": "YYYY-MM-DD/YYYY-MM-DD",
-        "default_lookback_days": 3,
-        "manual_example": "2026-05-21/2026-05-23"
+      "url_env": "CMMS_POST_PROCESS_REPORT_TRACKING_URL",
+      "selectors": {
+        "date": "#text0",
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
       },
-      "query_button_selector": "#Button2",
-      "export_button_text": "导出Excel",
-      "download_filename": "后工序报工跟踪.xls",
-      "notes": "按 text0 时间范围筛选，点击开始查询后导出 Excel。"
+      "incremental": {
+        "mode": "date_window",
+        "watermark_field": "业务时间",
+        "lookback_days": 2,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/post_process_report_tracking"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "post_process_report_tracking"
+      }
     }
   ]
 }

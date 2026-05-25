@@ -1,0 +1,21 @@
+{
+  "date_range": {
+    "input_format": "YYYY-MM-DD/YYYY-MM-DD",
+    "default_lookback_days": 3,
+    "incremental_overlap_days": 2
+  },
+  "selectors": {
+    "query_button": "#Button2",
+    "export_text": "导出Excel"
+  },
+  "paths": {
+    "raw_root": "data/raw",
+    "normalized_root": "data/normalized",
+    "latest_root": "data/latest",
+    "state_root": "data/state",
+    "debug_root": "data/debug"
+  },
+  "destination": {
+    "type": "cloudflare_d1"
+  }
+}
