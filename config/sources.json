@@ -155,6 +155,32 @@
         "type": "cloudflare_d1",
         "table": "post_process_report_tracking"
       }
+    },
+    {
+      "name": "production_takt_maintenance",
+      "title": "生产节拍维护",
+      "flow_order": 7,
+      "enabled": true,
+      "type": "excel_export",
+      "url_env": "CMMS_PRODUCTION_TAKT_MAINTENANCE_URL",
+      "selectors": {
+        "date": null,
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
+      },
+      "incremental": {
+        "mode": "snapshot",
+        "watermark_field": null,
+        "lookback_days": 0,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/production_takt_maintenance"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "production_takt_maintenance"
+      }
     }
   ]
 }

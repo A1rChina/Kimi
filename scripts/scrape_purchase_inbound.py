@@ -15,6 +15,7 @@ WAREHOUSE_LEDGER_URL = os.environ['CMMS_WAREHOUSE_LEDGER_URL']
 SALES_OUTBOUND_DETAIL_URL = os.environ['CMMS_SALES_OUTBOUND_DETAIL_URL']
 DEFECTIVE_TRACKING_URL = os.environ['CMMS_DEFECTIVE_TRACKING_URL']
 POST_PROCESS_REPORT_TRACKING_URL = os.environ['CMMS_POST_PROCESS_REPORT_TRACKING_URL']
+PRODUCTION_TAKT_MAINTENANCE_URL = os.environ['CMMS_PRODUCTION_TAKT_MAINTENANCE_URL']
 USERNAME = os.environ['CMMS_USERNAME']
 PASSWORD = os.environ['CMMS_PASSWORD']
 DATE_RANGE = os.environ.get('DATE_RANGE', '').strip()
@@ -25,6 +26,7 @@ WAREHOUSE_LEDGER_OUTPUT_DIR = Path('data/excel_export/warehouse_ledger')
 SALES_OUTBOUND_DETAIL_OUTPUT_DIR = Path('data/excel_export/sales_outbound_detail')
 DEFECTIVE_TRACKING_OUTPUT_DIR = Path('data/excel_export/defective_tracking')
 POST_PROCESS_REPORT_TRACKING_OUTPUT_DIR = Path('data/excel_export/post_process_report_tracking')
+PRODUCTION_TAKT_MAINTENANCE_OUTPUT_DIR = Path('data/excel_export/production_takt_maintenance')
 
 for output_dir in [
     PURCHASE_OUTPUT_DIR,
@@ -33,6 +35,7 @@ for output_dir in [
     SALES_OUTBOUND_DETAIL_OUTPUT_DIR,
     DEFECTIVE_TRACKING_OUTPUT_DIR,
     POST_PROCESS_REPORT_TRACKING_OUTPUT_DIR,
+    PRODUCTION_TAKT_MAINTENANCE_OUTPUT_DIR,
 ]:
     (output_dir / 'raw').mkdir(parents=True, exist_ok=True)
     (output_dir / 'debug').mkdir(parents=True, exist_ok=True)
@@ -167,6 +170,7 @@ def run_scraper():
         scrape_export(page, name='sales_outbound_detail', url=SALES_OUTBOUND_DETAIL_URL, date_selector='#text0', date_value=date_range, output_dir=SALES_OUTBOUND_DETAIL_OUTPUT_DIR, payload={'source': 'sales_outbound_detail', 'date_range': date_range})
         scrape_export(page, name='defective_tracking', url=DEFECTIVE_TRACKING_URL, output_dir=DEFECTIVE_TRACKING_OUTPUT_DIR, payload={'source': 'defective_tracking', 'date_range': None})
         scrape_export(page, name='post_process_report_tracking', url=POST_PROCESS_REPORT_TRACKING_URL, date_selector='#text0', date_value=date_range, output_dir=POST_PROCESS_REPORT_TRACKING_OUTPUT_DIR, payload={'source': 'post_process_report_tracking', 'date_range': date_range})
+        scrape_export(page, name='production_takt_maintenance', url=PRODUCTION_TAKT_MAINTENANCE_URL, output_dir=PRODUCTION_TAKT_MAINTENANCE_OUTPUT_DIR, payload={'source': 'production_takt_maintenance', 'date_range': None})
 
         browser.close()
 
