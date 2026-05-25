@@ -181,6 +181,32 @@
         "type": "cloudflare_d1",
         "table": "production_takt_maintenance"
       }
+    },
+    {
+      "name": "production_equipment_maintenance",
+      "title": "生产设备维护",
+      "flow_order": 8,
+      "enabled": true,
+      "type": "excel_export",
+      "url_env": "CMMS_PRODUCTION_EQUIPMENT_MAINTENANCE_URL",
+      "selectors": {
+        "date": null,
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
+      },
+      "incremental": {
+        "mode": "snapshot",
+        "watermark_field": null,
+        "lookback_days": 0,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/production_equipment_maintenance"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "production_equipment_maintenance"
+      }
     }
   ]
 }

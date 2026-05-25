@@ -27,7 +27,7 @@ CMMS / ERP 网页系统
 
 ## 2. 当前已支持的数据源
 
-当前脚本已接入 7 类业务页面：
+当前脚本已接入 8 类业务页面：
 
 | 数据源 | 脚本内部名称 | 说明 |
 |---|---|---|
@@ -38,6 +38,7 @@ CMMS / ERP 网页系统
 | 不良品跟踪 | `defective_tracking` | 当前不设置日期范围，直接查询导出 |
 | 后工序报工跟踪 | `post_process_report_tracking` | 按 `text0` 时间范围查询并导出 |
 | 生产节拍维护 | `production_takt_maintenance` | 当前不设置日期范围，直接查询导出 |
+| 生产设备维护 | `production_equipment_maintenance` | 当前不设置日期范围，直接查询导出 |
 
 ## 3. 项目结构
 
@@ -60,7 +61,8 @@ Kimi/
 │       ├── sales_outbound_detail/        # 销售出库明细输出目录
 │       ├── defective_tracking/           # 不良品跟踪输出目录
 │       ├── post_process_report_tracking/ # 后工序报工跟踪输出目录
-│       └── production_takt_maintenance/  # 生产节拍维护输出目录
+│       ├── production_takt_maintenance/  # 生产节拍维护输出目录
+│       └── production_equipment_maintenance/ # 生产设备维护输出目录
 ├── scripts/
 │   └── scrape_purchase_inbound.py        # 当前主抓取脚本
 ├── requirements.txt                      # Python 依赖
@@ -90,6 +92,7 @@ CMMS_SALES_OUTBOUND_DETAIL_URL
 CMMS_DEFECTIVE_TRACKING_URL
 CMMS_POST_PROCESS_REPORT_TRACKING_URL
 CMMS_PRODUCTION_TAKT_MAINTENANCE_URL
+CMMS_PRODUCTION_EQUIPMENT_MAINTENANCE_URL
 CMMS_USERNAME
 CMMS_PASSWORD
 DATE_RANGE
@@ -109,6 +112,7 @@ data/excel_export/sales_outbound_detail/
 data/excel_export/defective_tracking/
 data/excel_export/post_process_report_tracking/
 data/excel_export/production_takt_maintenance/
+data/excel_export/production_equipment_maintenance/
 ```
 
 每个目录下会自动创建：
@@ -216,6 +220,7 @@ scrape_export(page, name, url, output_dir, payload, date_selector=None, date_val
 | 不良品跟踪 | 不设置日期 |
 | 后工序报工跟踪 | `#text0` |
 | 生产节拍维护 | 不设置日期 |
+| 生产设备维护 | 不设置日期 |
 
 查询按钮统一使用：
 
@@ -380,6 +385,7 @@ Settings → Secrets and variables → Actions → New repository secret
 | `CMMS_DEFECTIVE_TRACKING_URL` | 不良品跟踪页面地址 |
 | `CMMS_POST_PROCESS_REPORT_TRACKING_URL` | 后工序报工跟踪页面地址 |
 | `CMMS_PRODUCTION_TAKT_MAINTENANCE_URL` | 生产节拍维护页面地址 |
+| `CMMS_PRODUCTION_EQUIPMENT_MAINTENANCE_URL` | 生产设备维护页面地址 |
 | `CMMS_USERNAME` | 登录账号 |
 | `CMMS_PASSWORD` | 登录密码 |
 
@@ -417,6 +423,7 @@ export CMMS_SALES_OUTBOUND_DETAIL_URL="销售出库明细地址"
 export CMMS_DEFECTIVE_TRACKING_URL="不良品跟踪地址"
 export CMMS_POST_PROCESS_REPORT_TRACKING_URL="后工序报工跟踪地址"
 export CMMS_PRODUCTION_TAKT_MAINTENANCE_URL="生产节拍维护地址"
+export CMMS_PRODUCTION_EQUIPMENT_MAINTENANCE_URL="生产设备维护地址"
 export CMMS_USERNAME="账号"
 export CMMS_PASSWORD="密码"
 export DATE_RANGE="2026-05-21/2026-05-24"
@@ -433,6 +440,7 @@ $env:CMMS_SALES_OUTBOUND_DETAIL_URL="销售出库明细地址"
 $env:CMMS_DEFECTIVE_TRACKING_URL="不良品跟踪地址"
 $env:CMMS_POST_PROCESS_REPORT_TRACKING_URL="后工序报工跟踪地址"
 $env:CMMS_PRODUCTION_TAKT_MAINTENANCE_URL="生产节拍维护地址"
+$env:CMMS_PRODUCTION_EQUIPMENT_MAINTENANCE_URL="生产设备维护地址"
 $env:CMMS_USERNAME="账号"
 $env:CMMS_PASSWORD="密码"
 $env:DATE_RANGE="2026-05-21/2026-05-24"
