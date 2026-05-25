@@ -207,6 +207,58 @@
         "type": "cloudflare_d1",
         "table": "production_equipment_maintenance"
       }
+    },
+    {
+      "name": "equipment_downtime_query",
+      "title": "设备停机查询",
+      "flow_order": 9,
+      "enabled": true,
+      "type": "excel_export",
+      "url_env": "CMMS_EQUIPMENT_DOWNTIME_QUERY_URL",
+      "selectors": {
+        "date": "#text0",
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
+      },
+      "incremental": {
+        "mode": "date_window",
+        "watermark_field": "业务时间",
+        "lookback_days": 2,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/equipment_downtime_query"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "equipment_downtime_query"
+      }
+    },
+    {
+      "name": "tooling_replacement_query",
+      "title": "工装更换查询",
+      "flow_order": 10,
+      "enabled": true,
+      "type": "excel_export",
+      "url_env": "CMMS_TOOLING_REPLACEMENT_QUERY_URL",
+      "selectors": {
+        "date": "#text0",
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
+      },
+      "incremental": {
+        "mode": "date_window",
+        "watermark_field": "业务时间",
+        "lookback_days": 2,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/tooling_replacement_query"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "tooling_replacement_query"
+      }
     }
   ]
 }
