@@ -1,7 +1,7 @@
 {
   "source": "equipment_downtime_query",
   "date_range": "2026-05-23/2026-05-26",
-  "synced_at": "2026-05-26T21:29:41",
+  "synced_at": "2026-05-26T23:02:15",
   "count": 103,
   "records": [
     {
