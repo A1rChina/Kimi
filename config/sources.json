@@ -259,6 +259,58 @@
         "type": "cloudflare_d1",
         "table": "tooling_replacement_query"
       }
+    },
+    {
+      "name": "machining_transfer_query",
+      "title": "机加转序查询",
+      "flow_order": 11,
+      "enabled": true,
+      "type": "excel_export",
+      "url_env": "CMMS_MACHINING_TRANSFER_QUERY_URL",
+      "selectors": {
+        "date": "#text0",
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
+      },
+      "incremental": {
+        "mode": "date_window",
+        "watermark_field": "业务时间",
+        "lookback_days": 2,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/machining_transfer_query"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "machining_transfer_query"
+      }
+    },
+    {
+      "name": "project_info_maintenance",
+      "title": "项目信息维护",
+      "flow_order": 12,
+      "enabled": true,
+      "type": "excel_export",
+      "url_env": "CMMS_PROJECT_INFO_MAINTENANCE_URL",
+      "selectors": {
+        "date": null,
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
+      },
+      "incremental": {
+        "mode": "snapshot",
+        "watermark_field": null,
+        "lookback_days": 0,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/project_info_maintenance"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "project_info_maintenance"
+      }
     }
   ]
 }

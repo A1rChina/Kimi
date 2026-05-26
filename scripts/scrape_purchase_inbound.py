@@ -19,6 +19,8 @@ PRODUCTION_TAKT_MAINTENANCE_URL = os.environ['CMMS_PRODUCTION_TAKT_MAINTENANCE_U
 PRODUCTION_EQUIPMENT_MAINTENANCE_URL = os.environ['CMMS_PRODUCTION_EQUIPMENT_MAINTENANCE_URL']
 EQUIPMENT_DOWNTIME_QUERY_URL = os.environ['CMMS_EQUIPMENT_DOWNTIME_QUERY_URL']
 TOOLING_REPLACEMENT_QUERY_URL = os.environ['CMMS_TOOLING_REPLACEMENT_QUERY_URL']
+MACHINING_TRANSFER_QUERY_URL = os.environ['CMMS_MACHINING_TRANSFER_QUERY_URL']
+PROJECT_INFO_MAINTENANCE_URL = os.environ['CMMS_PROJECT_INFO_MAINTENANCE_URL']
 USERNAME = os.environ['CMMS_USERNAME']
 PASSWORD = os.environ['CMMS_PASSWORD']
 DATE_RANGE = os.environ.get('DATE_RANGE', '').strip()
@@ -33,6 +35,8 @@ PRODUCTION_TAKT_MAINTENANCE_OUTPUT_DIR = Path('data/excel_export/production_takt
 PRODUCTION_EQUIPMENT_MAINTENANCE_OUTPUT_DIR = Path('data/excel_export/production_equipment_maintenance')
 EQUIPMENT_DOWNTIME_QUERY_OUTPUT_DIR = Path('data/excel_export/equipment_downtime_query')
 TOOLING_REPLACEMENT_QUERY_OUTPUT_DIR = Path('data/excel_export/tooling_replacement_query')
+MACHINING_TRANSFER_QUERY_OUTPUT_DIR = Path('data/excel_export/machining_transfer_query')
+PROJECT_INFO_MAINTENANCE_OUTPUT_DIR = Path('data/excel_export/project_info_maintenance')
 
 for output_dir in [
     PURCHASE_OUTPUT_DIR,
@@ -45,6 +49,8 @@ for output_dir in [
     PRODUCTION_EQUIPMENT_MAINTENANCE_OUTPUT_DIR,
     EQUIPMENT_DOWNTIME_QUERY_OUTPUT_DIR,
     TOOLING_REPLACEMENT_QUERY_OUTPUT_DIR,
+    MACHINING_TRANSFER_QUERY_OUTPUT_DIR,
+    PROJECT_INFO_MAINTENANCE_OUTPUT_DIR,
 ]:
     (output_dir / 'raw').mkdir(parents=True, exist_ok=True)
     (output_dir / 'debug').mkdir(parents=True, exist_ok=True)
@@ -183,6 +189,8 @@ def run_scraper():
         scrape_export(page, name='production_equipment_maintenance', url=PRODUCTION_EQUIPMENT_MAINTENANCE_URL, output_dir=PRODUCTION_EQUIPMENT_MAINTENANCE_OUTPUT_DIR, payload={'source': 'production_equipment_maintenance', 'date_range': None})
         scrape_export(page, name='equipment_downtime_query', url=EQUIPMENT_DOWNTIME_QUERY_URL, date_selector='#text0', date_value=date_range, output_dir=EQUIPMENT_DOWNTIME_QUERY_OUTPUT_DIR, payload={'source': 'equipment_downtime_query', 'date_range': date_range})
         scrape_export(page, name='tooling_replacement_query', url=TOOLING_REPLACEMENT_QUERY_URL, date_selector='#text0', date_value=date_range, output_dir=TOOLING_REPLACEMENT_QUERY_OUTPUT_DIR, payload={'source': 'tooling_replacement_query', 'date_range': date_range})
+        scrape_export(page, name='machining_transfer_query', url=MACHINING_TRANSFER_QUERY_URL, date_selector='#text0', date_value=date_range, output_dir=MACHINING_TRANSFER_QUERY_OUTPUT_DIR, payload={'source': 'machining_transfer_query', 'date_range': date_range})
+        scrape_export(page, name='project_info_maintenance', url=PROJECT_INFO_MAINTENANCE_URL, output_dir=PROJECT_INFO_MAINTENANCE_OUTPUT_DIR, payload={'source': 'project_info_maintenance', 'date_range': None})
 
         browser.close()
 
