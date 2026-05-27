@@ -59,6 +59,8 @@ ON CONFLICT(record_key) DO UPDATE SET ...
 
 因此重复同步同一批数据不会插入重复行。若源系统回写或修正了同一业务记录，`record_hash` 会随内容变化而更新。
 
+注意：`upsert.sql` 不包含显式事务包装。Wrangler 远端执行 D1 SQL 文件时不接受显式事务语句，失败时 D1 会按导入机制回滚，可直接重试。
+
 ## 推荐启用顺序
 
 1. 先手动运行 workflow，`upload_to_d1=false`，确认抓取和清洗产物正常。

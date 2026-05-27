@@ -538,7 +538,7 @@ def write_upsert_sql(tables: dict[str, pd.DataFrame]) -> None:
     lines = [
         "-- SQLite / Cloudflare D1 compatible upsert data generated from data/normalized.",
         "-- Run schema.sql before this file.",
-        "BEGIN TRANSACTION;",
+        "-- Remote D1 imports reject explicit transaction wrappers.",
         "",
     ]
     for source, df in sorted(tables.items()):
@@ -553,7 +553,6 @@ def write_upsert_sql(tables: dict[str, pd.DataFrame]) -> None:
                 f"ON CONFLICT(record_key) DO UPDATE SET {update_sql};"
             )
         lines.append("")
-    lines.append("COMMIT;")
     (NORMALIZED_ROOT / "upsert.sql").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
