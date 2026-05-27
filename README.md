@@ -27,7 +27,7 @@ CMMS / ERP 网页系统
 
 ## 2. 当前已支持的数据源
 
-当前脚本已接入 12 类业务页面：
+当前脚本已接入 14 类业务页面：
 
 | 数据源 | 脚本内部名称 | 说明 |
 |---|---|---|
@@ -43,6 +43,8 @@ CMMS / ERP 网页系统
 | 工装更换查询 | `tooling_replacement_query` | 按 `text0` 时间范围查询并导出 |
 | 机加转序查询 | `machining_transfer_query` | 按 `text0` 时间范围查询并导出 |
 | 项目信息维护 | `project_info_maintenance` | 当前不设置日期范围，直接查询导出 |
+| 产品材料匹配维护 | `product_material_match_maintenance` | 当前不设置日期范围，直接查询导出 |
+| 周计划执行跟踪 | `weekly_plan_execution_tracking` | 当前不设置日期范围，直接查询导出 |
 
 ## 3. 项目结构
 
@@ -70,7 +72,9 @@ Kimi/
 │       ├── equipment_downtime_query/     # 设备停机查询输出目录
 │       ├── tooling_replacement_query/    # 工装更换查询输出目录
 │       ├── machining_transfer_query/     # 机加转序查询输出目录
-│       └── project_info_maintenance/     # 项目信息维护输出目录
+│       ├── project_info_maintenance/     # 项目信息维护输出目录
+│       ├── product_material_match_maintenance/ # 产品材料匹配维护输出目录
+│       └── weekly_plan_execution_tracking/ # 周计划执行跟踪输出目录
 ├── scripts/
 │   └── scrape_purchase_inbound.py        # 当前主抓取脚本
 ├── requirements.txt                      # Python 依赖
@@ -105,6 +109,8 @@ CMMS_EQUIPMENT_DOWNTIME_QUERY_URL
 CMMS_TOOLING_REPLACEMENT_QUERY_URL
 CMMS_MACHINING_TRANSFER_QUERY_URL
 CMMS_PROJECT_INFO_MAINTENANCE_URL
+CMMS_PRODUCT_MATERIAL_MATCH_MAINTENANCE_URL
+CMMS_WEEKLY_PLAN_EXECUTION_TRACKING_URL
 CMMS_USERNAME
 CMMS_PASSWORD
 DATE_RANGE
@@ -129,6 +135,8 @@ data/excel_export/equipment_downtime_query/
 data/excel_export/tooling_replacement_query/
 data/excel_export/machining_transfer_query/
 data/excel_export/project_info_maintenance/
+data/excel_export/product_material_match_maintenance/
+data/excel_export/weekly_plan_execution_tracking/
 ```
 
 每个目录下会自动创建：
@@ -241,6 +249,8 @@ scrape_export(page, name, url, output_dir, payload, date_selector=None, date_val
 | 工装更换查询 | `#text0` |
 | 机加转序查询 | `#text0` |
 | 项目信息维护 | 不设置日期 |
+| 产品材料匹配维护 | 不设置日期 |
+| 周计划执行跟踪 | 不设置日期 |
 
 查询按钮统一使用：
 
@@ -410,6 +420,8 @@ Settings → Secrets and variables → Actions → New repository secret
 | `CMMS_TOOLING_REPLACEMENT_QUERY_URL` | 工装更换查询页面地址 |
 | `CMMS_MACHINING_TRANSFER_QUERY_URL` | 机加转序查询页面地址 |
 | `CMMS_PROJECT_INFO_MAINTENANCE_URL` | 项目信息维护页面地址 |
+| `CMMS_PRODUCT_MATERIAL_MATCH_MAINTENANCE_URL` | 产品材料匹配维护页面地址 |
+| `CMMS_WEEKLY_PLAN_EXECUTION_TRACKING_URL` | 周计划执行跟踪页面地址 |
 | `CMMS_USERNAME` | 登录账号 |
 | `CMMS_PASSWORD` | 登录密码 |
 
@@ -452,6 +464,8 @@ export CMMS_EQUIPMENT_DOWNTIME_QUERY_URL="设备停机查询地址"
 export CMMS_TOOLING_REPLACEMENT_QUERY_URL="工装更换查询地址"
 export CMMS_MACHINING_TRANSFER_QUERY_URL="机加转序查询地址"
 export CMMS_PROJECT_INFO_MAINTENANCE_URL="项目信息维护地址"
+export CMMS_PRODUCT_MATERIAL_MATCH_MAINTENANCE_URL="产品材料匹配维护地址"
+export CMMS_WEEKLY_PLAN_EXECUTION_TRACKING_URL="周计划执行跟踪地址"
 export CMMS_USERNAME="账号"
 export CMMS_PASSWORD="密码"
 export DATE_RANGE="2026-05-21/2026-05-24"
@@ -473,6 +487,8 @@ $env:CMMS_EQUIPMENT_DOWNTIME_QUERY_URL="设备停机查询地址"
 $env:CMMS_TOOLING_REPLACEMENT_QUERY_URL="工装更换查询地址"
 $env:CMMS_MACHINING_TRANSFER_QUERY_URL="机加转序查询地址"
 $env:CMMS_PROJECT_INFO_MAINTENANCE_URL="项目信息维护地址"
+$env:CMMS_PRODUCT_MATERIAL_MATCH_MAINTENANCE_URL="产品材料匹配维护地址"
+$env:CMMS_WEEKLY_PLAN_EXECUTION_TRACKING_URL="周计划执行跟踪地址"
 $env:CMMS_USERNAME="账号"
 $env:CMMS_PASSWORD="密码"
 $env:DATE_RANGE="2026-05-21/2026-05-24"

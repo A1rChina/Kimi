@@ -311,6 +311,58 @@
         "type": "cloudflare_d1",
         "table": "project_info_maintenance"
       }
+    },
+    {
+      "name": "product_material_match_maintenance",
+      "title": "产品材料匹配维护",
+      "flow_order": 13,
+      "enabled": true,
+      "type": "excel_export",
+      "url_env": "CMMS_PRODUCT_MATERIAL_MATCH_MAINTENANCE_URL",
+      "selectors": {
+        "date": null,
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
+      },
+      "incremental": {
+        "mode": "snapshot",
+        "watermark_field": null,
+        "lookback_days": 0,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/product_material_match_maintenance"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "product_material_match_maintenance"
+      }
+    },
+    {
+      "name": "weekly_plan_execution_tracking",
+      "title": "周计划执行跟踪",
+      "flow_order": 14,
+      "enabled": true,
+      "type": "excel_export",
+      "url_env": "CMMS_WEEKLY_PLAN_EXECUTION_TRACKING_URL",
+      "selectors": {
+        "date": null,
+        "query_button": "#Button2",
+        "export_text": "导出Excel"
+      },
+      "incremental": {
+        "mode": "snapshot",
+        "watermark_field": null,
+        "lookback_days": 0,
+        "key_fields": []
+      },
+      "output": {
+        "source_dir": "data/excel_export/weekly_plan_execution_tracking"
+      },
+      "destination": {
+        "type": "cloudflare_d1",
+        "table": "weekly_plan_execution_tracking"
+      }
     }
   ]
 }
