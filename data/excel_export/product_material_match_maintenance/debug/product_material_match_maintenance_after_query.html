@@ -1,0 +1,898 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>
+	产品材料匹配维护
+</title>
+    
+    <script src="../../js/calendar3.js">
+</script><style type="text/css">.cmp-date-time-picker{width:210px;padding:4px;margin:0;background-color:#fff;border:1px solid #ccc;border-radius:2px;-webkit-box-shadow:0 1px 3px #ccc;box-shadow:0 1px 3px #ccc;-webkit-box-sizing:content-box;box-sizing:content-box;font-size:12px;position:absolute;z-index:9999;display:none;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.cmp-date-time-picker *{-webkit-box-sizing:content-box;box-sizing:content-box;margin:0;padding:0;font-style:normal}.cmp-date-time-picker .cmp-dp-ctrl-wrap{width:210px;height:26px;overflow:hidden}.cmp-date-time-picker .cmp-dp-ctrl-group{height:26px;line-height:26px;float:left;margin:0 2px}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-btn{width:22px;height:26px;overflow:hidden;float:left;cursor:pointer;position:relative}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-txt{width:57px;height:26px;text-align:center;overflow:hidden;float:left}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-triangle{display:block;width:0;height:0;position:absolute;left:50%;top:50%;margin:-4px 0 0 -2px}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-btn-prev .cmp-dp-triangle{border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:0 solid transparent;border-right:5px solid #333}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-btn-next .cmp-dp-triangle{border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #333;border-right:0 solid transparent}.cmp-date-time-picker .cmp-dp-ctrl-group-month{width:91px}.cmp-date-time-picker .cmp-dp-ctrl-group-month .cmp-dp-txt{width:47px;cursor:pointer}.cmp-date-time-picker .cmp-dp-ctrl-group-year{width:111px}.cmp-date-time-picker .cmp-dp-ctrl-group-year .cmp-dp-txt{width:67px}.cmp-date-time-picker .cmp-dp-day-name{width:210px;height:30px;line-height:30px;overflow:hidden}.cmp-date-time-picker .cmp-dp-day-name .cmp-dp-day-item{width:30px;text-align:center;font-weight:700;color:#999;float:left}.cmp-date-time-picker .cmp-dp-date-wrapper{width:210px;line-height:26px;overflow:hidden}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item{width:26px;margin:0 2px 4px;text-align:center;color:#333;float:left;cursor:pointer;border-radius:3px}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item:hover{background-color:#eee;color:#3740d5;font-weight:700}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-today,.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-today:hover{background-color:#a4a4a4;color:#fff}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-other{background-color:#f0f0f0}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-cur,.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-cur:hover{background-color:#3740d5;color:#fff}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-disabled,.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-disabled:hover{background-color:#f9f9f9;color:#e1e1e1;font-weight:400;cursor:default}.cmp-date-time-picker .cmp-dp-btn-wrap{width:210px;height:26px;padding-top:5px;*padding-top:10px;padding-bottom:4px;text-align:center;overflow:hidden}.cmp-date-time-picker .cmp-dp-btn-wrap .cmp-dp-btn{display:inline-block;padding:0 8px;margin:0 4px;height:24px;line-height:24px;font-size:12px;color:#fff;background:#3740d5;border:1px solid #3740d5;border-radius:4px;cursor:pointer}.cmp-date-time-picker .cmp-dp-btn-wrap .cmp-dp-btn-disabled{color:#f6f6f6;background:#cecece;border:1px solid #cecece}.cmp-date-time-picker .cmp-dp-time-group{width:105px;height:26px;float:left;overflow:hidden;vertical-align:top;font-size:12px;color:#999}.cmp-date-time-picker .cmp-dp-time-group input{width:20px;height:16px;line-height:16px;padding:4px 0;*margin-top:-1px;text-align:center;color:#666;border:1px solid #ccc;outline:0;vertical-align:middle}.cmp-date-time-picker .cmp-dp-btn-group{width:105px;height:26px;float:left;overflow:hidden;font-size:0}.cmp-date-time-picker .cmp-dp-month-menu{width:150px;padding:4px;background-color:#fff;border:1px solid #ccc;border-radius:2px;-webkit-box-shadow:0 1px 3px #ccc;box-shadow:0 1px 3px #ccc;position:absolute;top:30px;right:10px;display:none}.cmp-date-time-picker .cmp-dp-month-item{width:50px;height:26px;line-height:26px;text-align:center;overflow:hidden;border-radius:3px;float:left}.cmp-date-time-picker .cmp-dp-month-item:hover{background-color:#eee}.cmp-date-time-picker .cmp-dp-time-menu{width:180px;padding:4px;background-color:#fff;border:1px solid #ccc;border-radius:2px;-webkit-box-shadow:0 1px 3px #ccc;box-shadow:0 1px 3px #ccc;position:absolute;bottom:37px;display:none}.cmp-date-time-picker .cmp-dp-time-item{width:26px;line-height:26px;margin:0 2px;text-align:center;color:#333;float:left;cursor:pointer;border-radius:3px}.cmp-date-time-picker .cmp-dp-time-item:hover{background-color:#eee}.cmp-date-time-picker .cmp-dp-hour-menu{left:4px}.cmp-date-time-picker .cmp-dp-minute-menu{width:120px;left:36px}.cmp-date-time-picker .cmp-dp-second-menu{width:120px;left:68px}</style><script type="text/javascript" src="/ECOERP_CMMS/WebResource.axd?d=VKHi8pxmLK-NK79fg4jTrRvZYBlkpRg1_CyGEBV10UvySVwJjI-WFz1a_LFk_M9Gr_2ZjpmMySU6JpMRqJWSe3sZEgerjlhKgtHsFJgXXV-WiyzRNXRPc24LJOLVJtV10&amp;amp;t=635260899183750000"></script><script type="text/javascript">
+//<![CDATA[
+var Page_Validators = new Array();
+function WebForm_OnSubmit() {
+    return true;
+}
+//]]></script><script type="text/javascript">
+</script><script type="text/javascript">
+
+
+    function gettextvalue() {
+
+    var textvalue="";
+    for(var i=0;i<10;i++)
+    {
+        var control=document.getElementById("text"+i);
+        if(control!=undefined&&control!=null)
+        {
+            textvalue+="&text"+i+"="+control.value;
+        }
+    }
+    return textvalue;
+}
+
+
+//2019.5.25
+document.onkeydown = function ()
+{
+//使用document.getElementById获取到按钮对象
+ var button = document.getElementById('Button2');
+ if(event.keyCode == 13)
+ {
+  button.click();
+  event.returnValue = false;
+ }
+}
+var textid;
+function Buck() {
+            textid.value=document.all.TextBox1.value+"/"+document.all.TextBox2.value;
+            document.getElementById("divtime").style.visibility="hidden";
+}
+function divview() {
+                   //document.getElementById("divtime").style.visibility="visible";
+                   //document.getElementById("TextBox1").value=textid;
+                   }
+function Button4_onclick() {
+document.getElementById("divtime").style.visibility="hidden";
+}
+function btjs_Click()
+{
+ 
+ btjsclick(gettextvalue());
+}
+function btadd_Click()
+{
+ btaddclick();
+}
+function bthz_Click()
+{
+ bthzclick();
+}
+function QueryString(item){
+     var sValue=location.search.match(new RegExp("[\?\&]"+item+"=([^\&]*)(\&?)","i"))
+     return sValue?sValue[1]:sValue
+}
+function btsql_Click()
+{
+    var sql="";
+    var e=document.getElementsByTagName("input"); 
+    for(var i=0;i <e.length;i++) 
+　{ 
+　　if (e[i].type=="checkbox") 
+　　{ 
+　　  if(e[i].checked==true&&e[i].value!="全否")
+　　  {
+　　    sql=sql+e[i].value+",";
+　　  }
+　　} 
+　} 
+　if(sql!="")
+　{
+　  var iTop = (window.screen.availHeight-document.getElementById("hisqlheight").value)/2;
+　  var iLeft = (window.screen.availWidth-500)/2;
+    window.open("jcsql.aspx?id=" + sql + "&rowid=" +  QueryString('id')+gettextvalue() ,"","Scrollbars=no,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=500px ,Height="+document.getElementById("hisqlheight").value+"px,top="+iTop+",left="+iLeft);
+   }
+    else
+    {
+        alert("请选择需要处理的数据！");
+    }
+}
+function GetEnable()
+{
+    var flagjs=document.getElementById("hiflag").value.split(',')[0];
+    var flaghz=document.getElementById("hiflag").value.split(',')[1];
+    var flagadd=document.getElementById("hiflag").value.split(',')[2];
+    if(flagjs=="0")
+    {
+        document.getElementById("btjs").disabled="disabled";
+        document.getElementById("btjs").style.display="none";
+    }
+    if(flaghz=="0")
+    {
+        document.getElementById("bthz").disabled="disabled";
+        document.getElementById("bthz").style.display="none";
+    }
+    if(flagadd=="0")
+    {
+        document.getElementById("btadd").disabled="disabled";
+        document.getElementById("btadd").style.display="none";
+    }
+}
+function SelectAll(obj) 
+{ 
+  var e=document.getElementsByTagName("input"); 
+  var IsTrue; 
+  if(obj.value=="全选") 
+　 { 
+　　 IsTrue=true; 
+　　 obj.value="全否" 
+　 } 
+　 else 
+　 {
+     IsTrue = false; 
+　　obj.value="全选" 
+　　} 
+　　 
+　for(var i=0;i <e.length;i++) 
+　{ 
+　　if (e[i].type=="checkbox") 
+　　{ 
+　　  e[i].checked=IsTrue; 
+　　} 
+　} 
+} 
+function showwait()
+{
+    document.getElementById("showdiv").style.left=document.body.clientWidth/2-100;
+    document.getElementById("showdiv").style.top=document.body.clientHeight/2-35;
+    document.getElementById("showdiv").style.display="";
+}
+function diswait()
+{
+    //try
+    //{
+        document.getElementById("showdiv").style.display="none";
+    //}
+    //catch(e)
+   // {
+   // }
+}
+function btmbexcel_Click()
+{
+   if(document.getElementById("trmb").style.display=="none")
+      document.getElementById("trmb").style.display="";
+   else
+      document.getElementById("trmb").style.display="none";
+}
+function getexcel()
+{
+    window.open("XLS_DownLoad.aspx?path="+document.getElementById("fileupexcel").value);
+    //location.reload();
+    //window.document.forms(0).Button2.click();
+}
+function getexcelload()
+{
+    
+    location.reload();
+    //window.document.forms(0).Button2.click();
+}
+</script><script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+function btjsclick(textvalue){var iTop = (window.screen.availHeight-350)/2;var iLeft = (window.screen.availWidth-500)/2;window.open("Detial.aspx?id=EPlan_Process_1020&jcbm=Eco_SCGXHB7030&autojsflag=False&conkey=LJKJ_ECO_ZGCProcess"+textvalue+"","","Scrollbars=no,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=500px ,Height=350px,top="+iTop+",left="+iLeft+"");}//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+var Anthem_FormID = "form1";
+//]]>
+</script><script type="text/javascript">
+        $('#TextBox1').dateTimePicker(
+        //以下设置可以选择时分秒
+        //{
+        //mode: 'dateTime'
+        //}
+        );
+
+        $('#TextBox2').dateTimePicker(
+        //以下设置可以选择时分秒
+        //{
+        //mode: 'dateTime'
+        //}
+        );
+    </script><script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ValidationSummary1"));
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+var ValidationSummary1 = document.all ? document.all["ValidationSummary1"] : document.getElementById("ValidationSummary1");
+ValidationSummary1.showmessagebox = "True";
+ValidationSummary1.showsummary = "False";
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+diswait();//]]>
+</script></head><body text="#00" onload="GetEnable()"><iframe id="endDateLayer" name="endDateLayer" frameborder="0" width="204" height="273" style="position: absolute;  z-index: 9998; display: none;"></iframe>
+
+<script type="text/javascript">
+
+
+    function gettextvalue() {
+
+    var textvalue="";
+    for(var i=0;i<10;i++)
+    {
+        var control=document.getElementById("text"+i);
+        if(control!=undefined&&control!=null)
+        {
+            textvalue+="&text"+i+"="+control.value;
+        }
+    }
+    return textvalue;
+}
+
+
+//2019.5.25
+document.onkeydown = function ()
+{
+//使用document.getElementById获取到按钮对象
+ var button = document.getElementById('Button2');
+ if(event.keyCode == 13)
+ {
+  button.click();
+  event.returnValue = false;
+ }
+}
+var textid;
+function Buck() {
+            textid.value=document.all.TextBox1.value+"/"+document.all.TextBox2.value;
+            document.getElementById("divtime").style.visibility="hidden";
+}
+function divview() {
+                   //document.getElementById("divtime").style.visibility="visible";
+                   //document.getElementById("TextBox1").value=textid;
+                   }
+function Button4_onclick() {
+document.getElementById("divtime").style.visibility="hidden";
+}
+function btjs_Click()
+{
+ 
+ btjsclick(gettextvalue());
+}
+function btadd_Click()
+{
+ btaddclick();
+}
+function bthz_Click()
+{
+ bthzclick();
+}
+function QueryString(item){
+     var sValue=location.search.match(new RegExp("[\?\&]"+item+"=([^\&]*)(\&?)","i"))
+     return sValue?sValue[1]:sValue
+}
+function btsql_Click()
+{
+    var sql="";
+    var e=document.getElementsByTagName("input"); 
+    for(var i=0;i <e.length;i++) 
+　{ 
+　　if (e[i].type=="checkbox") 
+　　{ 
+　　  if(e[i].checked==true&&e[i].value!="全否")
+　　  {
+　　    sql=sql+e[i].value+",";
+　　  }
+　　} 
+　} 
+　if(sql!="")
+　{
+　  var iTop = (window.screen.availHeight-document.getElementById("hisqlheight").value)/2;
+　  var iLeft = (window.screen.availWidth-500)/2;
+    window.open("jcsql.aspx?id=" + sql + "&rowid=" +  QueryString('id')+gettextvalue() ,"","Scrollbars=no,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=500px ,Height="+document.getElementById("hisqlheight").value+"px,top="+iTop+",left="+iLeft);
+   }
+    else
+    {
+        alert("请选择需要处理的数据！");
+    }
+}
+function GetEnable()
+{
+    var flagjs=document.getElementById("hiflag").value.split(',')[0];
+    var flaghz=document.getElementById("hiflag").value.split(',')[1];
+    var flagadd=document.getElementById("hiflag").value.split(',')[2];
+    if(flagjs=="0")
+    {
+        document.getElementById("btjs").disabled="disabled";
+        document.getElementById("btjs").style.display="none";
+    }
+    if(flaghz=="0")
+    {
+        document.getElementById("bthz").disabled="disabled";
+        document.getElementById("bthz").style.display="none";
+    }
+    if(flagadd=="0")
+    {
+        document.getElementById("btadd").disabled="disabled";
+        document.getElementById("btadd").style.display="none";
+    }
+}
+function SelectAll(obj) 
+{ 
+  var e=document.getElementsByTagName("input"); 
+  var IsTrue; 
+  if(obj.value=="全选") 
+　 { 
+　　 IsTrue=true; 
+　　 obj.value="全否" 
+　 } 
+　 else 
+　 {
+     IsTrue = false; 
+　　obj.value="全选" 
+　　} 
+　　 
+　for(var i=0;i <e.length;i++) 
+　{ 
+　　if (e[i].type=="checkbox") 
+　　{ 
+　　  e[i].checked=IsTrue; 
+　　} 
+　} 
+} 
+function showwait()
+{
+    document.getElementById("showdiv").style.left=document.body.clientWidth/2-100;
+    document.getElementById("showdiv").style.top=document.body.clientHeight/2-35;
+    document.getElementById("showdiv").style.display="";
+}
+function diswait()
+{
+    //try
+    //{
+        document.getElementById("showdiv").style.display="none";
+    //}
+    //catch(e)
+   // {
+   // }
+}
+function btmbexcel_Click()
+{
+   if(document.getElementById("trmb").style.display=="none")
+      document.getElementById("trmb").style.display="";
+   else
+      document.getElementById("trmb").style.display="none";
+}
+function getexcel()
+{
+    window.open("XLS_DownLoad.aspx?path="+document.getElementById("fileupexcel").value);
+    //location.reload();
+    //window.document.forms(0).Button2.click();
+}
+function getexcelload()
+{
+    
+    location.reload();
+    //window.document.forms(0).Button2.click();
+}
+</script>
+
+
+    <form name="form1" method="post" action="?id=1918" id="form1" enctype="multipart/form-data">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" style="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" style="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" style="">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+function btjsclick(textvalue){var iTop = (window.screen.availHeight-350)/2;var iLeft = (window.screen.availWidth-500)/2;window.open("Detial.aspx?id=EPlan_Process_1020&jcbm=Eco_SCGXHB7030&autojsflag=False&conkey=LJKJ_ECO_ZGCProcess"+textvalue+"","","Scrollbars=no,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=500px ,Height=350px,top="+iTop+",left="+iLeft+"");}//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var Anthem_FormID = "form1";
+//]]>
+</script>
+<script src="/ECOERP_CMMS/WebResource.axd?d=VKHi8pxmLK-NK79fg4jTrRvZYBlkpRg1_CyGEBV10UvySVwJjI-WFz1a_LFk_M9Gr_2ZjpmMySU6JpMRqJWSe3sZEgerjlhKgtHsFJgXXV-WiyzRNXRPc24LJOLVJtV10&amp;t=635260899183750000" type="text/javascript"></script>
+    <div><link href="../../Images/TreeImg/infocss.css" rel="stylesheet" type="text/css">
+    <div id="ValidationSummary1" style="color:Red;display:none;">
+
+</div>
+        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+            <tbody><tr>
+                <td id="TD2" style="width: 100%;  background-repeat: repeat-x; border-top-width: 1px; border-left-width: 1px; border-left-color: #009999; border-bottom-width: 1px; border-bottom-color: #009999; border-top-color: #009999; border-right-width: 1px; border-right-color: #009999;">
+                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%" class="prodtable">
+                        <tbody><tr>
+                            
+                            <td style="width: 100%; border-top-width: 1px; border-left-width: 1px; border-left-color: #000099; border-bottom-width: 1px; border-bottom-color: #000099; border-top-color: #000099; border-right-width: 1px; border-right-color: #000099;">
+                                <div style="float:left; vertical-align:middle; margin-top:4px; margin-left:5px; width:100%; ">
+                                <div id="Anthem_Panel1__"><div id="Panel1" style="width:850px;">
+	<span id="lb0" title="Project" style="display:inline-block;width:65px;">产品/项目</span><span id="lbL0" style="display:inline-block;width:20px;">like</span><span id="Anthem_text0__"><!--START:text0--><select name="text0" id="text0" class="prodbut" style="width:100px;">
+		<option selected="selected" value=""></option>
+		<option value="025AC">025AC</option>
+		<option value="37KWH">37KWH</option>
+		<option value="53KWH">53KWH</option>
+		<option value="AB01">AB01</option>
+		<option value="AWT-50.9KWH">AWT-50.9KWH</option>
+		<option value="AWT-87.3(E16)">AWT-87.3(E16)</option>
+		<option value="BP45">BP45</option>
+		<option value="BP62">BP62</option>
+		<option value="BP76">BP76</option>
+		<option value="BP80">BP80</option>
+		<option value="BV85">BV85</option>
+		<option value="BX4">BX4</option>
+		<option value="C01">C01</option>
+		<option value="C385">C385</option>
+		<option value="C385MCA">C385MCA</option>
+		<option value="C390">C390</option>
+		<option value="C673-ICA">C673-ICA</option>
+		<option value="C857">C857</option>
+		<option value="CM2E">CM2E</option>
+		<option value="DC1E">DC1E</option>
+		<option value="DJ2436">DJ2436</option>
+		<option value="E12">E12</option>
+		<option value="E12-4C(平伟）">E12-4C(平伟）</option>
+		<option value="E12-98（星环）">E12-98（星环）</option>
+		<option value="E15">E15</option>
+		<option value="E35">E35</option>
+		<option value="EHU-56">EHU-56</option>
+		<option value="ENERS">ENERS</option>
+		<option value="EP36-2">EP36-2</option>
+		<option value="EPA1-28">EPA1-28</option>
+		<option value="EPA1-59">EPA1-59</option>
+		<option value="EPA2">EPA2</option>
+		<option value="ES11">ES11</option>
+		<option value="F1L">F1L</option>
+		<option value="F2N81">F2N81</option>
+		<option value="F3-56">F3-56</option>
+		<option value="F3-CCB">F3-CCB</option>
+		<option value="F618">F618</option>
+		<option value="GE1">GE1</option>
+		<option value="HP32">HP32</option>
+		<option value="HP38-13">HP38-13</option>
+		<option value="HP71">HP71</option>
+		<option value="HP80">HP80</option>
+		<option value="J90A">J90A</option>
+		<option value="JL5500YS">JL5500YS</option>
+		<option value="M2模组">M2模组</option>
+		<option value="MS11">MS11</option>
+		<option value="P0R">P0R</option>
+		<option value="PMA1">PMA1</option>
+		<option value="PP-0168">PP-0168</option>
+		<option value="PP7">PP7</option>
+		<option value="RDME91">RDME91</option>
+		<option value="SD01-61">SD01-61</option>
+		<option value="SD01-69">SD01-69</option>
+		<option value="SEA1/EF1E">SEA1/EF1E</option>
+		<option value="VL1">VL1</option>
+		<option value="VM3">VM3</option>
+		<option value="VP6">VP6</option>
+		<option value="Z22506">Z22506</option>
+		<option value="打样">打样</option>
+		<option value="东泽">东泽</option>
+		<option value="极氪门槛">极氪门槛</option>
+		<option value="面板">面板</option>
+		<option value="问界-81">问界-81</option>
+		<option value="小卡三代">小卡三代</option>
+
+	</select><!--END:text0--></span><span style="display:inline-block;color:Red;width:14px;">   </span><span id="lb1" title="MaterialID" style="display:inline-block;width:65px;">物资编码</span><span id="lbL1" style="display:inline-block;width:20px;">like</span><span id="Anthem_text1__"><!--START:text1--><input name="text1" type="text" id="text1" class="prodbut" style="width:100px;"><!--END:text1--></span><span style="display:inline-block;color:Red;width:14px;">   </span><span id="lb2" title="MaterialNAME" style="display:inline-block;width:65px;">物资名称</span><span id="lbL2" style="display:inline-block;width:20px;">like</span><span id="Anthem_text2__"><!--START:text2--><input name="text2" type="text" id="text2" class="prodbut" style="width:100px;"><!--END:text2--></span><span style="display:inline-block;color:Red;width:14px;">   </span><span id="lb3" title="CustName" style="display:inline-block;width:65px;">选择客户</span><span id="lbL3" style="display:inline-block;width:20px;">like</span><span id="Anthem_text3__"><!--START:text3--><select name="text3" id="text3" class="prodbut" style="width:100px;">
+		<option selected="selected" value=""></option>
+		<option value="博奥镁铝">博奥镁铝</option>
+		<option value="长盈精密">长盈精密</option>
+		<option value="东泽">东泽</option>
+		<option value="和胜">和胜</option>
+		<option value="嘉龙">嘉龙</option>
+		<option value="锦佳盛">锦佳盛</option>
+		<option value="联伟">联伟</option>
+		<option value="亮达">亮达</option>
+		<option value="普翼">普翼</option>
+		<option value="祥鑫">祥鑫</option>
+		<option value="鑫铂">鑫铂</option>
+		<option value="誉寰">誉寰</option>
+		<option value="元新隆">元新隆</option>
+
+	</select><!--END:text3--></span><span style="display:inline-block;color:Red;width:14px;">   </span>
+</div></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+
+            </tr>
+            <tr>
+                <td id="TD1" style="width: 100%; height: 26px; background-repeat: repeat-x; border-top-width: 1px; border-left-width: 1px; border-left-color: #000099; border-bottom-width: 1px; border-bottom-color: #000099; border-top-color: #000099; border-right-width: 1px; border-right-color: #000099;" align="right">
+                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%" class="prodtable1">
+                        <tbody><tr>
+                            <td style="width: 20%; " align="left" bgcolor="#FFFFFF">
+                                &nbsp; &nbsp; 
+                                <span id="Anthem_Label1__"><span id="Label1" class="STYLE3" style="font-weight:bold;">产品材料匹配维护</span></span>
+                        &nbsp; &nbsp; 
+                                
+                        </td>
+                        <td style="width: 30%; " align="left" bgcolor="#FFFFFF">
+                            <span id="lbl" class="prodbut"></span>
+                          
+                        </td>
+                            <td style="width: 50%;" bgcolor="#FFFFFF" align="right">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody><tr>
+                            
+                            <td style="width: 72px">
+                                </td>
+                            <td>
+                                <input id="btadd" type="button" value="添加" style="width: 80px; margin-left: 5px; display: none;" class="prodbut" onclick="btadd_Click()" disabled=""></td>
+                               <td>
+                                <input type="submit" name="Button1" value="导出Excel" id="Button1" class="prodbut" style="width: 80px; margin-left: 5px;">
+                                
+                                </td>
+                            
+                            <td>
+                                    <input name="btjs" type="button" id="btjs" value="首序刷新" class="prodbut" onclick="btjs_Click()" style="margin-left: 5px;">
+                                </td>
+                            <td>
+                                <span id="Anthem_btn1__" style="display: none;"></span>
+                            </td>
+                            <td>
+                                <span id="Anthem_btn2__" style="display: none;"></span>
+                            </td>
+                            <td>
+                                <span id="Anthem_btn3__" style="display: none;"></span>
+                            </td>
+                            <td>
+                                
+                                </td>
+                            <td>
+                               <input id="bthz" type="button" value="汇总" style="width: 80px; margin-left: 5px; display: none;" class="prodbut" onclick="bthz_Click()" disabled=""> 
+                                </td>
+                                <td>
+                                <span id="Anthem_Button2__"><input type="submit" name="Button2" value="开始查询" onclick="javascript:Anthem_FireCallBackEvent(this,event,'Button2','',true,'','','正在查询...',false,showwait(),null,null,true,true);return false;" id="Button2" class="prodbut" style="margin-left:5px"></span></td>
+                            <td style="width: 10px">
+                            </td>
+                        </tr>
+                        
+                    </tbody></table>
+                            </td>
+                        </tr>
+                        <tr style="display:none" id="trmb">
+                            <td align="left" bgcolor="#ffffff" style="width: 50%; border-top:lightsteelblue 2px solid; background-color: lightsteelblue;">
+                            </td>
+                            <td bgcolor="#ffffff" style="width: 50%; border-top:lightsteelblue 1px solid; background-color: lightsteelblue;">
+                                <input type="file" name="fileupexcel" id="fileupexcel" class="prodbut" autoupdateaftercallback="true" style=""> 
+                                <input type="submit" name="btupdownexcel" value="导出数据到模板" id="btupdownexcel" class="prodbut" autoupdateaftercallback="true" postcallbackfunction="getexcel()" enabledduringcallback="false" textduringcallback="正在生成数据..." style=""> <input id="Button5" type="button" value="刷新页面" style="width: 80px;" class="prodbut" onclick="getexcelload()"> 
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+
+            </tr>
+            <tr>
+                <td style="width: 100%; height: 3px; ">
+                
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100%; border-top-width: 1px; border-left-width: 1px; border-left-color: #000099; border-bottom-width: 1px; border-bottom-color: #000099; border-top-color: #000099; border-right-width: 1px; border-right-color: #000099; font-size: 10pt;">
+                    
+                    <div id="Anthem_GridView1__"><div>
+	<table class="gridbk" cellspacing="0" rules="all" border="1" id="GridView1" style="width:100%;border-collapse:collapse;background-image:url(../../Images/TreeImg/info/conbg.jpg);background-repeat:repeat-x;">
+		<tbody><tr class="gridcss" style="height:20px;">
+			<th class="gridcss" scope="col" style="width:20px;"><input name="GridView1$ctl01$chall" type="checkbox" id="GridView1_ctl01_chall" value="全选" onclick="javascript:SelectAll(this);"></th><th class="gridcss" scope="col">产品/项目</th><th class="gridcss" scope="col">产品编码</th><th class="gridcss" scope="col">产品名称</th><th class="gridcss" scope="col">领料物资ID</th><th class="gridcss" scope="col">领料物资名称</th><th class="gridcss" scope="col">材料规格</th><th class="gridcss" scope="col">单位</th><th class="gridcss" scope="col">用量</th><th class="gridcss" scope="col">毛坯</th><th class="gridcss" scope="col">产品</th><th class="gridcss" scope="col">铝块</th><th class="gridcss" scope="col">铝屑</th><th class="gridcss" scope="col">客户</th><th class="gridcss" scope="col">&nbsp;</th>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl02$ch1" type="checkbox" id="GridView1_ctl02_ch1" value="15258"></td><td class="gridcss">025AC</td><td class="gridcss">10062035-0-02</td><td class="gridcss">025AC前边梁</td><td class="gridcss">10062035-0-02-YL</td><td class="gridcss">025AC前边梁</td><td class="gridcss">741.8</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">1.239</td><td class="gridcss">0.98</td><td class="gridcss">0</td><td class="gridcss">0.259</td><td class="gridcss">联伟</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15258&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl03$ch1" type="checkbox" id="GridView1_ctl03_ch1" value="15259"></td><td class="gridcss">025AC</td><td class="gridcss">10062035-0-03</td><td class="gridcss">025AC左边梁</td><td class="gridcss">10062035-0-03/11-YL-GY</td><td class="gridcss">025AC左右边梁</td><td class="gridcss">1657.98</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">6.03</td><td class="gridcss">5.146</td><td class="gridcss">0.464</td><td class="gridcss">0.42</td><td class="gridcss">联伟</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15259&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl04$ch1" type="checkbox" id="GridView1_ctl04_ch1" value="15485"></td><td class="gridcss">025AC</td><td class="gridcss">10062035-0-04-A</td><td class="gridcss">025AC后边梁</td><td class="gridcss">10062035-0-04-YL</td><td class="gridcss">025AC后边梁</td><td class="gridcss">1341.49</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">3.915</td><td class="gridcss">3.775</td><td class="gridcss">0</td><td class="gridcss">0.14</td><td class="gridcss">联伟</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15485&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl05$ch1" type="checkbox" id="GridView1_ctl05_ch1" value="15261"></td><td class="gridcss">025AC</td><td class="gridcss">10062035-0-05</td><td class="gridcss">025AC前横梁</td><td class="gridcss">10062035-0-05-YL</td><td class="gridcss">025AC前横梁</td><td class="gridcss">1293</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">2.252</td><td class="gridcss">2.18</td><td class="gridcss">0</td><td class="gridcss">0.072</td><td class="gridcss">联伟</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15261&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl06$ch1" type="checkbox" id="GridView1_ctl06_ch1" value="15262"></td><td class="gridcss">025AC</td><td class="gridcss">10062035-0-06</td><td class="gridcss">025AC中横梁</td><td class="gridcss">10062035-0-06-YL</td><td class="gridcss">025AC中横梁</td><td class="gridcss">1293</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">3.304</td><td class="gridcss">3.2</td><td class="gridcss">0</td><td class="gridcss">0.104</td><td class="gridcss">联伟</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15262&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl07$ch1" type="checkbox" id="GridView1_ctl07_ch1" value="15263"></td><td class="gridcss">025AC</td><td class="gridcss">10062035-0-07</td><td class="gridcss">025AC纵梁</td><td class="gridcss">10062035-0-07-YL</td><td class="gridcss">025AC纵梁</td><td class="gridcss">1515.4</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">2.626</td><td class="gridcss">2.516</td><td class="gridcss">0</td><td class="gridcss">0.11</td><td class="gridcss">联伟</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15263&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl08$ch1" type="checkbox" id="GridView1_ctl08_ch1" value="15264"></td><td class="gridcss">025AC</td><td class="gridcss">10062035-0-11</td><td class="gridcss">025AC右边梁</td><td class="gridcss">10062035-0-03/11-YL-GY</td><td class="gridcss">025AC左右边梁</td><td class="gridcss">1657.98</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">6.028</td><td class="gridcss">5.165</td><td class="gridcss">0.464</td><td class="gridcss">0.399</td><td class="gridcss">联伟</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15264&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl09$ch1" type="checkbox" id="GridView1_ctl09_ch1" value="15265"></td><td class="gridcss">025AC</td><td class="gridcss">10062035-0-45</td><td class="gridcss">025AC前吊耳</td><td class="gridcss">10062035-0-45-YL</td><td class="gridcss">025AC前吊耳</td><td class="gridcss">44</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.151</td><td class="gridcss">0.136</td><td class="gridcss">0</td><td class="gridcss">0.015</td><td class="gridcss">联伟</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15265&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl10$ch1" type="checkbox" id="GridView1_ctl10_ch1" value="15833"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515（552）-01-07</td><td class="gridcss">37/53KWH膨胀梁</td><td class="gridcss">500109-00515-01-07-YL</td><td class="gridcss">37KWH膨胀梁</td><td class="gridcss">1192.001</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">2.2</td><td class="gridcss">2.08</td><td class="gridcss">0</td><td class="gridcss">0.12</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15833&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl11$ch1" type="checkbox" id="GridView1_ctl11_ch1" value="15223"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-00</td><td class="gridcss">37KWH安装梁00</td><td class="gridcss">500109-00515-01-00-YL</td><td class="gridcss">37KWH安装梁00</td><td class="gridcss">115.47</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.05</td><td class="gridcss">0.048</td><td class="gridcss">0</td><td class="gridcss">0.002</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15223&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl12$ch1" type="checkbox" id="GridView1_ctl12_ch1" value="15099"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-01-01</td><td class="gridcss">37KWH后梁-01</td><td class="gridcss">500109-00515-01-01-01-YL</td><td class="gridcss">37KWH后梁-01</td><td class="gridcss">368.910</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.689</td><td class="gridcss">0.673</td><td class="gridcss">0</td><td class="gridcss">0.016</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15099&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl13$ch1" type="checkbox" id="GridView1_ctl13_ch1" value="15100"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-01-02</td><td class="gridcss">37KWH后梁-02</td><td class="gridcss">500109-00515-01-01-02-YL</td><td class="gridcss">37KWH后梁-02</td><td class="gridcss">500109-00515-01-01-02-YL</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.378</td><td class="gridcss">0.357</td><td class="gridcss">0</td><td class="gridcss">0.021</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15100&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl14$ch1" type="checkbox" id="GridView1_ctl14_ch1" value="12394"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-02</td><td class="gridcss">37KWH左右边梁1</td><td class="gridcss">500109-00515-01-02-YL-GY</td><td class="gridcss">37KWH左右边梁</td><td class="gridcss">1228.448</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">9.25</td><td class="gridcss">6.45</td><td class="gridcss">2</td><td class="gridcss">0.8</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=12394&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl15$ch1" type="checkbox" id="GridView1_ctl15_ch1" value="12398"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-03</td><td class="gridcss">37KWH左右边梁2</td><td class="gridcss">500109-00515-01-02-YL-GY</td><td class="gridcss">37KWH左右边梁</td><td class="gridcss">1228.448</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">9.25</td><td class="gridcss">6.45</td><td class="gridcss">2</td><td class="gridcss">0.8</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=12398&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl16$ch1" type="checkbox" id="GridView1_ctl16_ch1" value="15104"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-04</td><td class="gridcss">37KWH安装梁1</td><td class="gridcss">500109-00515-01-04-YL</td><td class="gridcss">37KWH安装梁1</td><td class="gridcss">500109-00515-01-04-YL</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.073</td><td class="gridcss">0.066</td><td class="gridcss">0</td><td class="gridcss">0.007</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15104&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl17$ch1" type="checkbox" id="GridView1_ctl17_ch1" value="15103"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-05</td><td class="gridcss">37KWH安装梁3</td><td class="gridcss">500109-00515-01-05-YL</td><td class="gridcss">37KWH安装梁3</td><td class="gridcss">500109-00515-01-05-YL</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.13</td><td class="gridcss">0.129</td><td class="gridcss">0</td><td class="gridcss">0.001</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15103&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl18$ch1" type="checkbox" id="GridView1_ctl18_ch1" value="12395"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-06</td><td class="gridcss">37KWH前梁</td><td class="gridcss">500109-00515-01-06-YL</td><td class="gridcss">37KWH前梁</td><td class="gridcss">1210.371</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">3.832</td><td class="gridcss">3.15</td><td class="gridcss">0</td><td class="gridcss">0.682</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=12395&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl19$ch1" type="checkbox" id="GridView1_ctl19_ch1" value="12396"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-07</td><td class="gridcss">37KWH膨胀梁</td><td class="gridcss">500109-00515-01-07-YL</td><td class="gridcss">37KWH膨胀梁</td><td class="gridcss">1192.001</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">2.2</td><td class="gridcss">2.08</td><td class="gridcss">0</td><td class="gridcss">0.12</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=12396&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl20$ch1" type="checkbox" id="GridView1_ctl20_ch1" value="15101"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-08</td><td class="gridcss">37KWH前斜边梁</td><td class="gridcss">500109-00515-01-08/09-YL-GY</td><td class="gridcss">37KWH-552前斜边梁/2</td><td class="gridcss">70.12</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.135</td><td class="gridcss">0.111</td><td class="gridcss">0</td><td class="gridcss">0.024</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15101&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl21$ch1" type="checkbox" id="GridView1_ctl21_ch1" value="15102"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-09</td><td class="gridcss">37KWH前斜边梁2</td><td class="gridcss">500109-00515-01-08/09-YL-GY</td><td class="gridcss">37KWH-552前斜边梁/2</td><td class="gridcss">70.12</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.135</td><td class="gridcss">0.111</td><td class="gridcss">0</td><td class="gridcss">0.024</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15102&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl22$ch1" type="checkbox" id="GridView1_ctl22_ch1" value="12397"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-10</td><td class="gridcss">37KWH中间纵梁</td><td class="gridcss">500109-00515-01-10-YL-GY</td><td class="gridcss">37KWH中间纵梁</td><td class="gridcss">1011.42</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">1.582</td><td class="gridcss">1.536</td><td class="gridcss">0</td><td class="gridcss">0.046</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=12397&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl23$ch1" type="checkbox" id="GridView1_ctl23_ch1" value="15106"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-12</td><td class="gridcss">37KWH安装梁2</td><td class="gridcss">500109-00515-01-12-YL</td><td class="gridcss">37KWH安装梁2</td><td class="gridcss">500109-00515-01-12-YL</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.114</td><td class="gridcss">0.09</td><td class="gridcss">0</td><td class="gridcss">0.024</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15106&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl24$ch1" type="checkbox" id="GridView1_ctl24_ch1" value="15107"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-18</td><td class="gridcss">37KWH安装梁6</td><td class="gridcss">500109-00515-01-18-YL</td><td class="gridcss">37KWH安装梁6</td><td class="gridcss">500109-00515-01-18-YL</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.129</td><td class="gridcss">0.126</td><td class="gridcss">0</td><td class="gridcss">0.003</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15107&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl25$ch1" type="checkbox" id="GridView1_ctl25_ch1" value="15105"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-01-21</td><td class="gridcss">37KWH安装梁8</td><td class="gridcss">500109-00515-01-21-YL</td><td class="gridcss">37KWH安装梁8</td><td class="gridcss">500109-00515-01-21-YL</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.104</td><td class="gridcss">0.082</td><td class="gridcss">0</td><td class="gridcss">0.022</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15105&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl26$ch1" type="checkbox" id="GridView1_ctl26_ch1" value="15109"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-08-04-01</td><td class="gridcss">37KWH前客户挂载支架本体</td><td class="gridcss">500109-00515-08-04-01-YL</td><td class="gridcss">37KWH前客户挂载支架本体</td><td class="gridcss">500109-00515-08-04-01-YL</td><td class="gridcss">个</td><td class="gridcss">2</td><td class="gridcss">0.214</td><td class="gridcss">0.141</td><td class="gridcss">0</td><td class="gridcss">0.073</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15109&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl27$ch1" type="checkbox" id="GridView1_ctl27_ch1" value="15108"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-08-04-02</td><td class="gridcss">37KWH后客户挂载支架本体</td><td class="gridcss">500109-00515-08-04-02-YL</td><td class="gridcss">37KWH后客户挂载支架本体</td><td class="gridcss">500109-00515-08-04-02-YL</td><td class="gridcss">个</td><td class="gridcss">2</td><td class="gridcss">0.197</td><td class="gridcss">0.114</td><td class="gridcss">0</td><td class="gridcss">0.083</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15108&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl28$ch1" type="checkbox" id="GridView1_ctl28_ch1" value="15111"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-08-14</td><td class="gridcss">37KWH客户支架04</td><td class="gridcss">500109-00515-08-14-YL</td><td class="gridcss">37KWH客户支架04</td><td class="gridcss">500109-00515-08-14-YL</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.046</td><td class="gridcss">0.026</td><td class="gridcss">0</td><td class="gridcss">0.02</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15111&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl29$ch1" type="checkbox" id="GridView1_ctl29_ch1" value="15110"></td><td class="gridcss">37KWH</td><td class="gridcss">500109-00515-08-15</td><td class="gridcss">37KWH客户支架05</td><td class="gridcss">500109-00515-08-15-YL</td><td class="gridcss">37KWH客户支架05</td><td class="gridcss">500109-00515-08-15-YL</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0.028</td><td class="gridcss">0.026</td><td class="gridcss">0</td><td class="gridcss">0.002</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15110&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl30$ch1" type="checkbox" id="GridView1_ctl30_ch1" value="15251"></td><td class="gridcss">53KWH</td><td class="gridcss">500109-00552-01-02</td><td class="gridcss">53KWH左右边梁1</td><td class="gridcss">500109-00515-01-02-YL-GY</td><td class="gridcss">37KWH左右边梁</td><td class="gridcss">1228.448</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">9.25</td><td class="gridcss">6.45</td><td class="gridcss">2</td><td class="gridcss">0.8</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15251&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl31$ch1" type="checkbox" id="GridView1_ctl31_ch1" value="15474"></td><td class="gridcss">53KWH</td><td class="gridcss">500109-00552-01-03</td><td class="gridcss">53KWH左右边梁2（552）</td><td class="gridcss">500109-00515-01-02-YL-GY</td><td class="gridcss">37KWH左右边梁</td><td class="gridcss">1228.448</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">9.25</td><td class="gridcss">6.45</td><td class="gridcss">2</td><td class="gridcss">0.8</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15474&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl32$ch1" type="checkbox" id="GridView1_ctl32_ch1" value="15249"></td><td class="gridcss">53KWH</td><td class="gridcss">500109-00552-01-06</td><td class="gridcss">53KWH前梁（552）</td><td class="gridcss">500109-00515-01-06-YL</td><td class="gridcss">37KWH前梁</td><td class="gridcss">1210.371</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">3.832</td><td class="gridcss">3.15</td><td class="gridcss">0</td><td class="gridcss">0.682</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15249&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl33$ch1" type="checkbox" id="GridView1_ctl33_ch1" value="15451"></td><td class="gridcss">53KWH</td><td class="gridcss">500109-00552-01-10</td><td class="gridcss">53KWH中间纵梁（552）</td><td class="gridcss">500109-00515-01-10-YL-GY</td><td class="gridcss">37KWH中间纵梁</td><td class="gridcss">1011.42</td><td class="gridcss">个</td><td class="gridcss">2</td><td class="gridcss">1.582</td><td class="gridcss">1.536</td><td class="gridcss">0</td><td class="gridcss">0.046</td><td class="gridcss">祥鑫</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15451&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl34$ch1" type="checkbox" id="GridView1_ctl34_ch1" value="15871"></td><td class="gridcss">AB01</td><td class="gridcss">500104-00746/747-02-01</td><td class="gridcss">AB01-747/746-塞块01</td><td class="gridcss">500104-00746/747-02-01-YL-GY</td><td class="gridcss">AB01-747/746-塞块01</td><td class="gridcss">90.3</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0</td><td class="gridcss">0</td><td class="gridcss">0</td><td class="gridcss">0</td><td class="gridcss">联伟</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15871&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl35$ch1" type="checkbox" id="GridView1_ctl35_ch1" value="15872"></td><td class="gridcss">AB01</td><td class="gridcss">500104-00746/747-02-01-01</td><td class="gridcss">AB01-746/747-塞块01-01</td><td class="gridcss">500104-00746/747-02-01-YL-GY</td><td class="gridcss">AB01-747/746-塞块01</td><td class="gridcss">90.9</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0</td><td class="gridcss">0</td><td class="gridcss">0</td><td class="gridcss">0</td><td class="gridcss">联伟</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15872&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl36$ch1" type="checkbox" id="GridView1_ctl36_ch1" value="15870"></td><td class="gridcss">AB01</td><td class="gridcss">500104-00746-01-01-C</td><td class="gridcss">AB01-746-下箱体集成水冷板左</td><td class="gridcss">500104-00746-01-7-C/01-C-YL</td><td class="gridcss">AB01-746-下箱体集成水冷板左/右</td><td class="gridcss">2051</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0</td><td class="gridcss">0</td><td class="gridcss">0</td><td class="gridcss">0</td><td class="gridcss">联伟</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15870&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr class="gridcss" style="height:18px;">
+			<td class="gridcss" style="width:20px;"><input name="GridView1$ctl37$ch1" type="checkbox" id="GridView1_ctl37_ch1" value="15873"></td><td class="gridcss">AB01</td><td class="gridcss">500104-00746-01-04-B</td><td class="gridcss">AB01-746-后膨胀梁</td><td class="gridcss">500104-00746-01-04-B-YL</td><td class="gridcss">AB01-746-后膨胀梁</td><td class="gridcss">633</td><td class="gridcss">个</td><td class="gridcss">1</td><td class="gridcss">0</td><td class="gridcss">0</td><td class="gridcss">0</td><td class="gridcss">0</td><td class="gridcss">联伟</td><td class="gridcss" align="center" onclick="javascript:return window.open(&quot;parmview.aspx?id=1918&amp;rowid=0&amp;parmheight=330&amp;comsum=2&amp;parmkey=15873&amp;parmkeyvalue=xh&amp;parmflag=1&quot;,&quot;&quot;,&quot;Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=330px,top=&quot;+(window.screen.availHeight-330)/2+&quot;,left=&quot;+(window.screen.availWidth-640)/2+&quot;&quot;);"><a href="#">修改</a></td>
+		</tr><tr align="right">
+			<td colspan="15">
+                        <table width="100%" class="prodtable1" border="0" cellpadding="0" cellspacing="0">
+                      
+                          <tbody><tr>
+                          <td style="width:20%;" bgcolor="#FFFFFF">
+                            &nbsp; &nbsp; <span id="Anthem_GridView1_ctl39_Label2__"><!--START:GridView1$ctl39$Label2--><span id="GridView1_ctl39_Label2" class="STYLE1" style="font-weight:normal;">查询数据共：698条</span><!--END:GridView1$ctl39$Label2--></span>
+                          </td>
+                          <td bgcolor="#FFFFFF" style="width:30%;"></td>
+                            <td style="text-align:right; width:50%;" bgcolor="#FFFFFF">
+                            第<span id="Anthem_GridView1_ctl39_lblPageIndex__"><!--START:GridView1$ctl39$lblPageIndex--><span id="GridView1_ctl39_lblPageIndex">1</span><!--END:GridView1$ctl39$lblPageIndex--></span>页
+                                /共<span id="Anthem_GridView1_ctl39_lblPageCount__"><!--START:GridView1$ctl39$lblPageCount--><span id="GridView1_ctl39_lblPageCount">20</span><!--END:GridView1$ctl39$lblPageCount--></span>页 
+                                <span id="Anthem_GridView1_ctl39_btnFirst__"><!--START:GridView1$ctl39$btnFirst--><a onclick="javascript:Anthem_FireCallBackEvent(this,event,'GridView1$ctl39$btnFirst','',false,'','','首页 正在处理...',false,null,null,null,true,true);return false;" id="GridView1_ctl39_btnFirst" href="javascript:__doPostBack('GridView1$ctl39$btnFirst','')">首页</a><!--END:GridView1$ctl39$btnFirst--></span>
+                              <span id="Anthem_GridView1_ctl39_btnPrev__"><!--START:GridView1$ctl39$btnPrev--><a onclick="javascript:Anthem_FireCallBackEvent(this,event,'GridView1$ctl39$btnPrev','',false,'','','上一页 正在处理...',false,null,null,null,true,true);return false;" id="GridView1_ctl39_btnPrev" href="javascript:__doPostBack('GridView1$ctl39$btnPrev','')">上一页</a><!--END:GridView1$ctl39$btnPrev--></span>
+                             <span id="Anthem_GridView1_ctl39_btnNext__"><!--START:GridView1$ctl39$btnNext--><a onclick="javascript:Anthem_FireCallBackEvent(this,event,'GridView1$ctl39$btnNext','',false,'','','下一页 正在处理...',false,null,null,null,true,true);return false;" id="GridView1_ctl39_btnNext" href="javascript:__doPostBack('GridView1$ctl39$btnNext','')">下一页</a><!--END:GridView1$ctl39$btnNext--></span>                          
+                             <span id="Anthem_GridView1_ctl39_btnLast__"><!--START:GridView1$ctl39$btnLast--><a onclick="javascript:Anthem_FireCallBackEvent(this,event,'GridView1$ctl39$btnLast','',false,'','','尾页 正在处理...',false,null,null,null,true,true);return false;" id="GridView1_ctl39_btnLast" href="javascript:__doPostBack('GridView1$ctl39$btnLast','')">尾页</a><!--END:GridView1$ctl39$btnLast--></span>                                            
+                             <span id="Anthem_GridView1_ctl39_txtNewPageIndex__"><!--START:GridView1$ctl39$txtNewPageIndex--><input name="GridView1$ctl39$txtNewPageIndex" type="text" value="1" id="GridView1_ctl39_txtNewPageIndex" style="width:20px;"><!--END:GridView1$ctl39$txtNewPageIndex--></span>
+                             <span id="Anthem_GridView1_ctl39_btnGo__"><!--START:GridView1$ctl39$btnGo--><a onclick="javascript:Anthem_FireCallBackEvent(this,event,'GridView1$ctl39$btnGo','',false,'','','GO...',false,null,null,null,true,true);return false;" id="GridView1_ctl39_btnGo" href="javascript:__doPostBack('GridView1$ctl39$btnGo','')">GO</a><!--END:GridView1$ctl39$btnGo--></span><!-- here set the CommandArgument of the Go Button to '-1' as the flag -->
+                              &nbsp; &nbsp; </td>
+                          </tr>
+                        </tbody></table>
+
+                        
+</td>
+		</tr>
+	</tbody></table>
+</div></div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-top-width: 1px; border-left-width: 1px; font-size: 10pt; border-left-color: #000099;
+                    border-bottom-width: 1px; border-bottom-color: #000099; width: 100%; border-top-color: #000099;
+                    height: 25px; border-right-width: 1px; border-right-color: #000099">
+                  <span id="Anthem_lbsum__"><span id="lbsum" class="STYLE3" style="font-weight:bold;">【合计：698条】</span></span>  
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+        <div id="divtime" style="z-index: 101; left: 338px; width: 200px; position: absolute; top: 176px;
+            height: 44px; visibility: hidden;">
+            <table border="0" cellpadding="0" cellspacing="0" style="width: 120%; border-right: #330000 1px solid; border-top: #330000 1px solid; border-left: #330000 1px solid; border-bottom: #330000 1px solid;">
+                <tbody><tr>
+                   
+                    <td style="width: 100px; height: 32px;" align="center" class="mailinput01bg">
+                        <span style="font-size: 10pt">起始时间：</span></td>
+                    <td style="width: 100px; height: 32px;" class="mailinput01bg">
+                        <span id="Anthem_TextBox1__"><input name="TextBox1" type="text" id="TextBox1" class="mailinput01bg" onfocus="setday(this)" style="width:100px;" readonly=""></span></td>
+                </tr>
+                <tr>
+                    <td align="center" class="mailinput01bg" style="width: 100px; height: 32px">
+                        <span style="font-size: 10pt">结束时间：</span></td>
+                    <td class="mailinput01bg" style="width: 100px; height: 32px">
+                        <span id="Anthem_TextBox2__"><input name="TextBox2" type="text" id="TextBox2" class="mailinput01bg" onfocus="setday(this)" style="width:100px;" readonly=""></span></td>
+                </tr>
+                <tr>
+                    <td align="center" class="mailinput01bg" style="height: 32px" colspan="2">
+                        <input id="Button3" type="button" value="确定" onclick="Buck()" style="">
+                        <input id="Button4" type="button" value="取消" onclick="return Button4_onclick()" style=""></td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+        
+        
+        
+        
+        <span id="Anthem_hiflag__"><input type="hidden" name="hiflag" id="hiflag" value="1,0,0"></span>
+        <span id="Anthem_hisqlheight__"><input type="hidden" name="hisqlheight" id="hisqlheight"></span>
+         <span id="Anthem_hiupdateparm__"><input type="hidden" name="hiupdateparm" id="hiupdateparm"></span>
+          <span id="Anthem_hiupdatemun__"><input type="hidden" name="hiupdatemun" id="hiupdatemun"></span>
+          <span id="Anthem_hiexcelpath__"><input type="hidden" name="hiexcelpath" id="hiexcelpath"></span>
+        <div id="showdiv" style="z-index: 102; left: 620px; width: 232px; position: absolute; top: 465px; height: 60px; background-image: url(&quot;../../Images/loading_index01.gif&quot;); vertical-align: middle; display: none;">
+            <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+        
+        </div>
+
+<script src="../../js/jquery.min.js"></script>
+    <script src="../../js/date-time-picker.min.js"></script>
+    <script type="text/javascript">
+        $('#TextBox1').dateTimePicker(
+        //以下设置可以选择时分秒
+        //{
+        //mode: 'dateTime'
+        //}
+        );
+
+        $('#TextBox2').dateTimePicker(
+        //以下设置可以选择时分秒
+        //{
+        //mode: 'dateTime'
+        //}
+        );
+    </script>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ValidationSummary1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ValidationSummary1 = document.all ? document.all["ValidationSummary1"] : document.getElementById("ValidationSummary1");
+ValidationSummary1.showmessagebox = "True";
+ValidationSummary1.showsummary = "False";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+diswait();//]]>
+</script>
+</form>
+
+
+<div class="cmp-date-time-picker" data-cur-target="" data-target-list="" data-year="" data-month="" data-date="" data-original-year="" data-original-month="" data-original-date="" data-original="" data-year-name="" data-month-name="" data-limit-max="" data-limit-min="" data-format="" data-mode="" style="display: none;">
+    <div class="cmp-dp-ctrl-wrap">
+        <div class="cmp-dp-ctrl-group cmp-dp-ctrl-group-year">
+            <span class="cmp-dp-btn cmp-dp-btn-prev J-dtp-btn-ctrl" data-ctrl="prev" data-type="year">
+                <i class="cmp-dp-triangle"></i>
+            </span>
+            <span class="cmp-dp-txt J-dtp-year-txt">2017年</span>
+            <span class="cmp-dp-btn cmp-dp-btn-next J-dtp-btn-ctrl" data-ctrl="next" data-type="year">
+                <i class="cmp-dp-triangle"></i>
+            </span>
+        </div>
+        <div class="cmp-dp-ctrl-group cmp-dp-ctrl-group-month">
+            <span class="cmp-dp-btn cmp-dp-btn-prev J-dtp-btn-ctrl" data-ctrl="prev" data-type="month">
+                <i class="cmp-dp-triangle"></i>
+            </span>
+            <span class="cmp-dp-txt J-dtp-month-txt">12月</span>
+            <span class="cmp-dp-btn cmp-dp-btn-next J-dtp-btn-ctrl" data-ctrl="next" data-type="month">
+                <i class="cmp-dp-triangle"></i>
+            </span>
+        </div>
+    </div>
+    <div class="cmp-dp-day-name J-dtp-day-name">
+        <span class="cmp-dp-day-item">日</span>
+        <span class="cmp-dp-day-item">一</span>
+        <span class="cmp-dp-day-item">二</span>
+        <span class="cmp-dp-day-item">三</span>
+        <span class="cmp-dp-day-item">四</span>
+        <span class="cmp-dp-day-item">五</span>
+        <span class="cmp-dp-day-item">六</span>
+    </div>
+    <div class="cmp-dp-date-wrapper J-dtp-date-wrap"></div>
+
+    <div class="cmp-dp-btn-wrap J-dtp-date-btn-wrap">
+        <span class="cmp-dp-btn J-dtp-btn-clear">清空</span>
+        <span class="cmp-dp-btn J-dtp-btn-today">今天</span>
+    </div>
+    <div class="cmp-dp-btn-wrap J-dtp-time-btn-wrap">
+        <div class="cmp-dp-time-group">
+            <input type="text" name="hour" maxlength="2" class="J-dtp-hour-input" style="">&nbsp;:&nbsp;<input type="text" name="minute" maxlength="2" class="J-dtp-minute-input" style="">&nbsp;:&nbsp;<input type="text" name="second" maxlength="2" class="J-dtp-second-input" style="">
+        </div>
+        <div class="cmp-dp-btn-group">
+            <span class="cmp-dp-btn J-dtp-btn-clear">清空</span>
+            <span class="cmp-dp-btn J-dtp-btn-yes">确定</span>
+        </div>
+    </div>
+
+    <div class="cmp-dp-month-menu J-dtp-month-menu"></div>
+    <div class="cmp-dp-time-menu cmp-dp-hour-menu J-dtp-hour-menu">
+        <span class="cmp-dp-time-item J-dtp-hour-item">00</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">01</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">02</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">04</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">05</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">06</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">07</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">08</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">09</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">10</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">11</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">12</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">13</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">14</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">15</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">16</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">17</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">18</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">19</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">20</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">21</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">22</span>
+        <span class="cmp-dp-time-item J-dtp-hour-item">23</span>
+    </div>
+    <div class="cmp-dp-time-menu cmp-dp-minute-menu J-dtp-minute-menu">
+        <span class="cmp-dp-time-item J-dtp-minute-item">00</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">05</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">10</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">15</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">20</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">25</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">30</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">35</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">40</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">45</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">50</span>
+        <span class="cmp-dp-time-item J-dtp-minute-item">55</span>
+    </div>
+    <div class="cmp-dp-time-menu cmp-dp-second-menu J-dtp-second-menu">
+        <span class="cmp-dp-time-item J-dtp-second-item">00</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">05</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">10</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">15</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">20</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">25</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">30</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">35</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">40</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">45</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">50</span>
+        <span class="cmp-dp-time-item J-dtp-second-item">55</span>
+    </div>
+</div></body></html>
