@@ -257,6 +257,18 @@ KEY_FIELDS = {
     "weekly_plan_execution_tracking": ["year_week", "project_code", "product_code", "attribute"],
 }
 
+DATE_WINDOW_SOURCES = {
+    "purchase_inbound",
+    "warehouse_detail",
+    "sales_outbound_detail",
+    "post_process_report_tracking",
+    "equipment_downtime_query",
+    "tooling_replacement_query",
+    "machining_transfer_query",
+}
+
+UPSERT_MODE = os.environ.get("UPSERT_MODE", "all_latest").strip().lower()
+
 NUMERIC_KEYWORDS = (
     "qty",
     "quantity",
@@ -534,11 +546,21 @@ def sql_literal(value: Any) -> str:
     return f"'{text}'"
 
 
+def upsert_tables_for_mode(tables: dict[str, pd.DataFrame]) -> dict[str, pd.DataFrame]:
+    if UPSERT_MODE in {"all", "all_latest", "full"}:
+        return tables
+    if UPSERT_MODE in {"incremental", "incremental_window", "date_window"}:
+        return {name: df for name, df in tables.items() if name in DATE_WINDOW_SOURCES}
+    raise ValueError(f"Unsupported UPSERT_MODE: {UPSERT_MODE}")
+
+
 def write_upsert_sql(tables: dict[str, pd.DataFrame]) -> None:
+    tables = upsert_tables_for_mode(tables)
     lines = [
         "-- SQLite / Cloudflare D1 compatible upsert data generated from data/normalized.",
         "-- Run schema.sql before this file.",
         "-- Remote D1 imports reject explicit transaction wrappers.",
+        f"-- UPSERT_MODE={UPSERT_MODE}; tables={','.join(sorted(tables))}",
         "",
     ]
     for source, df in sorted(tables.items()):
@@ -587,7 +609,7 @@ def write_markdown_report(profiles: list[dict[str, Any]]) -> None:
         "- 每张表都补充 `record_key`、`record_hash`、`source_table`、`source_file`、`source_row_index`、`extracted_at`。",
         "- 字段名已从中文表头映射为稳定的英文 snake_case，日期统一为 `YYYY-MM-DD` 或 `YYYY-MM-DD HH:MM:SS`，数值列统一为数据库可读数字。",
         "- 生成 `data/normalized/schema.sql`，可用于 SQLite / Cloudflare D1 建表。",
-        "- 生成 `data/normalized/upsert.sql`，可用于向 SQLite / Cloudflare D1 幂等写入当前清洗数据。",
+        f"- 生成 `data/normalized/upsert.sql`，可用于向 SQLite / Cloudflare D1 幂等写入当前清洗数据；当前 `UPSERT_MODE={UPSERT_MODE}`。",
         "",
         "## 表级评估",
         "",

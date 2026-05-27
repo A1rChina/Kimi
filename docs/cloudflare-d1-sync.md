@@ -21,6 +21,10 @@ data/normalized/upsert.sql   # 当前清洗数据的幂等写入
 
 `upsert.sql` 是 Actions 运行时产物，内容会重复包含一份清洗数据，因此默认不提交到 Git；它会随 workflow artifact 上传，并在 D1 写入步骤中直接使用。
 
+默认定时任务使用 `UPSERT_MODE=incremental_window`：只把带日期查询条件的滚动窗口表写入 D1，包括采购入库、仓库明细、销售出库、后工序报工、设备停机、工装更换和机加转序。没有日期条件的快照/维表不在默认增量 upsert 中重复写入。
+
+手动运行 workflow 时可以把 `d1_upload_scope` 切到 `all_latest`，用于初始化或需要刷新快照/维表的场景。
+
 ## GitHub 侧配置
 
 在 GitHub 仓库中配置以下 Secrets：
@@ -66,8 +70,9 @@ ON CONFLICT(record_key) DO UPDATE SET ...
 1. 先手动运行 workflow，`upload_to_d1=false`，确认抓取和清洗产物正常。
 2. 在 Cloudflare 创建 D1 数据库，并把数据库名称写入 `CLOUDFLARE_D1_DATABASE_NAME`。
 3. 配置 `CLOUDFLARE_API_TOKEN` 和 `CLOUDFLARE_ACCOUNT_ID`。
-4. 再手动运行 workflow，`upload_to_d1=true`，验证远端 D1 写入。
+4. 首次全量同步时，手动运行 workflow，`upload_to_d1=true` 且 `d1_upload_scope=all_latest`。
 5. 验证无误后，把仓库 Variable `UPLOAD_TO_D1` 改为 `true`，让定时任务自动同步。
+6. 定时任务默认使用 `d1_upload_scope=incremental_window`，每次只写入最近几天窗口数据，并由 D1 根据 `record_key` 去重/upsert。
 
 ## 验证 D1
 

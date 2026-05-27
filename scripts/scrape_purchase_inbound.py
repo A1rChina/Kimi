@@ -26,6 +26,7 @@ WEEKLY_PLAN_EXECUTION_TRACKING_URL = os.environ['CMMS_WEEKLY_PLAN_EXECUTION_TRAC
 USERNAME = os.environ['CMMS_USERNAME']
 PASSWORD = os.environ['CMMS_PASSWORD']
 DATE_RANGE = os.environ.get('DATE_RANGE', '').strip()
+INCREMENTAL_LOOKBACK_DAYS = int(os.environ.get('INCREMENTAL_LOOKBACK_DAYS', '3'))
 
 PURCHASE_OUTPUT_DIR = Path('data/excel_export/purchase_inbound')
 WAREHOUSE_OUTPUT_DIR = Path('data/excel_export/warehouse_detail')
@@ -70,7 +71,7 @@ def normalize_url_keep_login_host(target_url):
     return urlunparse(target)
 
 
-def default_date_range(days=3):
+def default_date_range(days=INCREMENTAL_LOOKBACK_DAYS):
     today = datetime.now().date()
     start = today - timedelta(days=days)
     return f'{start:%Y-%m-%d}/{today:%Y-%m-%d}'
