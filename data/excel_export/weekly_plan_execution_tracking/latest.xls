@@ -3,13 +3,13 @@
 		<tr>
 			<th scope="col">年周</th><th scope="col">开始日期</th><th scope="col">项目/车型</th><th scope="col">产品编码</th><th scope="col">产品名称</th><th scope="col">单位</th><th scope="col">单车用量</th><th scope="col">星期日</th><th scope="col">星期一</th><th scope="col">星期二</th><th scope="col">星期三</th><th scope="col">星期四</th><th scope="col">星期五</th><th scope="col">星期六</th><th scope="col">计划量</th><th scope="col">完成量</th><th scope="col">完成率</th><th scope="col">属性</th>
 		</tr><tr>
-			<td>2026_22</td><td>2026-05-24</td><td>小卡三代</td><td>500104-00518-01-05-B</td><td>小卡三代-后膨胀梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">120</td><td>120</td><td>120</td><td>120</td><td>120</td><td>120</td><td>120</td><td>840</td><td>635</td><td>76</td><td>本厂</td>
+			<td>2026_22</td><td>2026-05-24</td><td>小卡三代</td><td>500104-00518-01-05-B</td><td>小卡三代-后膨胀梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">120</td><td>120</td><td>120</td><td>120</td><td>120</td><td>120</td><td>120</td><td>840</td><td>654</td><td>78</td><td>本厂</td>
 		</tr><tr>
 			<td>2026_22</td><td>2026-05-24</td><td>小卡三代</td><td>500104-00518-01-03-C</td><td>小卡三代-前边框梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">&nbsp;</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>6</td><td>&nbsp;</td><td>&nbsp;</td><td>本厂</td>
 		</tr><tr>
-			<td>2026_22</td><td>2026-05-24</td><td>小卡三代</td><td>500104-00518-01-010-02-C</td><td>小卡三代-右边框</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">90</td><td>90</td><td>90</td><td>90</td><td>90</td><td>90</td><td>90</td><td>630</td><td>231</td><td>37</td><td>本厂</td>
+			<td>2026_22</td><td>2026-05-24</td><td>小卡三代</td><td>500104-00518-01-010-02-C</td><td>小卡三代-右边框</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">90</td><td>90</td><td>90</td><td>90</td><td>90</td><td>90</td><td>90</td><td>630</td><td>254</td><td>40</td><td>本厂</td>
 		</tr><tr>
-			<td>2026_22</td><td>2026-05-24</td><td>小卡三代</td><td>500104-00518-01-010-01-C</td><td>小卡三代-左边框</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">90</td><td>90</td><td>90</td><td>90</td><td>90</td><td>90</td><td>90</td><td>630</td><td>243</td><td>39</td><td>本厂</td>
+			<td>2026_22</td><td>2026-05-24</td><td>小卡三代</td><td>500104-00518-01-010-01-C</td><td>小卡三代-左边框</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">90</td><td>90</td><td>90</td><td>90</td><td>90</td><td>90</td><td>90</td><td>630</td><td>258</td><td>41</td><td>本厂</td>
 		</tr><tr>
 			<td>2026_22</td><td>2026-05-24</td><td>PP-0168</td><td>2.A.02.6184-OSP00</td><td>PP-0168-右边梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">60</td><td>60</td><td>60</td><td>60</td><td>60</td><td>60</td><td>60</td><td>420</td><td>86</td><td>20</td><td>本厂</td>
 		</tr><tr>
@@ -25,9 +25,9 @@
 		</tr><tr>
 			<td>2026_22</td><td>2026-05-24</td><td>E35</td><td>500109-00312-01-17</td><td>E35横梁04</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>0</td><td>9</td><td>&nbsp;</td><td>本厂</td>
 		</tr><tr>
-			<td>2026_22</td><td>2026-05-24</td><td>AWT-87.3(E16)</td><td>500110-00799-01-02</td><td>AWT87.3-横梁01</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">190</td><td>190</td><td>190</td><td>190</td><td>190</td><td>190</td><td>190</td><td>1330</td><td>1346</td><td>101</td><td>本厂</td>
+			<td>2026_22</td><td>2026-05-24</td><td>AWT-87.3(E16)</td><td>500110-00799-01-02</td><td>AWT87.3-横梁01</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">190</td><td>190</td><td>190</td><td>190</td><td>190</td><td>190</td><td>190</td><td>1330</td><td>1446</td><td>109</td><td>本厂</td>
 		</tr><tr>
-			<td>2026_22</td><td>2026-05-24</td><td>AWT-87.3(E16)</td><td>500110-00799-01-03</td><td>AWT87.3-横梁02</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">180</td><td>180</td><td>180</td><td>180</td><td>180</td><td>180</td><td>180</td><td>1260</td><td>2074</td><td>165</td><td>本厂</td>
+			<td>2026_22</td><td>2026-05-24</td><td>AWT-87.3(E16)</td><td>500110-00799-01-03</td><td>AWT87.3-横梁02</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">180</td><td>180</td><td>180</td><td>180</td><td>180</td><td>180</td><td>180</td><td>1260</td><td>2093</td><td>166</td><td>本厂</td>
 		</tr><tr>
 			<td>2026_22</td><td>2026-05-24</td><td>37KWH</td><td>500109-00515（552）-01-07</td><td>37/53KWH膨胀梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">300</td><td>300</td><td>300</td><td>300</td><td>300</td><td>300</td><td>300</td><td>2100</td><td>484</td><td>23</td><td>本厂</td>
 		</tr><tr>
@@ -37,11 +37,11 @@
 		</tr><tr>
 			<td>2026_22</td><td>2026-05-24</td><td>025AC</td><td>10062035-0-11</td><td>025AC右边梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">175</td><td>175</td><td>175</td><td>175</td><td>175</td><td>175</td><td>175</td><td>1225</td><td>456</td><td>37</td><td>本厂</td>
 		</tr><tr>
-			<td>2026_22</td><td>2026-05-24</td><td>025AC</td><td>10062035-0-06</td><td>025AC中横梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">220</td><td>220</td><td>220</td><td>220</td><td>220</td><td>220</td><td>1</td><td>1321</td><td>800</td><td>61</td><td>本厂</td>
+			<td>2026_22</td><td>2026-05-24</td><td>025AC</td><td>10062035-0-06</td><td>025AC中横梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">220</td><td>220</td><td>220</td><td>220</td><td>220</td><td>220</td><td>1</td><td>1321</td><td>863</td><td>65</td><td>本厂</td>
 		</tr><tr>
-			<td>2026_22</td><td>2026-05-24</td><td>025AC</td><td>10062035-0-07</td><td>025AC纵梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">220</td><td>220</td><td>220</td><td>220</td><td>220</td><td>220</td><td>1</td><td>1321</td><td>688</td><td>52</td><td>本厂</td>
+			<td>2026_22</td><td>2026-05-24</td><td>025AC</td><td>10062035-0-07</td><td>025AC纵梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">220</td><td>220</td><td>220</td><td>220</td><td>220</td><td>220</td><td>1</td><td>1321</td><td>733</td><td>55</td><td>本厂</td>
 		</tr><tr>
-			<td>2026_22</td><td>2026-05-24</td><td>025AC</td><td>10062035-0-03</td><td>025AC左边梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">175</td><td>175</td><td>175</td><td>175</td><td>175</td><td>175</td><td>175</td><td>1225</td><td>476</td><td>39</td><td>本厂</td>
+			<td>2026_22</td><td>2026-05-24</td><td>025AC</td><td>10062035-0-03</td><td>025AC左边梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">175</td><td>175</td><td>175</td><td>175</td><td>175</td><td>175</td><td>175</td><td>1225</td><td>490</td><td>40</td><td>本厂</td>
 		</tr><tr>
 			<td>2026_21</td><td>2026-05-17</td><td>小卡三代</td><td>500104-00518-01-05-B</td><td>小卡三代-后膨胀梁</td><td>个</td><td>1</td><td style="vnd.ms-excel.numberformat:@">120</td><td>120</td><td>120</td><td>120</td><td>120</td><td>120</td><td>120</td><td>840</td><td>642</td><td>76</td><td>本厂</td>
 		</tr><tr>

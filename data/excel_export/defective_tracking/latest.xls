@@ -3,6 +3,10 @@
 		<tr>
 			<th scope="col">质量跟踪码</th><th scope="col">公司名称</th><th scope="col">物料编码</th><th scope="col">物料名称</th><th scope="col">单位</th><th scope="col">申报时间</th><th scope="col">申报人员</th><th scope="col">部门名称</th><th scope="col">反馈来源</th><th scope="col">缺陷描述</th><th scope="col">申报说明</th><th scope="col">后序处置</th><th scope="col">供应商</th><th scope="col">入库性质</th><th scope="col">总量</th><th scope="col">待入库量</th><th scope="col">入库数量</th><th scope="col">出库量</th><th scope="col">在库量</th><th scope="col">入出库明细</th>
 		</tr><tr>
+			<td>260526009</td><td>重庆元新隆</td><td>500109-00698-01-04</td><td>EHU-56左右边梁02</td><td>个</td><td>2026/5/26 11:37:04</td><td>张莉</td><td>&nbsp;</td><td>客户端反馈</td><td>材料裂纹/气泡或拉伤</td><td>外观拉伤</td><td>材料退库返厂家</td><td>星环</td><td>材料责任退库</td><td>2</td><td>0</td><td>2</td><td>0</td><td>2</td><td>&nbsp;</td>
+		</tr><tr>
+			<td>260526007</td><td>重庆元新隆</td><td>500109-00698-01-03</td><td>EHU-56左右边梁01</td><td>个</td><td>2026/5/26 11:34:34</td><td>张莉</td><td>&nbsp;</td><td>客户端反馈</td><td>机加调试不良</td><td>位置度超差，无法装配</td><td>报废处理</td><td>星环</td><td>生产责任退库</td><td>16</td><td>0</td><td>16</td><td>0</td><td>16</td><td>&nbsp;</td>
+		</tr><tr>
 			<td>260525029</td><td>重庆元新隆</td><td>2.A.02.6184-OSP00</td><td>PP-0168-右边梁</td><td>个</td><td>2026/5/25 18:52:10</td><td>戴智豪</td><td>机加1班</td><td>巡检发现</td><td>材料变形/角度不良</td><td>原材料退回</td><td>材料退库返厂家</td><td>佳坤</td><td>材料责任退库</td><td>33</td><td>0</td><td>33</td><td>0</td><td>33</td><td>&nbsp;</td>
 		</tr><tr>
 			<td>260525025</td><td>重庆元新隆</td><td>2.A.02.6184-OSP00</td><td>PP-0168-右边梁</td><td>个</td><td>2026/5/25 16:36:43</td><td>王永强</td><td>机加1班</td><td>加工操作发现</td><td>材料尺寸/公差不稳定</td><td>PP0168右边梁铭牌处铣深为0.8MM</td><td>报废处理</td><td>佳坤</td><td>材料责任退库</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>&nbsp;</td>
@@ -2009,10 +2013,6 @@
 			<td>260403045</td><td>重庆元新隆</td><td>10062035-0-04-A</td><td>025AC后边梁</td><td>个</td><td>2026/4/3 6:17:26</td><td>杨见川</td><td>机加1班</td><td>加工操作发现</td><td>加工弹刀/粘刀</td><td>机加过程弹刀，导致变形，邵家云</td><td>报废处理</td><td>正合</td><td>生产责任退库</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>&nbsp;</td>
 		</tr><tr>
 			<td>260403044</td><td>重庆元新隆</td><td>2.A.02.6186-OSP00</td><td>PP-0168-左边梁</td><td>个</td><td>2026/4/3 6:12:13</td><td>张浩林</td><td>机加1班</td><td>加工操作发现</td><td>材料内腔拉伤、筋变形</td><td>原材料开裂，邵家云</td><td>材料退库返厂家</td><td>佳坤</td><td>材料责任退库</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>清空</td>
-		</tr><tr>
-			<td>260403043</td><td>重庆元新隆</td><td>2.A.02.6186-OSP00</td><td>PP-0168-左边梁</td><td>个</td><td>2026/4/3 6:08:10</td><td>张浩林</td><td>机加1班</td><td>加工操作发现</td><td>加工弹刀/粘刀</td><td>机加过程中，弹刀导致变形，邵家云</td><td>报废处理</td><td>佳坤</td><td>生产责任退库</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>清空</td>
-		</tr><tr>
-			<td>260403041</td><td>重庆元新隆</td><td>500109-00406-10-03</td><td>SEA1前梁</td><td>个</td><td>2026/4/3 6:16:04</td><td>刘洪波</td><td>机加1班</td><td>加工操作发现</td><td>机加过铣、留筋/壁厚不良</td><td>材料差异壁厚薄1.75要求最低1.8，邵家云</td><td>材料退库返厂家</td><td>新美鱼</td><td>材料责任退库</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>清空</td>
 		</tr>
 	</table>
 </div>
