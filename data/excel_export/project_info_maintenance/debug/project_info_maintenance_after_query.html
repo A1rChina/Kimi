@@ -3,7 +3,224 @@
 </title>
     
     <script src="../../js/calendar3.js">
-</script><style type="text/css">.cmp-date-time-picker{width:210px;padding:4px;margin:0;background-color:#fff;border:1px solid #ccc;border-radius:2px;-webkit-box-shadow:0 1px 3px #ccc;box-shadow:0 1px 3px #ccc;-webkit-box-sizing:content-box;box-sizing:content-box;font-size:12px;position:absolute;z-index:9999;display:none;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.cmp-date-time-picker *{-webkit-box-sizing:content-box;box-sizing:content-box;margin:0;padding:0;font-style:normal}.cmp-date-time-picker .cmp-dp-ctrl-wrap{width:210px;height:26px;overflow:hidden}.cmp-date-time-picker .cmp-dp-ctrl-group{height:26px;line-height:26px;float:left;margin:0 2px}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-btn{width:22px;height:26px;overflow:hidden;float:left;cursor:pointer;position:relative}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-txt{width:57px;height:26px;text-align:center;overflow:hidden;float:left}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-triangle{display:block;width:0;height:0;position:absolute;left:50%;top:50%;margin:-4px 0 0 -2px}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-btn-prev .cmp-dp-triangle{border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:0 solid transparent;border-right:5px solid #333}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-btn-next .cmp-dp-triangle{border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #333;border-right:0 solid transparent}.cmp-date-time-picker .cmp-dp-ctrl-group-month{width:91px}.cmp-date-time-picker .cmp-dp-ctrl-group-month .cmp-dp-txt{width:47px;cursor:pointer}.cmp-date-time-picker .cmp-dp-ctrl-group-year{width:111px}.cmp-date-time-picker .cmp-dp-ctrl-group-year .cmp-dp-txt{width:67px}.cmp-date-time-picker .cmp-dp-day-name{width:210px;height:30px;line-height:30px;overflow:hidden}.cmp-date-time-picker .cmp-dp-day-name .cmp-dp-day-item{width:30px;text-align:center;font-weight:700;color:#999;float:left}.cmp-date-time-picker .cmp-dp-date-wrapper{width:210px;line-height:26px;overflow:hidden}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item{width:26px;margin:0 2px 4px;text-align:center;color:#333;float:left;cursor:pointer;border-radius:3px}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item:hover{background-color:#eee;color:#3740d5;font-weight:700}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-today,.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-today:hover{background-color:#a4a4a4;color:#fff}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-other{background-color:#f0f0f0}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-cur,.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-cur:hover{background-color:#3740d5;color:#fff}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-disabled,.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-disabled:hover{background-color:#f9f9f9;color:#e1e1e1;font-weight:400;cursor:default}.cmp-date-time-picker .cmp-dp-btn-wrap{width:210px;height:26px;padding-top:5px;*padding-top:10px;padding-bottom:4px;text-align:center;overflow:hidden}.cmp-date-time-picker .cmp-dp-btn-wrap .cmp-dp-btn{display:inline-block;padding:0 8px;margin:0 4px;height:24px;line-height:24px;font-size:12px;color:#fff;background:#3740d5;border:1px solid #3740d5;border-radius:4px;cursor:pointer}.cmp-date-time-picker .cmp-dp-btn-wrap .cmp-dp-btn-disabled{color:#f6f6f6;background:#cecece;border:1px solid #cecece}.cmp-date-time-picker .cmp-dp-time-group{width:105px;height:26px;float:left;overflow:hidden;vertical-align:top;font-size:12px;color:#999}.cmp-date-time-picker .cmp-dp-time-group input{width:20px;height:16px;line-height:16px;padding:4px 0;*margin-top:-1px;text-align:center;color:#666;border:1px solid #ccc;outline:0;vertical-align:middle}.cmp-date-time-picker .cmp-dp-btn-group{width:105px;height:26px;float:left;overflow:hidden;font-size:0}.cmp-date-time-picker .cmp-dp-month-menu{width:150px;padding:4px;background-color:#fff;border:1px solid #ccc;border-radius:2px;-webkit-box-shadow:0 1px 3px #ccc;box-shadow:0 1px 3px #ccc;position:absolute;top:30px;right:10px;display:none}.cmp-date-time-picker .cmp-dp-month-item{width:50px;height:26px;line-height:26px;text-align:center;overflow:hidden;border-radius:3px;float:left}.cmp-date-time-picker .cmp-dp-month-item:hover{background-color:#eee}.cmp-date-time-picker .cmp-dp-time-menu{width:180px;padding:4px;background-color:#fff;border:1px solid #ccc;border-radius:2px;-webkit-box-shadow:0 1px 3px #ccc;box-shadow:0 1px 3px #ccc;position:absolute;bottom:37px;display:none}.cmp-date-time-picker .cmp-dp-time-item{width:26px;line-height:26px;margin:0 2px;text-align:center;color:#333;float:left;cursor:pointer;border-radius:3px}.cmp-date-time-picker .cmp-dp-time-item:hover{background-color:#eee}.cmp-date-time-picker .cmp-dp-hour-menu{left:4px}.cmp-date-time-picker .cmp-dp-minute-menu{width:120px;left:36px}.cmp-date-time-picker .cmp-dp-second-menu{width:120px;left:68px}</style></head><body text="#00" onload="GetEnable()"><iframe id="endDateLayer" name="endDateLayer" frameborder="0" width="204" height="273" style="position: absolute;  z-index: 9998; display: none;"></iframe>
+</script><style type="text/css">.cmp-date-time-picker{width:210px;padding:4px;margin:0;background-color:#fff;border:1px solid #ccc;border-radius:2px;-webkit-box-shadow:0 1px 3px #ccc;box-shadow:0 1px 3px #ccc;-webkit-box-sizing:content-box;box-sizing:content-box;font-size:12px;position:absolute;z-index:9999;display:none;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.cmp-date-time-picker *{-webkit-box-sizing:content-box;box-sizing:content-box;margin:0;padding:0;font-style:normal}.cmp-date-time-picker .cmp-dp-ctrl-wrap{width:210px;height:26px;overflow:hidden}.cmp-date-time-picker .cmp-dp-ctrl-group{height:26px;line-height:26px;float:left;margin:0 2px}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-btn{width:22px;height:26px;overflow:hidden;float:left;cursor:pointer;position:relative}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-txt{width:57px;height:26px;text-align:center;overflow:hidden;float:left}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-triangle{display:block;width:0;height:0;position:absolute;left:50%;top:50%;margin:-4px 0 0 -2px}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-btn-prev .cmp-dp-triangle{border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:0 solid transparent;border-right:5px solid #333}.cmp-date-time-picker .cmp-dp-ctrl-group .cmp-dp-btn-next .cmp-dp-triangle{border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #333;border-right:0 solid transparent}.cmp-date-time-picker .cmp-dp-ctrl-group-month{width:91px}.cmp-date-time-picker .cmp-dp-ctrl-group-month .cmp-dp-txt{width:47px;cursor:pointer}.cmp-date-time-picker .cmp-dp-ctrl-group-year{width:111px}.cmp-date-time-picker .cmp-dp-ctrl-group-year .cmp-dp-txt{width:67px}.cmp-date-time-picker .cmp-dp-day-name{width:210px;height:30px;line-height:30px;overflow:hidden}.cmp-date-time-picker .cmp-dp-day-name .cmp-dp-day-item{width:30px;text-align:center;font-weight:700;color:#999;float:left}.cmp-date-time-picker .cmp-dp-date-wrapper{width:210px;line-height:26px;overflow:hidden}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item{width:26px;margin:0 2px 4px;text-align:center;color:#333;float:left;cursor:pointer;border-radius:3px}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item:hover{background-color:#eee;color:#3740d5;font-weight:700}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-today,.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-today:hover{background-color:#a4a4a4;color:#fff}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-other{background-color:#f0f0f0}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-cur,.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-cur:hover{background-color:#3740d5;color:#fff}.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-disabled,.cmp-date-time-picker .cmp-dp-date-wrapper .cmp-dp-date-item-disabled:hover{background-color:#f9f9f9;color:#e1e1e1;font-weight:400;cursor:default}.cmp-date-time-picker .cmp-dp-btn-wrap{width:210px;height:26px;padding-top:5px;*padding-top:10px;padding-bottom:4px;text-align:center;overflow:hidden}.cmp-date-time-picker .cmp-dp-btn-wrap .cmp-dp-btn{display:inline-block;padding:0 8px;margin:0 4px;height:24px;line-height:24px;font-size:12px;color:#fff;background:#3740d5;border:1px solid #3740d5;border-radius:4px;cursor:pointer}.cmp-date-time-picker .cmp-dp-btn-wrap .cmp-dp-btn-disabled{color:#f6f6f6;background:#cecece;border:1px solid #cecece}.cmp-date-time-picker .cmp-dp-time-group{width:105px;height:26px;float:left;overflow:hidden;vertical-align:top;font-size:12px;color:#999}.cmp-date-time-picker .cmp-dp-time-group input{width:20px;height:16px;line-height:16px;padding:4px 0;*margin-top:-1px;text-align:center;color:#666;border:1px solid #ccc;outline:0;vertical-align:middle}.cmp-date-time-picker .cmp-dp-btn-group{width:105px;height:26px;float:left;overflow:hidden;font-size:0}.cmp-date-time-picker .cmp-dp-month-menu{width:150px;padding:4px;background-color:#fff;border:1px solid #ccc;border-radius:2px;-webkit-box-shadow:0 1px 3px #ccc;box-shadow:0 1px 3px #ccc;position:absolute;top:30px;right:10px;display:none}.cmp-date-time-picker .cmp-dp-month-item{width:50px;height:26px;line-height:26px;text-align:center;overflow:hidden;border-radius:3px;float:left}.cmp-date-time-picker .cmp-dp-month-item:hover{background-color:#eee}.cmp-date-time-picker .cmp-dp-time-menu{width:180px;padding:4px;background-color:#fff;border:1px solid #ccc;border-radius:2px;-webkit-box-shadow:0 1px 3px #ccc;box-shadow:0 1px 3px #ccc;position:absolute;bottom:37px;display:none}.cmp-date-time-picker .cmp-dp-time-item{width:26px;line-height:26px;margin:0 2px;text-align:center;color:#333;float:left;cursor:pointer;border-radius:3px}.cmp-date-time-picker .cmp-dp-time-item:hover{background-color:#eee}.cmp-date-time-picker .cmp-dp-hour-menu{left:4px}.cmp-date-time-picker .cmp-dp-minute-menu{width:120px;left:36px}.cmp-date-time-picker .cmp-dp-second-menu{width:120px;left:68px}</style><script type="text/javascript" src="/ECOERP_CMMS/WebResource.axd?d=VKHi8pxmLK-NK79fg4jTrRvZYBlkpRg1_CyGEBV10UvySVwJjI-WFz1a_LFk_M9Gr_2ZjpmMySU6JpMRqJWSe3sZEgerjlhKgtHsFJgXXV-WiyzRNXRPc24LJOLVJtV10&amp;amp;t=635260899183750000"></script><script type="text/javascript">
+//<![CDATA[
+var Page_Validators = new Array();
+function WebForm_OnSubmit() {
+    return true;
+}
+//]]></script><script type="text/javascript">
+</script><script type="text/javascript">
+
+
+    function gettextvalue() {
+
+    var textvalue="";
+    for(var i=0;i<10;i++)
+    {
+        var control=document.getElementById("text"+i);
+        if(control!=undefined&&control!=null)
+        {
+            textvalue+="&text"+i+"="+control.value;
+        }
+    }
+    return textvalue;
+}
+
+
+//2019.5.25
+document.onkeydown = function ()
+{
+//使用document.getElementById获取到按钮对象
+ var button = document.getElementById('Button2');
+ if(event.keyCode == 13)
+ {
+  button.click();
+  event.returnValue = false;
+ }
+}
+var textid;
+function Buck() {
+            textid.value=document.all.TextBox1.value+"/"+document.all.TextBox2.value;
+            document.getElementById("divtime").style.visibility="hidden";
+}
+function divview() {
+                   //document.getElementById("divtime").style.visibility="visible";
+                   //document.getElementById("TextBox1").value=textid;
+                   }
+function Button4_onclick() {
+document.getElementById("divtime").style.visibility="hidden";
+}
+function btjs_Click()
+{
+ 
+ btjsclick(gettextvalue());
+}
+function btadd_Click()
+{
+ btaddclick();
+}
+function bthz_Click()
+{
+ bthzclick();
+}
+function QueryString(item){
+     var sValue=location.search.match(new RegExp("[\?\&]"+item+"=([^\&]*)(\&?)","i"))
+     return sValue?sValue[1]:sValue
+}
+function btsql_Click()
+{
+    var sql="";
+    var e=document.getElementsByTagName("input"); 
+    for(var i=0;i <e.length;i++) 
+　{ 
+　　if (e[i].type=="checkbox") 
+　　{ 
+　　  if(e[i].checked==true&&e[i].value!="全否")
+　　  {
+　　    sql=sql+e[i].value+",";
+　　  }
+　　} 
+　} 
+　if(sql!="")
+　{
+　  var iTop = (window.screen.availHeight-document.getElementById("hisqlheight").value)/2;
+　  var iLeft = (window.screen.availWidth-500)/2;
+    window.open("jcsql.aspx?id=" + sql + "&rowid=" +  QueryString('id')+gettextvalue() ,"","Scrollbars=no,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=500px ,Height="+document.getElementById("hisqlheight").value+"px,top="+iTop+",left="+iLeft);
+   }
+    else
+    {
+        alert("请选择需要处理的数据！");
+    }
+}
+function GetEnable()
+{
+    var flagjs=document.getElementById("hiflag").value.split(',')[0];
+    var flaghz=document.getElementById("hiflag").value.split(',')[1];
+    var flagadd=document.getElementById("hiflag").value.split(',')[2];
+    if(flagjs=="0")
+    {
+        document.getElementById("btjs").disabled="disabled";
+        document.getElementById("btjs").style.display="none";
+    }
+    if(flaghz=="0")
+    {
+        document.getElementById("bthz").disabled="disabled";
+        document.getElementById("bthz").style.display="none";
+    }
+    if(flagadd=="0")
+    {
+        document.getElementById("btadd").disabled="disabled";
+        document.getElementById("btadd").style.display="none";
+    }
+}
+function SelectAll(obj) 
+{ 
+  var e=document.getElementsByTagName("input"); 
+  var IsTrue; 
+  if(obj.value=="全选") 
+　 { 
+　　 IsTrue=true; 
+　　 obj.value="全否" 
+　 } 
+　 else 
+　 {
+     IsTrue = false; 
+　　obj.value="全选" 
+　　} 
+　　 
+　for(var i=0;i <e.length;i++) 
+　{ 
+　　if (e[i].type=="checkbox") 
+　　{ 
+　　  e[i].checked=IsTrue; 
+　　} 
+　} 
+} 
+function showwait()
+{
+    document.getElementById("showdiv").style.left=document.body.clientWidth/2-100;
+    document.getElementById("showdiv").style.top=document.body.clientHeight/2-35;
+    document.getElementById("showdiv").style.display="";
+}
+function diswait()
+{
+    //try
+    //{
+        document.getElementById("showdiv").style.display="none";
+    //}
+    //catch(e)
+   // {
+   // }
+}
+function btmbexcel_Click()
+{
+   if(document.getElementById("trmb").style.display=="none")
+      document.getElementById("trmb").style.display="";
+   else
+      document.getElementById("trmb").style.display="none";
+}
+function getexcel()
+{
+    window.open("XLS_DownLoad.aspx?path="+document.getElementById("fileupexcel").value);
+    //location.reload();
+    //window.document.forms(0).Button2.click();
+}
+function getexcelload()
+{
+    
+    location.reload();
+    //window.document.forms(0).Button2.click();
+}
+</script><script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+function btaddclick(){var iTop = (window.screen.availHeight-180)/2;var iLeft = (window.screen.availWidth-640)/2;window.open("parmview.aspx?id=1934&rowid=0&parmheight=180&comsum=2&parmkey=xh&parmkey=xh&parmflag=2","","Scrollbars=yes,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width=640px ,Height=180px,top="+iTop+",left="+iLeft+"");}//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+var Anthem_FormID = "form1";
+//]]>
+</script><script type="text/javascript">
+        $('#TextBox1').dateTimePicker(
+        //以下设置可以选择时分秒
+        //{
+        //mode: 'dateTime'
+        //}
+        );
+
+        $('#TextBox2').dateTimePicker(
+        //以下设置可以选择时分秒
+        //{
+        //mode: 'dateTime'
+        //}
+        );
+    </script><script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ValidationSummary1"));
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+var ValidationSummary1 = document.all ? document.all["ValidationSummary1"] : document.getElementById("ValidationSummary1");
+ValidationSummary1.showmessagebox = "True";
+ValidationSummary1.showsummary = "False";
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+diswait();//]]>
+</script></head><body text="#00" onload="GetEnable()"><iframe id="endDateLayer" name="endDateLayer" frameborder="0" width="204" height="273" style="position: absolute;  z-index: 9998; display: none;"></iframe>
 
 <script type="text/javascript">
 
@@ -414,13 +631,13 @@ var Anthem_FormID = "form1";
                     <td style="width: 100px; height: 32px;" align="center" class="mailinput01bg">
                         <span style="font-size: 10pt">起始时间：</span></td>
                     <td style="width: 100px; height: 32px;" class="mailinput01bg">
-                        <span id="Anthem_TextBox1__"><input name="TextBox1" type="text" id="TextBox1" class="mailinput01bg" onfocus="setday(this)" style="width:100px;"></span></td>
+                        <span id="Anthem_TextBox1__"><input name="TextBox1" type="text" id="TextBox1" class="mailinput01bg" onfocus="setday(this)" style="width:100px;" readonly=""></span></td>
                 </tr>
                 <tr>
                     <td align="center" class="mailinput01bg" style="width: 100px; height: 32px">
                         <span style="font-size: 10pt">结束时间：</span></td>
                     <td class="mailinput01bg" style="width: 100px; height: 32px">
-                        <span id="Anthem_TextBox2__"><input name="TextBox2" type="text" id="TextBox2" class="mailinput01bg" onfocus="setday(this)" style="width:100px;"></span></td>
+                        <span id="Anthem_TextBox2__"><input name="TextBox2" type="text" id="TextBox2" class="mailinput01bg" onfocus="setday(this)" style="width:100px;" readonly=""></span></td>
                 </tr>
                 <tr>
                     <td align="center" class="mailinput01bg" style="height: 32px" colspan="2">
@@ -439,7 +656,7 @@ var Anthem_FormID = "form1";
          <span id="Anthem_hiupdateparm__"><input type="hidden" name="hiupdateparm" id="hiupdateparm"></span>
           <span id="Anthem_hiupdatemun__"><input type="hidden" name="hiupdatemun" id="hiupdatemun"></span>
           <span id="Anthem_hiexcelpath__"><input type="hidden" name="hiexcelpath" id="hiexcelpath"></span>
-        <div id="showdiv" style="z-index: 102; left: 620px; width: 232px; position: absolute; top: 465px; height: 60px; background-image: url(&quot;../../Images/loading_index01.gif&quot;); vertical-align: middle;">
+        <div id="showdiv" style="z-index: 102; left: 620px; width: 232px; position: absolute; top: 465px; height: 60px; background-image: url(&quot;../../Images/loading_index01.gif&quot;); vertical-align: middle; display: none;">
             <br>
             &nbsp; &nbsp; &nbsp; &nbsp;
         
