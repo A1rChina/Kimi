@@ -1,0 +1,327 @@
+<link href='../../Images/TreeImg/infocss.css' rel='stylesheet' type='text/css' /><meta http-equiv="content-type" content="application/ms-excel; charset=UTF-8"/><div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">制程码</th><th scope="col">公司名称</th><th scope="col">工序</th><th scope="col">机台</th><th scope="col">生产车间</th><th scope="col">物料编码</th><th scope="col">物料名称</th><th scope="col">规格型号</th><th scope="col">单位</th><th scope="col">合格品</th><th scope="col">不良品</th><th scope="col">报工人员</th><th scope="col">报工时间</th><th scope="col">标签来源</th>
+		</tr><tr>
+			<td>R20260531-6417-CQYXL-2663</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3776-00-00</td><td>025AC中横梁</td><td>1293</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0001</td><td>2026/5/31 22:47:37</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260531-6436-CQYXL-2664</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>&nbsp;</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0001</td><td>2026/5/31 22:47:11</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260531-6419-CQYXL-2616</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3772-00-00</td><td>025AC右边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 22:32:09</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260531-6413-CQYXL-2637</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q240930-8181-00-00</td><td>C01右边框</td><td>1372.23*189.93*100.5</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 21:19:36</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260531-6467-CQYXL-2625</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q260402-7649-00-00</td><td>37/53KWH膨胀梁</td><td>500109-00515（552）-01-07</td><td>个</td><td>220</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 20:45:55</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260531-6421-CQYXL-2586</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4533-00-00</td><td>小卡三代-左边框</td><td>500104-00518-01-010-01-C</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 20:20:56</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260531-6436-CQYXL-2588</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>500110-00799-01-02</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0003</td><td>2026/5/31 19:44:25</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6356-CQYXL-2634</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3768-00-00</td><td>025AC左边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0003</td><td>2026/5/31 18:55:48</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6358-CQYXL-2633</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3776-00-00</td><td>025AC中横梁</td><td>1293</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0003</td><td>2026/5/31 18:10:49</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260531-6420-CQYXL-2629</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250417-4248-00-00</td><td>025AC后边梁</td><td>&nbsp;</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0003</td><td>2026/5/31 15:56:25</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6383-CQYXL-2628</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4556-00-00</td><td>AWT87.3-横梁02</td><td>500110-00799-01-03</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0003</td><td>2026/5/31 15:53:12</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260531-6469-CQYXL-2620</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>&nbsp;</td><td>个</td><td>23</td><td>0</td><td>YXL-JG0003</td><td>2026/5/31 14:44:20</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6310-CQYXL-2263</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3772-00-00</td><td>025AC右边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0003</td><td>2026/5/31 13:50:43</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6342-CQYXL-2369</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>1302</td><td>个</td><td>99</td><td>0</td><td>YXL-JG0003</td><td>2026/5/31 13:24:59</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6405-CQYXL-2577</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q240930-8180-00-00</td><td>C01左边框</td><td>500109-00249-01-01</td><td>件</td><td>5</td><td>0</td><td>YXL-JG0003</td><td>2026/5/31 13:10:28</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260531-6469-CQYXL-2601</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>31</td><td>0</td><td>YXL-JG0003</td><td>2026/5/31 13:09:19</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6403-CQYXL-2563</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250906-4535-00-00</td><td>小卡三代-右边框</td><td>500104-00518-01-010-02-C</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 12:54:58</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6359-CQYXL-2593</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3778-00-00</td><td>025AC纵梁</td><td>1515.4</td><td>个</td><td>200</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 11:08:59</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6397-CQYXL-2547</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>10062035-0-05</td><td>个</td><td>93</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 10:53:09</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6306-CQYXL-2420</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3768-00-00</td><td>025AC左边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 10:38:31</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260601-6468-CQYXL-2537</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q260402-7649-00-00</td><td>37/53KWH膨胀梁</td><td>500109-00515（552）-01-07</td><td>个</td><td>220</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 10:27:47</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6358-CQYXL-2587</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3776-00-00</td><td>025AC中横梁</td><td>1293</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 7:21:14</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260524-6077-CQYXL-1769</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>500110-00799-01-02</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 7:20:19</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6385-CQYXL-2584</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>&nbsp;</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 6:50:38</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6379-CQYXL-2581</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q240930-8181-00-00</td><td>C01右边框</td><td>500109-00249-01-02</td><td>件</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 6:34:21</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260531-6420-CQYXL-2579</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250417-4248-00-00</td><td>025AC后边梁</td><td>&nbsp;</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 5:44:04</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6385-CQYXL-2555</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 5:21:45</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6360-CQYXL-2576</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3772-00-00</td><td>025AC右边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 5:02:55</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6405-CQYXL-2578</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q240930-8180-00-00</td><td>C01左边框</td><td>&nbsp;</td><td>件</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 4:49:03</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260601-6464-CQYXL-2575</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4556-00-00</td><td>AWT87.3-横梁02</td><td>500110-00799-01-03</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 4:44:32</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6362-CQYXL-2512</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4533-00-00</td><td>小卡三代-左边框</td><td>500104-00518-01-010-01-C</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 3:52:39</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6356-CQYXL-2566</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3768-00-00</td><td>025AC左边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 1:40:33</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260601-6463-CQYXL-2565</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>500110-00799-01-02</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 1:40:15</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6403-CQYXL-2531</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250906-4535-00-00</td><td>小卡三代-右边框</td><td>500104-00518-01-010-02-C</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/31 0:14:17</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6357-CQYXL-2542</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>1293</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 23:08:43</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260601-6463-CQYXL-2554</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>500110-00799-01-02</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 22:55:13</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6360-CQYXL-2534</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3772-00-00</td><td>025AC右边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 22:37:18</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6397-CQYXL-2511</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>&nbsp;</td><td>个</td><td>80</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 22:37:10</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6378-CQYXL-2488</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q240930-8180-00-00</td><td>C01左边框</td><td>500109-00249-01-01</td><td>件</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 19:34:53</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6393-CQYXL-2520</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250417-4248-00-00</td><td>025AC后边梁</td><td>10062035-0-04-A</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 19:04:35</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6385-CQYXL-2518</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 18:47:55</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6384-CQYXL-2519</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 18:13:48</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6356-CQYXL-2526</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3768-00-00</td><td>025AC左边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 18:08:15</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6383-CQYXL-2514</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4556-00-00</td><td>AWT87.3-横梁02</td><td>500110-00799-01-03</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 18:00:44</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6401-CQYXL-2517</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q260402-7649-00-00</td><td>37/53KWH膨胀梁</td><td>500109-00515（552）-01-07</td><td>个</td><td>220</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 17:14:28</td><td>独立标签</td>
+		</tr><tr>
+			<td>R260530027-000-CQYXL-2513</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>2.A.02.6200-OSP00</td><td>PP-0168-前边梁</td><td>502.8</td><td>个</td><td>72</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/30 16:52:04</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260525-6148-CQYXL-1930</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4533-00-00</td><td>小卡三代-左边框</td><td>500104-00518-01-010-01-C</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0005</td><td>2026/5/30 13:42:27</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6397-CQYXL-2483</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>10062035-0-05</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0005</td><td>2026/5/30 13:41:53</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6356-CQYXL-2499</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3768-00-00</td><td>025AC左边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 13:41:32</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6310-CQYXL-2422</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3772-00-00</td><td>025AC右边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 13:33:21</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6328-CQYXL-2358</td><td>重庆元新隆</td><td>机加</td><td>德力2.5米</td><td>本厂</td><td>500109-00249-01-02</td><td>C01右边框</td><td>500109-00249-01-02</td><td>件</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 13:32:43</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6332-CQYXL-2471</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>500110-00799-01-02</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 13:30:05</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6359-CQYXL-2506</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3778-00-00</td><td>025AC纵梁</td><td>1515.4</td><td>个</td><td>200</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 13:29:27</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6401-CQYXL-2505</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q260402-7649-00-00</td><td>37/53KWH膨胀梁</td><td>500109-00515（552）-01-07</td><td>个</td><td>220</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 13:17:41</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6382-CQYXL-2509</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>500110-00799-01-02</td><td>个</td><td>99</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 13:15:18</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6357-CQYXL-2487</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>1293</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 13:00:52</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6391-CQYXL-2470</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q260402-4790-00-00</td><td>F618-前梁01</td><td>500110-00848-01-01</td><td>个</td><td>12</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 10:55:50</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260530-6385-CQYXL-2480</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 7:42:11</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6393-CQYXL-2476</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250417-4248-00-00</td><td>025AC后边梁</td><td>10062035-0-04-A</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/30 7:34:30</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6313-CQYXL-2415</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250906-4535-00-00</td><td>小卡三代-右边框</td><td>&nbsp;</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0003</td><td>2026/5/30 7:25:31</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6293-CQYXL-2478</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>&nbsp;</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0003</td><td>2026/5/30 7:20:29</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6343-CQYXL-2410</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>1302</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0003</td><td>2026/5/30 4:44:08</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6351-CQYXL-2467</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>10062035-0-05</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0003</td><td>2026/5/30 3:36:44</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260530-6360-CQYXL-2461</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3772-00-00</td><td>025AC右边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0003</td><td>2026/5/30 2:39:42</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260509-5255-CQYXL-2327</td><td>重庆元新隆</td><td>机加</td><td>德玛仕1.6米</td><td>本厂</td><td>500104-00518-01-05-B</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>2</td><td>0</td><td>YXL-JG0003</td><td>2026/5/30 2:25:50</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6306-CQYXL-2462</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3768-00-00</td><td>025AC左边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0003</td><td>2026/5/30 1:30:20</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6349-CQYXL-2459</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4556-00-00</td><td>AWT87.3-横梁02</td><td>500110-00799-01-03</td><td>个</td><td>61</td><td>0</td><td>YXL-JG0003</td><td>2026/5/30 1:06:56</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260525-6148-CQYXL-1952</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4533-00-00</td><td>小卡三代-左边框</td><td>500104-00518-01-010-01-C</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0003</td><td>2026/5/30 0:32:23</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6351-CQYXL-2441</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>10062035-0-05</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 23:13:42</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260527-6232-CQYXL-2266</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q251125-4647-00-00</td><td>F3-56-前梁01</td><td>&nbsp;</td><td>个</td><td>45</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 23:06:16</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260524-6125-CQYXL-2354</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4556-00-00</td><td>AWT87.3-横梁02</td><td>1302</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 22:41:19</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6341-CQYXL-2368</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 22:37:57</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6311-CQYXL-2434</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250417-4248-00-00</td><td>025AC后边梁</td><td>1341.49</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 22:32:55</td><td>合批标签</td>
+		</tr><tr>
+			<td>R260529049-000-CQYXL-2428</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>2.A.02.6200-OSP00</td><td>PP-0168-前边梁</td><td>502.8</td><td>个</td><td>88</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/29 19:33:10</td><td>独立标签</td>
+		</tr><tr>
+			<td>R260529048-000-CQYXL-2425</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>500109-00312-01-03</td><td>E35前梁01</td><td>455.6*119*103.88</td><td>个</td><td>200</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/29 19:32:55</td><td>独立标签</td>
+		</tr><tr>
+			<td>R260529048-000-CQYXL-2426</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>BP45A-XC-13</td><td>BP45（76）A吊耳02</td><td>95</td><td>个</td><td>1284</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/29 19:32:42</td><td>独立标签</td>
+		</tr><tr>
+			<td>R260529048-000-CQYXL-2424</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>10062035-0-02</td><td>025AC前边梁</td><td>741.8</td><td>个</td><td>360</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/29 19:32:28</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6341-CQYXL-2433</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 19:25:59</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6329-CQYXL-2372</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q240930-8180-00-00</td><td>C01左边框</td><td>500109-00249-01-01</td><td>件</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 18:32:03</td><td>合批标签</td>
+		</tr><tr>
+			<td>R260529048-000-CQYXL-2427</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>BP76A-XC-06</td><td>BP76A-左边梁</td><td>807</td><td>个</td><td>245</td><td>0</td><td>YXL-011</td><td>2026/5/29 17:31:52</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6337-CQYXL-2423</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q260402-7649-00-00</td><td>37/53KWH膨胀梁</td><td>500109-00515（552）-01-07</td><td>个</td><td>220</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 17:23:13</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6306-CQYXL-2348</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3768-00-00</td><td>025AC左边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 15:38:36</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260527-6226-CQYXL-2115</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3772-00-00</td><td>025AC右边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 15:38:26</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6351-CQYXL-2377</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>10062035-0-05</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 15:37:40</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6313-CQYXL-2381</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250906-4535-00-00</td><td>小卡三代-右边框</td><td>500104-00518-01-010-02-C</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 15:15:23</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6265-CQYXL-2411</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>1293</td><td>个</td><td>31</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 14:54:44</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6337-CQYXL-2407</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q260402-7649-00-00</td><td>37/53KWH膨胀梁</td><td>500109-00515（552）-01-07</td><td>个</td><td>220</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 12:37:35</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6309-CQYXL-2405</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3778-00-00</td><td>025AC纵梁</td><td>1515.4</td><td>个</td><td>200</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 11:48:12</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6339-CQYXL-2398</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>1293</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 11:05:57</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6338-CQYXL-2384</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>1293</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 11:02:06</td><td>合批标签</td>
+		</tr><tr>
+			<td>R260529003-000-CQYXL-2399</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>BP80-XC-06</td><td>BP80-后横梁</td><td>900.35</td><td>个</td><td>983</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/29 10:53:18</td><td>独立标签</td>
+		</tr><tr>
+			<td>R260529003-000-CQYXL-2402</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>BP76B-XC-01</td><td>BP76B-前边梁</td><td>724.5</td><td>个</td><td>240</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/29 10:52:48</td><td>独立标签</td>
+		</tr><tr>
+			<td>R260529003-000-CQYXL-2401</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>BP76A-XC-01</td><td>BP76A-前边梁</td><td>369.5</td><td>个</td><td>180</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/29 10:52:41</td><td>独立标签</td>
+		</tr><tr>
+			<td>R260529003-000-CQYXL-2400</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>BP76A-XC-02</td><td>BP76A-后边梁</td><td>369.5</td><td>个</td><td>180</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/29 10:52:34</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260525-6160-CQYXL-1954</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250417-4248-00-00</td><td>025AC后边梁</td><td>1341.49</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 10:00:12</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6328-CQYXL-2379</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q240930-8181-00-00</td><td>C01右边框</td><td>500109-00249-01-02</td><td>件</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 9:25:15</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6340-CQYXL-2380</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 9:20:21</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6316-CQYXL-2370</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q251125-4647-00-00</td><td>F3-56-前梁01</td><td>500109-00677-01-01</td><td>个</td><td>80</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 8:43:20</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6312-CQYXL-2376</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4533-00-00</td><td>小卡三代-左边框</td><td>500104-00518-01-010-01-C</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 8:40:54</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6335-CQYXL-2318</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q260402-7649-00-00</td><td>37/53KWH膨胀梁</td><td>500109-00515（552）-01-07</td><td>个</td><td>220</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 8:37:07</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6329-CQYXL-2378</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q240930-8180-00-00</td><td>C01左边框</td><td>&nbsp;</td><td>件</td><td>50</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 7:52:11</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6310-CQYXL-2366</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3772-00-00</td><td>025AC右边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 7:39:13</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6341-CQYXL-2361</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 7:33:28</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260528-6264-CQYXL-2265</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3768-00-00</td><td>025AC左边梁</td><td>&nbsp;</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 7:26:02</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260522-5979-CQYXL-1538</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>1302</td><td>个</td><td>5</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 7:12:52</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260528-6290-CQYXL-2325</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>500110-00799-01-02</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 6:49:44</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260528-6287-CQYXL-2245</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q240930-8181-00-00</td><td>C01右边框</td><td>500109-00249-01-02</td><td>件</td><td>50</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 5:23:30</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260527-6232-CQYXL-2272</td><td>重庆元新隆</td><td>机加</td><td>德玛仕1.6米</td><td>本厂</td><td>500109-00677-01-01</td><td>F3-56-前梁01</td><td>500109-00677-01-01</td><td>个</td><td>9</td><td>0</td><td>YXL-JG0003</td><td>2026/5/29 5:07:13</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6349-CQYXL-2303</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4556-00-00</td><td>AWT87.3-横梁02</td><td>500110-00799-01-03</td><td>个</td><td>53</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 4:58:14</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6335-CQYXL-2260</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q260402-7649-00-00</td><td>37/53KWH膨胀梁</td><td>500109-00515（552）-01-07</td><td>个</td><td>7</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 4:51:44</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6337-CQYXL-2252</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q260402-7649-00-00</td><td>37/53KWH膨胀梁</td><td>500109-00515（552）-01-07</td><td>个</td><td>220</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 4:40:20</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6337-CQYXL-2306</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q260402-7649-00-00</td><td>37/53KWH膨胀梁</td><td>&nbsp;</td><td>个</td><td>220</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 4:39:34</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260524-6125-CQYXL-2286</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4556-00-00</td><td>AWT87.3-横梁02</td><td>&nbsp;</td><td>个</td><td>8</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 2:49:25</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6333-CQYXL-2243</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4556-00-00</td><td>AWT87.3-横梁02</td><td>500110-00799-01-03</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 1:18:22</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6311-CQYXL-2267</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250417-4248-00-00</td><td>025AC后边梁</td><td>1341.49</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 1:06:42</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260506-5081-CQYXL-2282</td><td>重庆元新隆</td><td>制程</td><td>&nbsp;</td><td>本厂</td><td>500109-00677-01-03-A</td><td>F3-56-左右边梁01</td><td>Q260505-4840-00-00</td><td>个</td><td>5</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 1:03:11</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260528-6271-CQYXL-2241</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250906-4535-00-00</td><td>小卡三代-右边框</td><td>500104-00518-01-010-02-C</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 0:56:14</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260529-6338-CQYXL-2280</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>1293</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 0:43:48</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260527-6232-CQYXL-2068</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q251125-4647-00-00</td><td>F3-56-前梁01</td><td>500109-00677-01-01</td><td>个</td><td>5</td><td>0</td><td>YXL-JG0008</td><td>2026/5/29 0:07:08</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260528-6264-CQYXL-2211</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3768-00-00</td><td>025AC左边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 23:16:50</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6286-CQYXL-2246</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>500109-00249-01-01</td><td>C01左边框</td><td>&nbsp;</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 23:15:03</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6290-CQYXL-2221</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>500110-00799-01-02</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 23:13:39</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260529-6339-CQYXL-2259</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>1293</td><td>个</td><td>0</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 23:02:01</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6293-CQYXL-2240</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 23:01:52</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6268-CQYXL-2261</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3772-00-00</td><td>025AC右边梁</td><td>&nbsp;</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 23:00:06</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260528-6270-CQYXL-2228</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4533-00-00</td><td>小卡三代-左边框</td><td>500104-00518-01-010-01-C</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0005</td><td>2026/5/28 19:42:44</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6292-CQYXL-2236</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0005</td><td>2026/5/28 19:42:21</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260508-5185-CQYXL-2225</td><td>重庆元新隆</td><td>制程</td><td>&nbsp;</td><td>本厂</td><td>500109-00677-01-02</td><td>F3-56-后梁01</td><td>Q251125-4650-00-00</td><td>个</td><td>5</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 19:21:39</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260508-5228-CQYXL-2224</td><td>重庆元新隆</td><td>制程</td><td>&nbsp;</td><td>本厂</td><td>500109-00677-01-04</td><td>F3-56-左右边梁02</td><td>Q251125-4654-00-00</td><td>个</td><td>5</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 18:12:29</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260526-6197-CQYXL-2099</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4556-00-00</td><td>AWT87.3-横梁02</td><td>500110-00799-01-03</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 15:48:05</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260508-5199-CQYXL-2218</td><td>重庆元新隆</td><td>制程</td><td>&nbsp;</td><td>本厂</td><td>500109-00677-01-10</td><td>F3-56-膨胀梁01</td><td>Q251125-4658-00-00</td><td>个</td><td>5</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 15:31:33</td><td>独立标签</td>
+		</tr><tr>
+			<td>F20260429-2171-CQYXL-2217</td><td>重庆元新隆</td><td>制程</td><td>&nbsp;</td><td>本厂</td><td>500109-00677-01-09</td><td>F3-56-中部横梁</td><td>500109-00677-01-09</td><td>件</td><td>5</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 15:31:22</td><td>独立标签</td>
+		</tr><tr>
+			<td>R260528008-000-CQYXL-2209</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>500104-00518-01-04-A</td><td>小卡三代-前膨胀梁</td><td>658</td><td>个</td><td>150</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/28 15:22:58</td><td>独立标签</td>
+		</tr><tr>
+			<td>R260528008-000-CQYXL-2208</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>500109-00312-01-03</td><td>E35前梁01</td><td>455.6*119*103.88</td><td>个</td><td>200</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/28 15:22:48</td><td>独立标签</td>
+		</tr><tr>
+			<td>R260528008-000-CQYXL-2207</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>BP76A-XC-06</td><td>BP76A-左边梁</td><td>807</td><td>个</td><td>245</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/28 15:21:34</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260528-6264-CQYXL-2151</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3768-00-00</td><td>025AC左边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0005</td><td>2026/5/28 14:52:55</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260521-5910-CQYXL-2066</td><td>重庆元新隆</td><td>机加</td><td>德力2.5米</td><td>本厂</td><td>10062035-0-06</td><td>025AC中横梁</td><td>1293</td><td>个</td><td>1</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 13:53:07</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260528-6268-CQYXL-2203</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3772-00-00</td><td>025AC右边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 13:43:40</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6269-CQYXL-2204</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250417-4248-00-00</td><td>025AC后边梁</td><td>1341.49</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 13:18:01</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6265-CQYXL-2198</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>1293</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 13:10:28</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6267-CQYXL-2201</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3778-00-00</td><td>025AC纵梁</td><td>1515.4</td><td>个</td><td>199</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 12:56:35</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6274-CQYXL-2165</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q251125-4647-00-00</td><td>F3-56-前梁01</td><td>500109-00677-01-01</td><td>个</td><td>80</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 12:42:06</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260527-6250-CQYXL-2160</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q240930-8181-00-00</td><td>C01右边框</td><td>500109-00249-01-02</td><td>件</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 12:30:16</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6292-CQYXL-2161</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 11:45:17</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260524-6118-CQYXL-1899</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3774-00-00</td><td>025AC前横梁</td><td>1293</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 10:37:24</td><td>合批标签</td>
+		</tr><tr>
+			<td>R260528002-000-CQYXL-2185</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>BP45B-XC-01</td><td>BP45B前边梁</td><td>724.5</td><td>个</td><td>284</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/28 10:26:32</td><td>独立标签</td>
+		</tr><tr>
+			<td>R260528002-000-CQYXL-2186</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>BP62-XC-09</td><td>BP62前梁</td><td>811.21</td><td>个</td><td>442</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/28 10:26:18</td><td>独立标签</td>
+		</tr><tr>
+			<td>R260528002-000-CQYXL-2187</td><td>重庆元新隆</td><td>&nbsp;</td><td>&nbsp;</td><td>亿企</td><td>BP76A-XC-06</td><td>BP76A-左边梁</td><td>807</td><td>个</td><td>245</td><td>0</td><td>YXL-ZC0001</td><td>2026/5/28 10:26:09</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260523-6000-CQYXL-2093</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250906-4535-00-00</td><td>小卡三代-右边框</td><td>&nbsp;</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 9:16:47</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260526-6213-CQYXL-2131</td><td>重庆元新隆</td><td>前置检</td><td>德力2.5米</td><td>本厂</td><td>500110-00848-01-01</td><td>F618-前梁01</td><td>&nbsp;</td><td>&nbsp;</td><td>1</td><td>0</td><td>YXL-JG0001</td><td>2026/5/28 8:26:04</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260528-6291-CQYXL-2157</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4556-00-00</td><td>AWT87.3-横梁02</td><td>500110-00799-01-03</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 7:51:14</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260528-6293-CQYXL-2153</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 7:51:00</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260527-6222-CQYXL-2077</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3768-00-00</td><td>025AC左边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0003</td><td>2026/5/28 6:20:38</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6270-CQYXL-2149</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕2.5米</td><td>本厂</td><td>Q250906-4533-00-00</td><td>小卡三代-左边框</td><td>500104-00518-01-010-01-C</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 5:37:21</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260526-6174-CQYXL-1997</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3772-00-00</td><td>025AC右边梁</td><td>1657.98</td><td>个</td><td>50</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 4:41:44</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260524-6125-CQYXL-1799</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4556-00-00</td><td>AWT87.3-横梁02</td><td>1302</td><td>个</td><td>96</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 4:28:19</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260528-6269-CQYXL-2138</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250417-4248-00-00</td><td>025AC后边梁</td><td>1341.49</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 2:10:55</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260527-6224-CQYXL-2121</td><td>重庆元新隆</td><td>机加工</td><td>德力2.5米</td><td>本厂</td><td>Q250325-3776-00-00</td><td>025AC中横梁</td><td>1293</td><td>个</td><td>99</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 2:06:48</td><td>合批标签</td>
+		</tr><tr>
+			<td>R20260527-6246-CQYXL-2137</td><td>重庆元新隆</td><td>侧铣</td><td>德力2.5米</td><td>本厂</td><td>Q251129-4555-00-00</td><td>AWT87.3-横梁01</td><td>500110-00799-01-02</td><td>个</td><td>100</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 0:58:12</td><td>独立标签</td>
+		</tr><tr>
+			<td>R20260528-6293-CQYXL-2132</td><td>重庆元新隆</td><td>机加工</td><td>德玛仕1.6米</td><td>本厂</td><td>Q250906-4540-00-00</td><td>小卡三代-后膨胀梁</td><td>500104-00518-01-05-B</td><td>个</td><td>42</td><td>0</td><td>YXL-JG0008</td><td>2026/5/28 0:41:24</td><td>合批标签</td>
+		</tr>
+	</table>
+</div>
