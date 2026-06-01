@@ -369,10 +369,10 @@ date_range = YYYY-MM-DD/YYYY-MM-DD
 
 ```yaml
 schedule:
-  - cron: "0 */2 * * *"
+  - cron: "7 */6 * * *"
 ```
 
-即每 2 小时运行一次。
+即每 6 小时运行一次。
 
 ### 5.2 Actions 执行步骤
 
@@ -382,6 +382,8 @@ Checkout repository
 → pip install -r requirements.txt
 → python -m playwright install chromium
 → python scripts/scrape_purchase_inbound.py
+→ python scripts/clean_database_inputs.py
+→ 上传 data/normalized/ 为 workflow artifact
 → git add data/
 → 如 data/ 有变化，则自动 commit + push
 ```

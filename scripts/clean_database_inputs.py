@@ -503,7 +503,7 @@ def build_table(source: str, path: Path) -> tuple[pd.DataFrame, dict[str, Any]]:
 
 def write_schema_sql(profiles: list[dict[str, Any]]) -> None:
     lines = [
-        "-- SQLite / Cloudflare D1 compatible schema generated from data/normalized.",
+        "-- SQLite-compatible schema generated from data/normalized.",
         "-- record_key is deterministic for idempotent imports.",
         "",
     ]
@@ -557,9 +557,9 @@ def upsert_tables_for_mode(tables: dict[str, pd.DataFrame]) -> dict[str, pd.Data
 def write_upsert_sql(tables: dict[str, pd.DataFrame]) -> None:
     tables = upsert_tables_for_mode(tables)
     lines = [
-        "-- SQLite / Cloudflare D1 compatible upsert data generated from data/normalized.",
+        "-- SQLite-compatible upsert data generated from data/normalized.",
         "-- Run schema.sql before this file.",
-        "-- Remote D1 imports reject explicit transaction wrappers.",
+        "-- No explicit transaction wrapper is included so callers can choose their own import boundary.",
         f"-- UPSERT_MODE={UPSERT_MODE}; tables={','.join(sorted(tables))}",
         "",
     ]
@@ -608,8 +608,8 @@ def write_markdown_report(profiles: list[dict[str, Any]]) -> None:
         "- 输出目录：`data/normalized/`。",
         "- 每张表都补充 `record_key`、`record_hash`、`source_table`、`source_file`、`source_row_index`、`extracted_at`。",
         "- 字段名已从中文表头映射为稳定的英文 snake_case，日期统一为 `YYYY-MM-DD` 或 `YYYY-MM-DD HH:MM:SS`，数值列统一为数据库可读数字。",
-        "- 生成 `data/normalized/schema.sql`，可用于 SQLite / Cloudflare D1 建表。",
-        f"- 生成 `data/normalized/upsert.sql`，可用于向 SQLite / Cloudflare D1 幂等写入当前清洗数据；当前 `UPSERT_MODE={UPSERT_MODE}`。",
+        "- 生成 `data/normalized/schema.sql`，可用于 SQLite 建表。",
+        f"- 生成 `data/normalized/upsert.sql`，可用于向 SQLite 幂等写入当前清洗数据；当前 `UPSERT_MODE={UPSERT_MODE}`。",
         "",
         "## 表级评估",
         "",

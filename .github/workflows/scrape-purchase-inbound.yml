@@ -11,24 +11,8 @@ on:
         description: "未指定 date_range 时默认回溯天数"
         required: false
         default: "3"
-      d1_upload_scope:
-        description: "写入 D1 的清洗数据范围"
-        required: false
-        type: choice
-        options:
-          - "incremental_window"
-          - "all_latest"
-        default: "incremental_window"
-      upload_to_d1:
-        description: "是否将清洗后的数据写入 Cloudflare D1"
-        required: false
-        type: choice
-        options:
-          - "false"
-          - "true"
-        default: "false"
   schedule:
-    - cron: "7,37 * * * *"
+    - cron: "7 */6 * * *"
 
 permissions:
   contents: write
@@ -79,7 +63,7 @@ jobs:
 
       - name: Clean database inputs
         env:
-          UPSERT_MODE: ${{ github.event.inputs.d1_upload_scope || 'incremental_window' }}
+          UPSERT_MODE: incremental_window
         run: |
           python scripts/clean_database_inputs.py
 
@@ -119,26 +103,6 @@ jobs:
           path: |
             data/normalized/
             reports/08_database_readiness.md
-
-      - name: Setup Node for Wrangler
-        if: ${{ inputs.upload_to_d1 == 'true' || vars.UPLOAD_TO_D1 == 'true' }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Upload cleaned data to Cloudflare D1
-        if: ${{ inputs.upload_to_d1 == 'true' || vars.UPLOAD_TO_D1 == 'true' }}
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          D1_DATABASE_NAME: ${{ vars.CLOUDFLARE_D1_DATABASE_NAME || secrets.CLOUDFLARE_D1_DATABASE_NAME }}
-        run: |
-          test -n "$CLOUDFLARE_API_TOKEN" || (echo "Missing CLOUDFLARE_API_TOKEN secret" && exit 1)
-          test -n "$CLOUDFLARE_ACCOUNT_ID" || (echo "Missing CLOUDFLARE_ACCOUNT_ID secret" && exit 1)
-          test -n "$D1_DATABASE_NAME" || (echo "Missing CLOUDFLARE_D1_DATABASE_NAME variable or secret" && exit 1)
-
-          npx wrangler d1 execute "$D1_DATABASE_NAME" --remote --yes --file=data/normalized/schema.sql
-          npx wrangler d1 execute "$D1_DATABASE_NAME" --remote --yes --file=data/normalized/upsert.sql
 
       - name: Commit scraped source exports
         run: |

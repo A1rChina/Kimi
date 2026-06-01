@@ -22,7 +22,7 @@
         "source_dir": "data/excel_export/purchase_inbound"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "purchase_inbound"
       }
     },
@@ -48,7 +48,7 @@
         "source_dir": "data/excel_export/warehouse_detail"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "warehouse_detail"
       }
     },
@@ -74,7 +74,7 @@
         "source_dir": "data/excel_export/warehouse_ledger"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "warehouse_ledger"
       }
     },
@@ -100,7 +100,7 @@
         "source_dir": "data/excel_export/sales_outbound_detail"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "sales_outbound_detail"
       }
     },
@@ -126,7 +126,7 @@
         "source_dir": "data/excel_export/defective_tracking"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "defective_tracking"
       }
     },
@@ -152,7 +152,7 @@
         "source_dir": "data/excel_export/post_process_report_tracking"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "post_process_report_tracking"
       }
     },
@@ -178,7 +178,7 @@
         "source_dir": "data/excel_export/production_takt_maintenance"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "production_takt_maintenance"
       }
     },
@@ -204,7 +204,7 @@
         "source_dir": "data/excel_export/production_equipment_maintenance"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "production_equipment_maintenance"
       }
     },
@@ -230,7 +230,7 @@
         "source_dir": "data/excel_export/equipment_downtime_query"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "equipment_downtime_query"
       }
     },
@@ -256,7 +256,7 @@
         "source_dir": "data/excel_export/tooling_replacement_query"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "tooling_replacement_query"
       }
     },
@@ -282,7 +282,7 @@
         "source_dir": "data/excel_export/machining_transfer_query"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "machining_transfer_query"
       }
     },
@@ -308,7 +308,7 @@
         "source_dir": "data/excel_export/project_info_maintenance"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "project_info_maintenance"
       }
     },
@@ -334,7 +334,7 @@
         "source_dir": "data/excel_export/product_material_match_maintenance"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "product_material_match_maintenance"
       }
     },
@@ -360,7 +360,7 @@
         "source_dir": "data/excel_export/weekly_plan_execution_tracking"
       },
       "destination": {
-        "type": "cloudflare_d1",
+        "type": "local_artifact",
         "table": "weekly_plan_execution_tracking"
       }
     }

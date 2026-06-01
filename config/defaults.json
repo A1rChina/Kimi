@@ -16,6 +16,6 @@
     "debug_root": "data/debug"
   },
   "destination": {
-    "type": "cloudflare_d1"
+    "type": "local_artifact"
   }
 }

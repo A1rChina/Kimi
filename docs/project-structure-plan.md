@@ -6,7 +6,7 @@
 
 1. 从 CMMS 页面抓取原始数据。
 2. 对抓取结果做标准化、增量去重和水位线维护。
-3. 将稳定后的记录写入 Cloudflare D1。
+3. 将稳定后的记录输出为本地/Actions artifact，可按需导入 SQLite。
 
 因此项目结构应按“抓取、整理、入库”分层，而不是让主脚本继续堆积所有数据源逻辑。
 
@@ -30,7 +30,7 @@ Kimi/
 │       ├── normalize.py
 │       ├── incremental.py
 │       ├── outputs.py
-│       └── d1.py
+│       └── database.py
 ├── db/
 │   └── migrations/
 ├── data/
@@ -50,7 +50,7 @@ Kimi/
 - URL 对应的环境变量名。
 - 页面类型和选择器。
 - 增量模式、水位线字段、回看天数、去重字段。
-- 本地输出目录和 D1 目标表。
+- 本地输出目录和本地数据库目标表。
 
 配置中不保存真实 URL、IP、账号或密码。所有敏感值从 GitHub Secrets 或本地环境变量读取。
 
@@ -92,9 +92,9 @@ Kimi/
 
 保存 raw、normalized、latest、debug 文件。
 
-`src/kimi/d1.py`
+`src/kimi/database.py`
 
-负责 Cloudflare D1 写入。建议以 `record_key` 为主键执行 upsert。
+负责生成或导入本地数据库产物。建议以 `record_key` 为主键执行 upsert。
 
 ## 迁移步骤
 
@@ -124,9 +124,9 @@ data/debug/<source>/
 
 如果字段还不确定，先保留空数组，后续根据实际导出表头补齐。
 
-### 第四步：写入 D1
+### 第四步：生成数据库产物
 
-新增 D1 迁移 SQL，并用 `record_key` 做唯一键。写入流程放在增量整理之后，只写 normalized 记录。
+新增 SQLite 建表和 upsert SQL，并用 `record_key` 做唯一键。生成流程放在增量整理之后，只处理 normalized 记录。
 
 ### 第五步：保留重建能力
 
